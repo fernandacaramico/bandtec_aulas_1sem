@@ -14,6 +14,7 @@ entrar na pasta do github:
 1. cd _nomeaqui_
 // se nao quiser digitar tudo, digite 3 letras do repositorio + tab
 // ou, entre na pasta no github já criada e dê "git bash here aqui"
+// para repetir comando, navegue pelas setas pra cima e pra baixo para os comandos já executados
 
 checar como está a pasta: atualizada? não?
 1. git status
@@ -24,7 +25,12 @@ checar como está a pasta: atualizada? não?
 puxar as modificações feitas no repositório remoto para o local:
 1. git pull
 
-fazer caminho oposto, enviar alterações do local >> remoto
+fazer caminho oposto, enviar alterações do local --> remoto
 1. alterar o arquivo no local
 2. salvar
-3. "git diff" no gitbash
+3. <git diff> no gitbash << mostra para git que houveram alterações
+4. <git add .> no gitbash << fazer com que git esteja no meio termo de controlador das alterações
+5. <git commit -m "mexi na cor de fundo do app"> no gitbash << fazer com o que git local seja controlador das alterações
+//pode ser qualquer coisa, mas nunca pode mudar, até 72 caract
+//coloque sempre a extensão do arquivo ao criar no site do github, assim, quando acessar pelo local, vai conseguir abrir corretamente
+6. <git push> 
