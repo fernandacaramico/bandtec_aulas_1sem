@@ -1,0 +1,25 @@
+github - servidor de repositórios remotos
+git - tecnologia
+#1 vez, faz o clone do repositório remoto
+#i++ vez, faz o pull do repositório remoto, em seu repositório local
+
+
+colocar repositótio no local --> vá na pasta, clique com botao direito do mouse, clicar em "git bash here" * tem que baixar gitbash no pc*
+
+clonar:
+1. pegar url completo
+2. na janela do git bash, escrever "git clone http..."
+
+entrar na pasta do github:
+1. cd _nomeaqui_
+// se nao quiser digitar tudo, digite 3 letras do repositorio + tab
+// ou, entre na pasta no github já criada e dê "git bash here aqui"
+
+checar como está a pasta: atualizada? não?
+1. git status
+
+//não é recomendável alterar nem criar arquivos git diretamente no site github.
+//git entende que foi tudo baixado e editado por outro usuário em outro servidor em outro lugar
+
+puxar as modificações feitas no repositório remoto para o local:
+1. git pull
