@@ -23,3 +23,8 @@ checar como está a pasta: atualizada? não?
 
 puxar as modificações feitas no repositório remoto para o local:
 1. git pull
+
+fazer caminho oposto, enviar alterações do local >> remoto
+1. alterar o arquivo no local
+2. salvar
+3. "git diff" no gitbash
