@@ -1,0 +1,37 @@
+-- criar um banco de dados chamado PraticaPrograma
+
+-- selecionar esse banco de dados
+
+-- criar as tabelas correspondentes à modelagem
+
+-- inserir dados nas tabelas, de forma que exista mais de um gênero de programa diferente, e que exista alguma emissora com mais de um programa cadastrado
+
+-- exibir todos os dados de cada tabela criada, separadamente
+
+-- fazer os acertos da chave estrangeira, caso não tenha feito no moemento da criação
+
+-- exibir apenas os nomes das emissoras e dos telefones de todas as emissoras cujo nome comeca com uma determinada letra
+
+-- exibir todos os dados dos programas em ordem decrescente pelo gênero
+
+-- exibir os dados dos jogadores que jogam em uma determinado genero
+
+-- exibir os dados das emissoras em que o nome tenha a 2a letra de tras para frente igual a determinada letra
+
+-- exibir os dados das emissoras em ordem crescente pela data de fundacao
+
+-- alterar o genero de algum programa
+
+-- exibir os dados das emissoras e de seus respectivos programas
+
+-- exibir os dados de uma determinada emissora (informar o nome) e dos seus respectivos programas
+
+-- exibir os dados dos programas e dados dos seus respectivos produtos anunciados
+
+-- exibir os dados de um programa (informar o nome), os dados de seus respectivos produtos anunciados
+
+-- exibir os dados das emissoras, dados dos respectivos programas e os dados dos produtos anunciados
+
+-- excluir algum produto
+
+-- excluir as tabelas

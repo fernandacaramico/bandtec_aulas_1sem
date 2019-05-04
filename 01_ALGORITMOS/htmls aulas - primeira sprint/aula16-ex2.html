@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+        <form>
+                <h2>Sua idade, em anos</h2>
+                <input type="number" id="idade"> <br>
+                <button type="button" onclick="calcular()"> Calcular vida</button>
+
+        
+        
+                <script>
+                    function calcular() {
+                        var dias = idade.value * 365;
+                        var meses = idade.value * 12; 
+                        alert(`Você já viveu  ${dias} dias e ${meses} meses `);
+                    }
+        
+                   
+                </script>
+            </form>
+</body>
+</html>

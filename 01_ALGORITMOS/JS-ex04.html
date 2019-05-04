@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício 4</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+        <div>
+                <a href="JS-ex03.html"> << Exercício anterior - "Calculando vida"</a>
+                <a href="estudando-pra-prova_JS03.html" style="margin-left: 30px; margin-right: 30px"><b> Voltar ao índice </b></a> 
+                <a href="JS-ex05.html"> >> Próximo exercício - "Calcular média de aluno BandTec"</a> <br> <br>
+            </div>
+
+    <h2>Cofrinho da riqueza</h2>
+    <form>
+        Depósito no cofrinho: <input type="number" id="deposito" autofocus> <br>
+        Valor total no cofrinho: <input type="number" id="cofre" placeholder="0" readonly> <br>
+        <button type="button" onclick="depositar()">Depositar</button>
+    </form>
+</body>
+</html>
+<script>
+function depositar() {
+    cofre.value = Number(cofre.value) + Number(deposito.value);
+    deposito.value = 0;
+}
+
+</script>

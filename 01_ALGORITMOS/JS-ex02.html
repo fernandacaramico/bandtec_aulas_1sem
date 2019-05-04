@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício 2</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <div>
+        <a href="JS-ex01.html">
+            << Exercício anterior - "Aposentadoria por idade" </a> <a href="estudando-pra-prova_JS03.html"
+                style="margin-left: 30px; margin-right: 30px"><b> Voltar ao índice </b>
+        </a>
+        <a href="JS-ex03.html"> >> Próximo exercício - "Calculando vida"</a> <br> <br>
+    </div>
+
+    <h2>Aposentadoria por sexo</h2>
+    <form>
+        Sua idade em anos: <input type="number" min=0 max=100 id="idade" autofocus> <br> <br>
+        <button type="button" onclick="calcular_f()">Se você for mulher, clique aqui!</button>
+        <button type="button" onclick="calcular_m()">Se você for homem, clique aqui!</button>
+    </form>
+    <br><br>
+    <div id="msg"></div>
+</body>
+
+</html>
+<script>
+    function calcular_f() {
+        var idade_f = 60 - idade.value;
+        msg.innerHTML = `Mulher, faltam ${idade_f} anos para se aposentar.`;
+    };
+    function calcular_m() {
+        var idade_m = 65 - idade.value;
+        msg.innerHTML = `Homem, faltam ${idade_m} anos para se aposentar.`;
+    };
+</script>

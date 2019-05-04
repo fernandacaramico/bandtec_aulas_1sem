@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício 3</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+        <div>
+            <a href="JS-ex02.html"> << Exercício anterior - "Aposentadoria por sexo"</a>
+            <a href="estudando-pra-prova_JS03.html" style="margin-left: 30px; margin-right: 30px"><b> Voltar ao índice </b></a> 
+            <a href="JS-ex04.html"> >> Próximo exercício - "Cofrinho da riqueza"</a> <br> <br>
+        </div>
+
+    <h2>Calculando vida</h2>
+
+    <form>
+        Sua idade, em anos: <input type="number" id="idade" autofocus> <br> <br>
+        <button type="button" onclick="calcularVida()">Calcular</button>
+    </form>
+    <br><br>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+function calcularVida() {
+    var vidaDias = idade.value * 365;
+    var vidaMeses = idade.value * 12;
+    msg.innerHTML = `Você já viveu ${vidaDias} dias e ${vidaMeses} meses.`
+}
+
+</script>

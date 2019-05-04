@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt/br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercícios da aula</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <form>
+        <h2>Aposentadoria aos 65</h2>
+        Sua idade em anos: <input type="text" id="idade"> <br>
+        <button type="button" onclick="calcular()">Verifique tempo para aposentar aqui!</button>
+    </form>
+    <form>
+        <h2>Aposentadoria por sexo</h2>
+        Sua idade em anos: <input type="text" id="idade2"> <br>
+        <button type="button" onclick="calcular_m()">Homem, verifique tempo para aposentar aqui!</button> <br>
+        <button type="button" onclick="calcular_f()">Mulher, verifique tempo para aposentar aqui!</button>
+    </form>
+    <form>
+        <h2>Calcular vida</h2>
+        Sua idade em anos: <input type="text" id="idade_vida"> <br>
+        <button type="button" onclick="calcular_vida()">Calcular vida</button>
+    </form>
+    <form>
+        <h2>Cofrinho da riqueza</h2>
+        Depósito no cofrinho: <input type="text" id="deposito"> <br>
+        Valor no cofrinho: <input type="text" id="valor" value="0"> <br>
+        <button type="button" onclick="depositar()">Depositar</button>
+
+    </form>
+    <h2>Calcular média de aluno BandTec</h2>
+    <form>
+        Nome do aluno: <input type="text" id="nomeAluno"> <br>
+        Nota da prova continuada: <input type="number" id="nota1"> <br>
+        Nota da prova integrada: <input type="number" id="nota2"> <br> <br>
+        <button type="button" onclick="calcular_media()">Calcular média</button> <br><br>
+    </form>
+    <div id="msg" style="margin-bottom: 100px"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    // APOSENTADORIA POR IDADE AOS 65
+    function calcular() {
+        var aposentar = 65 - idade.value;
+        alert(`Faltam ${aposentar} anos para você se aposentar`)
+        if (aposentar > 20) {
+            alert('É melhor começar a economizar!')
+        } else {
+            alert('Opa, logo logo sái de férias!')
+        }
+    }
+
+    // APOSENTADORIA POR SEXO
+
+    function calcular_m() {
+        var aposentar = 65 - idade2.value;
+        alert(`Faltam ${aposentar} anos para você se aposentar`);
+        if (aposentar > 20) {
+            alert('É melhor começar a economizar!');
+        } else {
+            alert('Opa, logo logo sái de férias!');
+        };
+    };
+
+
+    function calcular_f() {
+        var aposentar = 60 - idade2.value;
+        alert(`Faltam ${aposentar} anos para você se aposentar`);
+        if (aposentar > 20) {
+            alert('É melhor começar a economizar!');
+        } else {
+            alert('Opa, logo logo sái de férias!');
+        };
+    };
+    
+    
+    //CALCULAR VIDA
+
+    function calcular_vida() {
+        var vida_dias = idade_vida.value * 365;
+        var vida_meses = idade_vida.value * 12;
+        alert(`Você já viveu ${vida_dias} dias e ${vida_meses} meses. É tempo, hein!`)
+    }
+    
+
+    //COFRINHO DA RIQUEZA
+    //
+    //esse jeito força a ser número e soma, não concatena
+
+    function depositar() {
+        valor.value = Number(valor.value) + Number(deposito.value);
+        deposito.value = 0;
+    };
+    
+    // maneira 2
+    //
+    //    function depositar() {
+    //      valor.value = valor.value - (-deposito.value);
+    //        deposito.value = 0;
+    //    }
+
+    //esse jeito vai concatenar
+    //
+    //function depositar_errado() {
+    //    valor.value = valor.value + deposito.value;
+    //    deposito.value = 0;
+    //}
+
+    //MEDIA ALUNO BANDTEC innerHTML e nao ALERT 
+
+    function calcular_media() {
+    var media = nota1.value * 0.4 + nota2.value * 0.6;
+    var nome = nomeAluno.value
+    msg.innerHTML = `Olá ${nome}. Sua média final será ${media}.`
+}
+</script>

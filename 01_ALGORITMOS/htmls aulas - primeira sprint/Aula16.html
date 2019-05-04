@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>Cálculo de vaquinha</h2>
+    <form>
+        Quantos amigos ?
+        <input type="number" id="amigos"> <br>
+        Com quanto cada um colaborou?
+        <input type="number" id="cota"> <br>
+        <button type="button" onclick="vaquinha()"> Calcular total arrecadado</button>
+    </form>
+
+    <h2>Pizza entre amigos</h2>
+
+<form>
+    Sabor da pizza: <input type="text" id="sabor_pizza"> <br>
+    Valor da pizza: <input type="text" id="valor_pizza"> <br>
+    Quantos amigos? <input type="number" id="amigos_pizza"> <br>
+
+    <button type="button" onclick="calcular_pizza()">
+        Quanto cada um vai pagar?
+    </button>
+</form>
+
+</body>
+
+</html>
+
+<script>
+    //função que calcula vaquinha
+    function vaquinha() {
+        var total = amigos.value * cota.value;
+        alert(`A vaquinha arrecadou ${total}!`);
+
+        //esse já não é tao prático:
+        //alert(`A vaquinha arrecadou ${(amigos.value * cota.value)}!`);
+    }
+    //função que calcula o valor por amigo para uma pizza
+    function calcular_pizza() {
+        var divisao = valor_pizza.value / amigos_pizza.value;
+        alert(`A pizza de ${sabor_pizza.value} vai sair R$${divisao.toFixed(2)} para cada amigo. Hmmm já estou com fome!`);
+    } 
+
+</script>

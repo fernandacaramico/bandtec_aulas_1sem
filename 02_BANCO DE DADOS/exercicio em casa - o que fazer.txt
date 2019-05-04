@@ -1,0 +1,33 @@
+	Criar database
+	Usar database
+	Criar tabela
+	Popular tabela
+	Exibir todos os dados
+	Exibir apenas 2 colunas
+	Exibir tudo de apenas 1 critério
+	Exibir tudo de apenas outro critério
+	Exibir tudo ordenado por uma coluna
+	Exibir tudo ordenado por outra coluna, em ordem descrescente
+
+	Exibir tudo que comece por uma letra em uma coluna
+	Exibir tudo que termine por outra letra em outra coluna
+	Exibir tudo que tenha como 2a uma letra em uma coluna
+	Exibir tudo que tenha como penultima outra letra em outra coluna
+
+	Atualizar coluna de determinada tupla. Exibir tudo para conferir.
+	Atualizar outra coluna de outra tupla. Exibir tudo para conferir.
+
+ALTER TABLE xxxx MODIFY xxxx NOVO EXTRA
+MODIFY infos de coluna da tabela. Exibir DESCricão para conferir.
+
+ALTER TABLE xxxx CHANGE col_antiga col_nova varchar(xx)
+CHANGE nome de coluna na tabela. Exibir DESCrição para conferir.
+
+ALTER TABLE xxxx ADD col_nova varchar(xx)
+Adicionar coluna na tabela. Exibir DESCrição para conferir.
+
+ALTER TABLE xxx DROP COLUMN xxxx
+Você mudou de ideia. Apagar coluna na tabela. Exibir DESCrição para conferir.
+
+DELETE FROM xxxx WHERE xxx
+Excluir alguma tupla. Exibir tudo para conferir.

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Eu que inventei</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <h1>Exercícios inventados</h1>
+    <form>
+        <h2>Quanto falta para fim do ano?</h2>
+        Em que <b>dia</b> do mês estamos? <input type="number" id="day" min="1" max="31"> <br>
+        Em que <b>mês</b> do ano estamos? <input type="number" id="month" min="1" max="12"> <br> <br>
+        <button type="button" onclick="calculate()">Clique aqui para descobrir!</button>
+    </form>
+
+
+    
+</body>
+</html>
+
+<script>
+function calculate() {
+    falta = 365 - ((month.value-1)*30) - day.value;
+    alert(`Faltam ${falta} dias para o fim do ano!`);
+    switch (falta) {
+        case falta < 6:
+            alert('Feliz ano novo!');
+            break;
+        case falta > 6:
+            alert('O ano demora para passar...');
+            break;
+        default:
+            alert('ops');
+    };
+};
+
+</script>

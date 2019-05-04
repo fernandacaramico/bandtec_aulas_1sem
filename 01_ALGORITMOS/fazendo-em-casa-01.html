@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Em casa por causa da chuva 1</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <div>
+        <a href="fazendo-em-casa-0001.html"><b>índice</b></a>
+        <a href="fazendo-em-casa-02.html"> >> ir para o próximo >> </a>
+    </div>
+
+    <h2>Oração pela paz</h2>
+    <form>
+        <select id="oracao">
+            <option value="">- escolha um techo -</option>
+            <option value="que eu leve o amor">onde houver ódio</option>
+            <option value="que eu leve o perdão">onde houver ofensa</option>
+            <option value="que eu leve a união">onde houver discórdia</option>
+            <option value="que eu leve a concórdia">onde houver ódio</option>
+        </select>
+        <br>
+        <button type="button" onclick="oracao_revelar()">Revelar boa obra</button>
+    </form>
+    <div id="oracao_toda" style="margin-top: 30px; color: #00ff00"></div>
+
+</body>
+
+</html>
+
+<script>
+    function oracao_revelar() {
+        oracao_toda.innerHTML = oracao.value;
+    }
+</script>

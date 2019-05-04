@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Em casa por causa da chuva 2</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+        <div>
+            <a href="fazendo-em-casa-01.html"> << ir para o anterior << </a>
+                <a href="fazendo-em-casa-0001.html"><b>índice</b></a>
+                <a href="fazendo-em-casa-03.html"> >> ir para o próximo >> </a>
+            </div>
+
+
+    <h2>Entendendo o manifesto ágil</h2>
+    Seu nome: <input type="text" id="nomeAqui"> <br>
+    <form>
+        <select id="manifesto">
+            <option value=""> - escolha um - </option>
+            <option value="processos e ferramentas e mais indivíduos e interações">processos e ferramentas</option>
+            <option value="documentação abrangente e mais software em funcionamento ">documentação abrangente</option>
+            <option value="negociação de contratos e mais colaboração com o cliente">negociação de contratos</option>
+            <option value="seguir um plano e mais responder a mudanças">seguir um plano</option>
+        </select>
+        <br>
+        <button type="button" onclick="manifesto2()">#partiuagilidade</button>
+    </form>
+    <div id="essaDiv"></div>
+</body>
+</html>
+<script>
+function manifesto2() {
+    essaDiv.innerHTML = `Então, ${nomeAqui.value}, valorize menos ${manifesto.value}`;
+}
+
+// ainda não consegui colocar o que está em texto no corpo da option pra aparecer
+
+</script>
+
+
+
+

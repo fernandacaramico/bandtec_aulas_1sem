@@ -1,0 +1,209 @@
+body {
+  background: rgb(231, 231, 231);
+}
+
+.navbar {
+  background: #00929c;
+}
+
+.nav-link, .navbar-brand {
+  color: #f4f4f4;
+  cursor: pointer;
+}
+
+.nav-link {
+  margin-right: 1em !important;
+}
+
+.nav-link:hover {
+  background: #f4f4f4;
+  color: #f97300;
+  border-radius: 10%;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+.navbar-toggler {
+  background: #fff !important;
+}
+
+/*header style*/
+.header{
+  background-image: url('https://i.pinimg.com/originals/ee/63/a4/ee63a4fff9d054695b606f07031f26a3.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  height: 800px;
+ }
+
+ .overlay{
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(244, 244, 244, 0.93);
+ }
+
+ /*Inside */
+
+ .description{
+  position: absolute;
+  top: 30%;
+  margin: auto;
+  padding: 2em;
+}
+.description h1{
+color:#00929c ;
+}
+.description p{
+color:#666;
+font-size: 20px;
+width: 50%;
+line-height: 1.5;
+}
+.description button{
+border:1px  solid #00929c;
+background: transparent;
+color:#00929c;
+
+}
+
+/* ABOUT */
+.about{
+  margin: 4em 0;
+  padding: 1em;
+  position: relative;
+ }
+ .about h3{
+  color:#00929c;
+  margin: 2em;
+ }
+ .about img{
+  height: 100%;
+  width: 100%;
+  border-radius: 50%
+ }
+ .about span{
+  display: block;
+  color: #888;
+  position: absolute;
+  left: 115px;
+ }
+ .about .desc{
+  padding: 2em;
+  border-left:4px solid #10828C;
+ }
+ .about .desc h3{
+  color: #10828C;
+ }
+ .about .desc p{
+  line-height:2;
+  color:#888;
+  margin-left: 30px;
+ }
+
+ /*Nossa tecnologia*/
+ .tecno {
+  margin: 4em 0;
+  position: relative;  
+ }
+ .tecno h1{
+  color:#00929c;
+  margin: 2em; 
+ }
+ .tecno .item{
+  position: relative;
+ }
+ .tecno .des{
+  background: #00929c;
+  color: #fff;
+  text-align: center;
+  border-bottom-left-radius: 93%;
+  transition:.3s ease-in-out;
+ }
+/*Contato*/
+ .contact-form{
+  margin: 6em 0;
+  position: relative;  
+ }
+ .contact-form h1{
+  padding:1em 1px 1em 1px;
+  color: #00929c; 
+ }
+ .contact-form p {
+   font-weight: 200;
+ }
+ .contact-form .right{
+  max-width: 600px;
+ }
+ .contact-form .right .btn-secondary{
+  background:  #00929c;
+  color: #fff;
+  border:0;
+ }
+ .contact-form .right .form-control::placeholder{
+  color: #888;
+  font-size: 16px;
+  font-style: italic;
+ }
+ .contact-form .right .form-control::placeholder:hover{
+  color: #00929c;
+  font-size: 16px;
+  font-style: italic;
+ }
+
+ .contact-form .right .btn-secondary:hover {
+  background: transparent;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #00929c;
+  color: #00929c;
+ }
+
+ /*PAGE FOOTER*/
+
+ .page-footer {
+   background-color: #00929c;
+   color: rgb(223, 223, 223);
+
+ }
+
+ .text-uppercase {
+   color: #fff;
+   font-weight: 100;
+ }
+
+ .footer-copyright {
+  font-style: italic;
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: #00848d;
+}
+
+ .footer-copyright a {
+   color: #fff;
+
+ }
+
+ #forgotPassLink {
+  margin: 2em;
+  font-style: italic;
+ }
+#forgotPassLink:hover {
+  color: #f97300;
+}
+#btnLogin:hover {
+  color: #f97300;
+}
+#btnHome:hover {
+  color: #f97300;
+}
+#signup {
+  width: 600px;
+}
+#graficos {
+  margin-top: 120px;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aluna Fernanda Caramico - 01191073 - Exercício 2 - Prova 15/03</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <div>
+        <a href="ex001_prova.html"> << ir para o anterior << </a>
+        <a href="COMECE-AQUI-indice-com-todos-os-exercicios.html"><b>índice</b></a>
+        <a href="ex02_prova.html"> >> ir para o próximo >> </a>
+    </div>
+
+
+
+    <h2>Cris Quisitão ajudando os daltônicos</h2>
+    Digite uma frase: <input type="text" id="frase"><br>
+    <input type="text" id="vermClaro" style="color: #ff9494">
+    <input type="text" id="vermSangue" style="color: #ff0000">
+    <input type="text" id="vermVinho" style="color:#aa0202"> <br>
+    <button type="button" onclick="passarTom1()">Ver no 1º tom</button>
+    <button type="button" onclick="passarTom2()">Ver no 2º tom</button>
+    <button type="button" onclick="passarTom3()">Ver no 3º tom</button>
+</body>
+
+</html>
+<script>
+    function passarTom1() {
+        vermClaro.value = frase.value;
+    };
+
+    function passarTom2() {
+        vermSangue.value = frase.value;
+    };
+
+    function passarTom3() {
+        vermVinho.value = frase.value;
+    };
+</script>

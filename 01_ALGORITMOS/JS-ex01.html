@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício 1</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <div>
+        <a href="estudando-pra-prova_JS03.html" style="margin-left: 30px; margin-right: 30px"><b> Voltar ao índice
+            </b></a>
+        <a href="JS-ex02.html"> >> Próximo exercício - "Aposentadoria por sexo"</a> <br> <br>
+    </div>
+    <form>
+        <h2>Aposentadoria por Idade</h2>
+        Sua idade, em anos: <input type="number" min=0 max=100 id="idade" autofocus> <br>
+        <br>
+        <button type="button" onclick="calcular()">Verificar tempo para aposentar</button>
+    </form>
+    <br>
+    <br>
+    <div id="msg"></div>
+</body>
+
+</html>
+<script>
+    function calcular() {
+        var aposentadoria = 65 - idade.value
+        msg.innerHTML = `Faltam ${aposentadoria} anos para você se aposentar.`
+    }
+
+
+</script>

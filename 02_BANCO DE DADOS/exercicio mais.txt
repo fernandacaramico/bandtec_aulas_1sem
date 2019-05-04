@@ -1,0 +1,37 @@
+-- criar um banco de dados chamado PraticaJogador
+
+-- selecionar esse banco de dados
+
+-- criar as tabelas correspondentes à modelagem
+
+-- inserir dados nas tabelas, de forma que exista mais de uma posição de atuação diferente, e que exista algum time com mais de um jogador cadastrado
+
+-- exibir todos os dados de cada tabela criada, separadamente
+
+-- fazer os acertos da chave estrangeira, caso não tenha feito no moemento da criação
+
+-- exibir apenas os nomes dos times e dos tecnicos de todos os times cujo nome comeca com uma determinada letra
+
+-- exibir todos os dados dos jogadores em ordem decrescente pela posicao
+
+-- exibir os dados dos jogadores que jogam em uma determinada posicao
+
+-- exibir os dados dos times em que o tecnico tenha a 2a letra de tras para frente igual a determinada letra
+
+-- exibir os dados dos times em ordem crescente pelo nome do tecnico
+
+-- alterar a posicao de algum jogador
+
+-- exibir os dados dos times e de seus respectivos jogadores
+
+-- exibir os dados de um determinado time (informar o nome do time na consulta) e dos seus respectivos jogadores
+
+-- exibir os dados dos jogadores e dados dos seus respectivos conselheiros
+
+-- exibir os dados dos jogadores, dados dos respectivos conselheiros e os dados de seus times
+
+-- exibir os dados de um jogador (informar o nome do jogador), os dados do seu conselheiro e do seu time
+
+-- exclui algum jogador
+
+-- excluir as tabelas

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+        <div>
+                <a href="fazendo-em-casa-02.html"> << ir para o anterior << </a>
+                    <a href="fazendo-em-casa-0001.html"><b>índice</b></a>
+                    <a href="fazendo-em-casa-04.html"> >> ir para o próximo >> </a>
+                </div>
+
+    <h2>Nota para passar</h2>
+    <form>
+        Seu nome <input type="text" id="nomeAluno"> <br>
+        Sua nota na 1ª continuada <input type="number" id="nota1"> <br>
+        Sua nota na 2ª continuada <input type="number" id="nota2"> <br>
+        Sua nota na 3ª continuada <input type="number" id="nota3"> <br>
+        <button type="button" onclick="calcularNota()">Calcular nota para passar</button>   
+    </form>
+    <div id="notaPassar"></div>
+</body>
+</html>
+<script>
+function calcularNota() {
+    var notaValida = ((5-(((Number(nota1.value) + Number(nota2.value) + Number(nota3.value)   )/3)*0.4))/0.6).toFixed(2);
+    //var notaValida = ( ( Number(nota1.value) + Number(nota2.value) + Number(nota3.value) ) / 3 ) * 0.4
+    //var notaValida2 = Number(notaValida.value)
+    notaPassar.innerHTML = `Olá, ${nomeAluno.value}. Para passar você precisa tirar ${notaValida} na integrada.`;
+}
+
+</script>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício 5</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <div>
+        <a href="JS-ex04.html">
+            << Exercício anterior - "Calculando vida" </a> <a href="estudando-pra-prova_JS03.html"
+                style="margin-left: 30px; margin-right: 30px"><b> Voltar ao índice </b>
+        </a>
+        <!-- <a href="JS-ex05.html"> >> Próximo exercício - "Calculando média aluno BandTec"</a> <br> <br>-->
+    </div>
+
+
+    <h2>Calcular média de aluno BandTec</h2>
+    <form>
+        Nome do aluno: <input type="text" id="nomeAluno"> <br>
+        Nota da prova continuada: <input type="number" id="nota1"> <br>
+        Nota da prova integrada: <input type="number" id="nota2"> <br> <br>
+        <button type="button" onclick="calcular()">Calcular média</button> 
+        <button type="button" onclick="novoCalculo()">Novo cálculo</button> <br><br>
+    </form>
+    <div id="msg"></div>
+</body>
+
+</html>
+
+<script>
+function calcular() {
+    var media = nota1.value * 0.4 + nota2.value * 0.6;
+    var nome = nomeAluno.value
+    msg.innerHTML = `Olá ${nome}. Sua média final será ${media}.`
+}
+function novoCalculo() {
+    nomeAluno.value = "";
+    nota1.value = "";
+    nota2.value = "";
+    msg.innerHTML = "";
+}
+
+
+</script>

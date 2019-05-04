@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Em casa por causa da chuva 4</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+        <div>
+                <a href="fazendo-em-casa-03.html"> << ir para o anterior << </a>
+                    <a href="fazendo-em-casa-0001.html"><b>índice</b></a>
+                    <a href="fazendo-em-casa-05.html"> >> ir para o próximo >> </a>
+                </div>
+
+    <h2>Maria Fobada</h2>
+    <form>
+        Seu nome: <input type="text" id="nomeAluno"> <br>
+        Seu salário bruto: <input type="number" id="sal_bruto"> <br>
+        <select id="inss">
+            <option value="">Faixa salarial para INSS</option>
+            <option value="0">0 a 1000</option>
+            <option value="0.10">1000 a 3000</option>
+            <option value="0.20">acima de 3000</option>
+        </select>
+        <br>
+        <button type="button" onclick="calcularINSS()">Calcular desconto</button>
+    </form>
+    <br><br>
+    <div id="msg" style="color: #0000ff"></div>
+</body>
+</html>
+<script>
+function calcularINSS() {
+    let desconto_sal = sal_bruto.value * inss.value;
+    let sal_liquido = sal_bruto.value - desconto_sal;
+    msg.innerHTML = `Olá, ${nomeAluno.value}. Seu desconto de INSS será de R$${desconto_sal}.
+    Assim, seu salário líquido será de R$${sal_liquido}.`
+}
+</script>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+        <div>
+                <a href="fazendo-em-casa-04.html"> << ir para o anterior << </a>
+                    <a href="fazendo-em-casa-0001.html"><b>índice</b></a>
+                </div>
+
+
+    <h2>Todo mundo adora pizza!</h2>
+    <form>
+        Qual será o sabor da pizza? 
+        <br>
+        <input type="text" id="saborPizza"> <br> <br>
+        <!--<input type="radio" name="massa" value="5">Massa comum <br>
+        <input type="radio" name="massa" value="7">Massa Integral <br>
+        <br>
+        <input type="radio" name="molho" value="3">Molho comum de tomate<br>
+        <input type="radio" name="molho" value="5">Molho caseiro de tomate <br>
+        <br>-->
+        <select id="extras1">
+            <option value=""> - Escolha o primeiro ingrediente - </option>
+            <option value="3">Queijo</option>
+            <option value="5">Presunto</option>
+            <option value="2">Ovo</option>
+            <option value="2,5">Palmito</option>
+            <option value="6">Frango</option>
+            <option value="3,5">Catupiry</option>
+        </select>
+        <br>
+        <select id="extras2">
+            <option value=""> - Escolha o segundo ingrediente - </option>
+            <option value="3">Queijo</option>
+            <option value="5">Presunto</option>
+            <option value="2">Ovo</option>
+            <option value="2,5">Palmito</option>
+            <option value="6">Frango</option>
+            <option value="3,5">Catupiry</option>
+        </select>
+        <br>
+        <select id="extras3">
+            <option value=""> - Escolha o terceiro ingrediente - </option>
+            <option value="3">Queijo</option>
+            <option value="5">Presunto</option>
+            <option value="2">Ovo</option>
+            <option value="2,5">Palmito</option>
+            <option value="6">Frango</option>
+            <option value="3,5">Catupiry</option>
+        </select>
+        <br>
+        <br>
+        <button type="button" onclick="calcularPizza()">Calcular o sabor da pizza</button>
+    </form>
+    <div id="totalPizza" style="color: #0000ff"></div>
+</body>
+
+</html>
+
+<script>
+function calcularPizza() {
+    var valorFinal = Number(extras1.value) + Number(extras2.value) + Number(extras2.value); 
+    totalPizza.innerHTML = `A pizza de <b>${saborPizza.value}</b> vai custar um total de <u>R$${valorFinal}</u>`; 
+};
+
+</script>

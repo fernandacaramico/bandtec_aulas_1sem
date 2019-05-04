@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DESAFIOS AGORA!</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+  <!--EXERCÍCIO 13-->
+  <h1>DESAFIOS! TANTANTAN!! </h1>
+
+  <div id="exercise">
+    <h2>Guardando seu dinheiro</h2>
+    <form>
+      Valor do depósito: <input type="number" id="valDeposit">
+      Valor já depositado: <input type="number" id="valAlreadyDeposited" placeholder="0" disabled>
+      <button type="button" onclick="depositing()">Depositar</button>
+    </form>
+    <img id="pictureGoesHere" src="" width="200px">
+  </div>
+
+  <!--EXERCÍCIO 14-->
+
+  <div id="exercise">
+    <h2>Democracia!</h2>
+    <form>
+      Votos no Zé Ruela <input type="number" id="totalVotesRuela" placeholder="0" disabled> <br>
+      Votos na Maria Bigodenha <input type="number" id="totalVotesMaria" placeholder="0" disabled> <br>
+      <button type="button" onclick="voteRuela()">Votar no Zé Ruela</button>
+      <button type="button" onclick="voteMaria()">Votar na Maria </button> <br><br>
+      <button type="button" onclick="getResult()">Resultado Parcial</button>
+    </form>
+
+
+  </div>
+</body>
+
+</html>
+
+<script>
+  // EXERCÍCIO 14
+  function voteRuela() {
+    totalVotesRuela.value = Number(totalVotesRuela.value) + 1;
+  }
+  
+  function voteMaria() {
+    totalVotesMaria.value = Number(totalVotesMaria.value) + 1;
+  }
+
+  function getResult() {
+    var colorRuela;
+    var colorMaria;
+    if (totalVotesRuela.value > totalVotesMaria.value) {
+      colorRuela = "blue";
+      colorMaria = "red";
+    } else if (totalVotesRuela.value < totalVotesMaria.value) {
+      colorMaria = "blue";
+      colorRuela = "red";
+    } else {
+      colorRuela = "gray";
+      colorMaria = "gray";
+    }
+    totalVotesRuela.style.color = colorRuela;
+    totalVotesMaria.style.color = colorMaria;
+  }
+
+  // EXERCÍCIO 13
+  function depositing() {
+    valAlreadyDeposited.value = Number(valAlreadyDeposited.value) + Number(valDeposit.value);
+    valDeposit.value = 0;
+
+    var image;
+
+    if (valAlreadyDeposited.value < 4000) {
+      image = '';
+    } else if (valAlreadyDeposited.value >= 80000) {
+      image = 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+    } else if (valAlreadyDeposited.value >= 20000) {
+      image = 'https://i1.wp.com/electrek.co/wp-content/uploads/sites/3/2018/09/Screen-Shot-2018-09-04-at-10.16.43-AM-e1536070647937.jpg?resize=1500%2C0&quality=82&strip=all&ssl=1';
+    } else if (valAlreadyDeposited.value >= 10000) {
+      image = 'https://d1ek71enupal89.cloudfront.net/images/blocks_png/FIAT/500/3DR/15Fia500Pop3drWhiFL1_800.jpg';
+    } else {
+      image = "http://www.stickpng.com/assets/images/580b585b2edbce24c47b2d1d.png";
+    }
+    
+    pictureGoesHere.src = image;
+  }
+
+
+</script>

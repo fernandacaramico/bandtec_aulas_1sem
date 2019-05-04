@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cofrinho</title>
+</head>
+<body>
+    
+    <h2>Cofrinho Loko</h2>
+
+    <form>
+
+        Depósito no cofrinho: 
+        <input type="number" id="deposito"><br>
+
+        Valor total no cofrinho
+        <input type="number" id="total" value="0"><br>
+        
+        <button type="button" onclick="depositar()">
+            Depositar
+        </button>
+
+    </form>
+</body>
+</html>
+
+<script>
+function depositar() {
+    var total_atualizado = (total.value-0) + (deposito.value-0);
+
+    total.value = total_atualizado;
+}
+</script>
+
+

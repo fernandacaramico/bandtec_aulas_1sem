@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aluna Fernanda Caramico - 01191073 - Exercício 3 - prova 15/03</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <div>
+        <a href="ex01_prova.html"> << ir para o anterior << </a>
+        <a href="COMECE-AQUI-indice-com-todos-os-exercicios.html"><b>índice</b>
+        </a>
+    </div>
+
+
+
+    <h2>Walmir Mão e suas contas negativadas</h2>
+    <form>
+        Digite seu salário bruto: <input type="number" id="salBruto"> <br>
+        Digite o valor total dos descontos no salário <input type="number" id="descSal"> <br>
+        <select id="multas">
+            <option value="0">Nenhuma</option>
+            <option value="50">Leve (R$ 50,00)</option>
+            <option value="100">Média (R$ 100,00)</option>
+            <option value="200">Grave (R$ 200,00)</option>
+            <option value="350">Gravíssima (R$ 350,00)</option>
+        </select>
+        <button type="button" onclick="calcularGasto()">Calcular custo mensal</button>
+        <br>
+        <br>
+        <div id="mensagem" style="color: #2bd62b"></div>
+    </form>
+</body>
+
+</html>
+<script>
+    function calcularGasto() {
+        var descontosSalario = Number(descSal.value) + Number(multas.value);
+        var sobraSalario = salBruto.value - descontosSalario;
+        var porcentSalario = (100 * descontosSalario) / salBruto.value;
+        mensagem.innerHTML = `O Walmir ganha R$${salBruto.value} e sobra R$${sobraSalario}. Ou seja, ele gasta ${porcentSalario.toFixed(2)}% de seu salário`;
+    }
+
+
+</script>
