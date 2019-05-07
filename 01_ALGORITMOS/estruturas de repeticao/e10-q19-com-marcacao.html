@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista 10 - Questão 19</title>
+</head>
+<body>
+
+    <form>
+
+        Número da sorte (0 e 100): 
+        <input type="number" id="numero">
+        <br><br>        
+        <button type="button" onclick="sortear()">
+            Sou sortudo?
+        </button>
+
+    </form>
+
+    <div id="div_sorteio">
+    </div>
+</body>
+</html>
+<script>
+function sortear() {
+    
+    div_sorteio.innerHTML = '';
+
+    var v_numero = Number(numero.value);     
+
+    for (contador=0; contador<7; contador++) {
+        var sorteado = parseInt(Math.random()*100);
+        div_sorteio.innerHTML += `Sorteado: ${sorteado} <br>`
+
+        // testando se o número recém sorteado
+        // é igual ao número da sorte do usuário
+        if (sorteado == v_numero) {
+            // se sim, exibe uma frase
+            div_sorteio.innerHTML += ' <b> QUE SORTE, HEIN!</b><br>'
+        }
+    }      
+
+
+}
+</script>

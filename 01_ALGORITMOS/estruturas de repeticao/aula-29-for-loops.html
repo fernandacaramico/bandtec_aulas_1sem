@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="estilos.css">
+  <title>Exercícios com FOR</title>
+</head>
+
+<body>
+  <h1>Estrutura de Repetição - FOR</h1>
+
+  <!--EXERCÍCIO 1-->
+  <div id="exercise">
+    <h2>Ex. 1 - Frase <b>N</b> vezes</h2>
+    Quantas vezes você quer a frase? <br> <input type="number" id="n_vezes"> <br> <br>
+    <button type="button" onclick="repetir_n_vezes()">Repetir</button>
+    <div id="frase_n_vezes"></div>
+  </div>
+
+  <!--EXERCÍCIO 2-->
+  <div id="exercise">
+    <h2>Ex. 2 - Frase <b>que você quer</b> N vezes</h2>
+    Qual a frase que você quer? <input type="text" id="minha_frase"> <br>
+    Quantas vezes você quer? <input type="number" id="minha_vezes"> <br>
+    <button type="button" onclick="frase_n(Number(minha_vezes.value), minha_frase.value)">Repetir</button>
+    <div id="minha_n_frase"></div>
+  </div>
+
+  <!--EXERCÍCIO 4-->
+  <div id="exercise">
+    <h2>Ex. 4 - Números pares</h2>
+    <button type="button" onclick="amar_pares()">Eu amo pares!</button>
+    <ul id="lista_amo_pares"></ul>
+  </div>
+
+  <!--EXERCÍCIO 5-->
+  <div id="exercise">
+    <h2>Ex. 5 - Contagem regressiva</h2>
+    <button type="button" onclick="contagem_regress()">Contar!</button>
+    <ul id="div_10_0"></ul>
+  </div>
+
+  <!--EXERCÍCIO 6-->
+  <div id="exercise">
+    <h2>Ex. 6 - Amo 3 e 4</h2>
+    <button type="button" onclick="amar_3_4()">Amo!</button>
+    <ul id="div_3_4"></ul>
+  </div>
+
+  <!--
+  PULEI PARA MAIS AVANÇADOS
+ -->
+  <div id="exercise">
+    <h2></h2>
+  </div>
+  <!--
+  PULEI PARA MAIS AVANÇADOS
+ -->
+
+  <!--EXERCÍCIO 16-->
+  <div id="exercise">
+    <h2>Ex. 16 - Investindo</h2>
+    Quanto você quer investir? <input type="number" id="valor_inicial"> <br>
+    Por quantos meses? <input type="number" id="valor_meses"> <br>
+    Qual a taxa de juros, %? <input type="number" id="valor_juros"> <br>
+    <button type="button" onclick="investir_meses(valor_inicial.value, valor_meses.value, valor_juros.value)">Investir</button>
+    <div id="div_investimento"></div>
+  </div>
+
+  <!--EXERCÍCIO 17-->
+  <div id="exercise">
+    <h2>Ex. 17 - Alternando</h2>
+    <button type="button" onclick="mudar_cores()">Exibir</button>
+    <div id="ex17_cores"></div>
+  </div>
+
+  <!--EXERCÍCIO 18-->
+  <div id="exercise">
+    <h2>Ex. 18 - Fatorial</h2>
+    De qual número você quer o fatorial? <input type="number" id="numero_base"> <br>
+    <button type="button" onclick="fatorar(numero_base.value)">Get factorial</button>
+    <div id="div_resultado_fatorial"></div>
+  </div>
+  <!--EXERCÍCIO 19-->
+  <div id="exercise">
+    <h2>Ex. 19 - Número da sorte?</h2>
+    Qual seu número da sorte? <input type="number" id="numero_da_sorte"> <br>
+    <button type="button" onclick="sortear_sorte(numero_da_sorte)">Sortear!</button>
+    <div id="div_sorte"></div>
+  </div>
+
+</body>
+</html>
+
+<script>
+  // EXERCÍCIO 19
+  function sortear_sorte(num_sorte) {
+    var frase = '';
+    //var vezes_sorteado = 0;
+    for (i = 0; i < 7; i++) {
+      var sorteado = parseInt(Math.random() * 5);
+      frase += `Número sorteado: ${sorteado} <br>`
+      if (sorteado == num_sorte) {
+        frase += 'Que sorte <br>';
+      } else {
+        frase += 'Que azar <br>';
+      }
+    }
+    
+    
+
+    div_sorte.innerHTML = frase;
+  }
+
+  //  EXERCÍCIO 18
+  function fatorar(num) {
+    var frase = '';
+    var resultado = num
+    var conta_extenso = '';
+
+    for (i=num; i > 1; i--) {
+      conta_extenso += `${i}x`;
+      resultado *= i - 1
+    }
+
+    div_resultado_fatorial.innerHTML = `Fatorial do número ${num}: ${conta_extenso}1 = ${resultado}`;
+  }
+  // EXERCÍCIO 17
+  function mudar_cores() {
+    var frase = '';
+    for (i = 40; i >= 0; i--) {
+      if (i == 0) {
+        frase += `<span style="color: black">${i}</span> <br>`;
+      } else if (i % 2 == 0) {
+        frase += `<span style="color: green">${i}</span> <br>`
+      } else {
+        frase += `<span style="color: red">${i}</span> <br>` 
+      }
+    }
+    ex17_cores.innerHTML = frase;
+  }
+
+  // EXERCÍCIO 16
+  function investir_meses(dinheiro, n_meses, v_juros) {
+    var frase = `Valor depositado: ${dinheiro} <br>`;
+    for (i = 1; i <= n_meses; i++) {
+      dinheiro *= 1 + v_juros/100;
+      frase += `${i}º mês: ${(dinheiro).toFixed(2)} <br>`;
+    }
+    div_investimento.innerHTML = frase;
+  }
+
+
+  //
+  // pulei
+  // para
+  // mais
+  // avançados
+  // 
+
+  // EXERÍCIO 6
+  function amar_3_4() {
+    var frase = '';
+    for (i = 1; i <= 30; i++) {
+      if (i % 3 == 0 && i % 4 == 0) {
+        frase += '<li>Eu amo o 3 e o 4</li>';
+      } else if (i % 3 == 0) {
+        frase += '<li>Eu amo o 3, apenas</li>';
+      } else if (i % 4 == 0) {
+        frase += '<li>4 são 2 pares</li>';
+      } else {
+        frase += `<li>${i}</li>`
+      }
+    }
+    div_3_4.innerHTML = frase;
+  }
+
+  // EXERCÍCIO 5
+  function contagem_regress() {
+    for (i = 10; i > 0; i--) {
+      div_10_0.innerHTML += `<li>${i}</li>`
+    }
+    div_10_0.innerHTML += '<li>BOOM!</li>'
+  }
+  // EXERCÍCIO 4
+  function amar_pares() {
+    for (i = 0; i <= 100; i += 2) {
+      lista_amo_pares.innerHTML += `<li>${i}</li>`;
+    }
+  }
+
+  // EXERCÍCIO 2
+  function frase_n(vezes, frase) {
+    var frase_div = '';
+    for (contador = 0; contador < vezes; contador++) {
+      frase_div += `${frase} <br>`;
+    }
+    minha_n_frase.innerHTML = frase_div;
+  }
+
+  // EXERCÍCIO 1
+  function repetir_n_vezes() {
+    var frase = '';
+    for (var i = 0; i < Number(n_vezes.value); i++) {
+      frase += "I'm the bad guy <br>";
+    }
+    frase_n_vezes.innerHTML = frase
+  }
+</script>

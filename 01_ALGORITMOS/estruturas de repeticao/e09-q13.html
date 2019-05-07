@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista 09 - questão 13</title>
+</head>
+<body>
+<form>
+    Valor depositado <input type="number" id="depositado">
+    <br>
+    Quantos meses? <input type="number" id="meses">
+    <br><br>        
+    <button type="button" onclick="ver_investimento()">
+        Ver investimento
+    </button>
+</form>        
+
+<br>
+<div id="div_poupanca">
+</div>
+
+</body>
+</html>
+
+
+<script>
+function ver_investimento() {
+    
+    div_poupanca.innerHTML = '';
+    var contador = 0;
+    var v_poupanca = Number(depositado.value);
+     
+    while (contador < Number(meses.value)) {
+        contador++;
+        v_poupanca*=1.005; // aumentando em 5%
+        div_poupanca.innerHTML += `${contador}º mês: ${v_poupanca.toFixed(2)}<br>`;
+    }    
+
+}
+</script>
