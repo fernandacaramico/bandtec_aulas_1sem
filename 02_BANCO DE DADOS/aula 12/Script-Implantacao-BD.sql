@@ -213,19 +213,60 @@ select p.idproj, d.iddepto, f.nomefunc, f.datanasc from projeto as p, departamen
 select f.idfunc, f.nomefunc, p.idproj, p.nomeproj, z.horas from funcionario as f, projeto as p, funcproj as z where f.idfunc = z.fkfunc and p.idproj = z.fkproj;
 
 -- exibir os nomes dos funcs que nasceram antes de 1980
-select nomefunc, datanasc from funcionario where datanasc < '1980'
+select nomefunc, datanasc from funcionario where datanasc < '1980';
 
 -- aplique um reajuste de 10% nos salarios dos funcionarios que trabalham no dept pesquisa
+select * from departamento;
+-- depto pesquisa = idDepto 105
+select * from funcionario; 
+update funcionario set salario = 3500 where idFunc = 1;
+update funcionario set salario = 4500 where idFunc = 2;
+update funcionario set salario = 3800 where idFunc = 5;
+update funcionario set salario = 2500 where idFunc = 6;
+-- aqui
+update funcionario set salario = salario * 1.1 where fkDepto = 105;
 
--- exibir a qtd de salaruios diferentes q existem na empresa
+-- exibir a qtd de salarios diferentes q existem na empresa
+select count(distinct(salario)) from funcionario;
 
 -- exibir a qtd de locais deferentes de projeto
+select count(distinct(localProj)) from projeto;
 
 -- exibir o salario medio da empresa e a soma dos salarios
+select avg(salario) as 'Salário Médio', sum(salario) as 'Soma dos Salários' from funcionario;
+-- como limitar o numero de casas decimais?
 
 -- exibir o menor e o maior salario da empresa
+select min(salario) as 'Menor Salário', max(salario) as 'Maior Salário' from funcionario;
 
--- exibir o iddepto, o salario merio e a soma do salario de cada departamento (agrupado por depto)
+-- exibir o iddepto, o salario medio e a soma do salario de cada departamento (agrupado por depto)
+select * from funcionario order by fkdepto; -- tabela aqui para checar
+select fkdepto, min(salario), sum(salario) from funcionario group by fkdepto;
+-- mais completo aqui abaixo, mostrando também o nome do depto
+select iddepto, nomedepto, min(salario) as 'Menor Salário do Departamento', sum(salario) as 'Soma dos Salários do Departamento' from departamento join funcionario on iddepto = fkdepto group by fkdepto;
+-- não deu certo usando 'group by IDDEPTO.' porque o atributo que será acumulado em cada linha não está na mesma tabela que IDDEPTO, mas sim na mesma tabela que FKDEPTO
 
 -- exibir o iddepto, o menor e o maior salario de cada departamento (agrupado por departamento)
+select fkdepto, min(salario), max(salario) from funcionario group by fkdepto;
+select fkdepto as 'Código do Departamento', min(salario) as 'Menor salário do departamento', max(salario) as 'Maior salário do departamento' from funcionario group by fkdepto;
 
+-- inserir mais os seguintes funcionarios na tabela funcionario:
+insert into funcionario values
+(10, 'José da Silva', 1800, 'm', 3, '2000-10-12', null),
+(11, 'Benedito Almeida', 1200, 'm', 5, '2001-09-01', null);
+
+select * from funcionario;
+
+-- inserir mais o seguinte depto na tabela departamento
+insert into departamento values
+(110, 'RH', 3, '2018-11-10');
+
+select * from departamento;
+
+-- exibir os dados de todos os funcionarios (inclusive os que não estão alocados em nenhum departamento) e os dados dos departamento em que trabalham 
+-- LEFT JOIN -->   [_ _ _ FUNCIONARIOS _ _ _ { _ _ ]   DEPARTAMENTO   }
+select * from funcionario left join departamento on iddepto = fkdepto;
+
+-- exibir os dados dos funcionarios que estão alocados em departamentos e os dados de todos os departamentos (mesmo os que não têm funcionários alocados)
+-- RIGHT JOIN -->   [     FUNCIONARIOS    { _ _ ] _ _ _ DEPARTAMENTO _ _ _ }
+select * from funcionario right join departamento on iddepto = fkdepto;
