@@ -1,0 +1,47 @@
+-- exibir a data de nasc e o salario do funcionario joao silva
+
+-- exibir uma lista apenas dos salarios de todos os funcionarios
+
+-- exibir uma lista apenas dos salarios distintos de todos os funcionarios
+
+-- exibir os dados dos funcionarios ordenados pelo nome
+
+-- exibir os dados dos funcionarios ordenados pelo salario, de forma decrescente
+
+-- exibir os dados dos funcionarios que tenham o salario entre 2000 e 4000
+
+-- exibir os nomes e os salarios dos funcionarios cujos nomes comecam com a letra j
+
+-- exibir os nomes e os salarios dos funcionarios cujos nomes terminam com a letra a
+
+-- exibir os nomes dos funcionarios que tem a letra 'n' como terceira letra do nome
+
+-- exibir os nomes e as datas de nascimento dos funcionarios cujos nomes tenham a letra s como a 5a letra de tras para frente
+
+-- exibir os dados dos funcionarios quw trabalham nodepto pesquisa
+
+-- exibir os dados dos funcs que trabalham no depto pesuisa e tenham salario acima de 3500
+
+-- exibir os dados dos funcs que trabalham no depto pesquisa e tenham o nome com inicial j
+
+-- exibir o idfunc e o nome de cada func, juntamente com o idfunc e o nome do supervisor. faça com que o titulo da coluna seja idfunc para uncionario e idsupervisor para o id do supervisor
+
+-- exibir para cada projeto localizado em sp o if, num do departamento que o controla, nome e data de nasc do gerente
+
+-- exibir o idfunc e o nome do funcionario, o projeto e o nome do projeto em que trabalha, a qtd de horas que trabalha nesse projeto
+
+-- exibir os nomes dos funcs que nasceram antes de 1980
+
+-- aplique um reajuste de 10% nos salarios dos funcionarios que trabalham no dept pesquisa
+
+-- exibir a qtd de salaruios diferentes q existem na empresa
+
+-- exibir a qtd de locais deferentes de projeto
+
+-- exibir o salario medio da empresa e a soma dos salarios
+
+-- exibir o menor e o maior salario da empresa
+
+-- exibir o iddepto, o salario merio e a soma do salario de cada departamento (agrupado por depto)
+
+-- exibir o iddepto, o menor e o maior salario de cada departamento (agrupado por departamento)
