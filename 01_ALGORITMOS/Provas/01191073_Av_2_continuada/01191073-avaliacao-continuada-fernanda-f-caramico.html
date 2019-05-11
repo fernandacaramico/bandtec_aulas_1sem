@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Avaliação continuada - 01191073</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <h1>Avaliação Continuada</h1>
+
+    <div id="exercise">
+        <h2>Enunciado</h2>
+        <p>Questão única. <br>
+            #partiufeira Crie um programa que simule uma ida a feira de uma família que não é lá fã de uma grande
+            variedade de produtos. <br>
+            Pergunte quantas bananas, quantos brócolis, quantas cenouras e quantas maçãs o usuário vai comprar.
+            Pergunte também o preço unitário de cada um desses itens. <br>
+            Pergunte, por fim, quantos Kg ele aguenta carregar em sua sacola. Por favor, não é quantos kg por produto e
+            sim quantos kg no total, na única sacola que ele leva para as compras, ok? Repetindo: não é quantos kg por
+            produto! <br>
+            Ou seja, a tela deve ter um total de 9 campos, 9 informações que o usuário deve preencher. São 4 quantidades
+            de produtos + 4 preços + 1 peso que o usuário aguenta carregar.
+<br><br>
+            Para a sequência do problema, considere os seguintes pesos para os produtos:
+            <ul>
+                <li>banana: 40g</li>
+                <li>brócolis: 15g</li>
+                <li>cenoura: 30g</li>
+                <li>maçã: 15g</li>
+            </ul>
+            E, não custa lembrar que 1kg = 1000g, certo?
+<br><br>
+            Abaixo dos campos, deve haver um botão "Fazer a feira". Ao clicar nele, devem ocorrer as seguintes ações:
+            <ul>
+                <li>
+                    a) Caso a quantidade de algum dos itens for menor que 0 ou maior que 15, exiba "Cada produto deve
+                    ter entre 0 e 15 de quantidade" num alert. Se todas as quantidades estiverem corretas, vá para o
+                    item b)
+                </li>
+                <li>
+                    b) Caso o peso em kg que o usuário for menor que 0.8 ou maior que 20, exiba "O peso que o cabra
+                    aguenta deve ter entre 0.8kg e 20kg" num alert. Se estiver correto, vá para o item c)
+                </li>
+                <li>
+                    c) Exiba, logo abaixo do botão, um conjunto de informações como estas:
+                    Valor total das compras: R$ X
+                    Peso total das compras: Y kg
+                    Onde X é a soma dos sub-totais de cada produto (ou seja, o preços unitário vezes a quantidade
+                    comprada) e Y é a soma dos pesos de todos os produtos vezes a quantidade de cada um
+                </li>
+                <li>
+                    d) Abaixo das informações descritas no item c), exiba a frase "Embaçou! O usuário não vai conseguir
+                    carregar essas compras!" na cor vermelha somente se o peso total das compras for maior que o peso
+                    que ele aguenta na sacola
+                </li>
+                <li>
+                    e) Abaixo das informações descritas nos item d), exiba a frase "Opa! Seria bom você comer mais
+                    frutas, né?" na cor laranja somente se não forem compradas nenhuma banana e nenhuma maçã
+                </li>
+                <li>
+                    f) Abaixo das informações descritas no item e), exiba N imagens de bananas, brócolis, cenouras e
+                    maçãs, conforme as quantidades informadas pelo usuário. Elas podem ficar umas do lado das outras
+                </li> 
+                <li>
+                g) Atenção! Caso o usuário clique várias vezes no botão, as imagens não devem ficar se multiplicando!
+                Suas quantidades devem refletir as quantidades descritas nos respectivos campos de quantidades,
+                independentemente de o usuário ficar clicando repetidas vezes no botão!
+            </li>
+            </ul>
+        </p>
+    </div>
+
+    <div id="exercise">
+        <h2>Resolução da prova: Família Feliz vai à feira</h2>
+        <form>
+            Quantidade de Bananas: <input type="number" id="qtd_bananas">
+            <br>
+            Quanto custa cada uma? <input type="number" id="preco_das_bananas">
+            <br>
+            <br>
+            Quantidade de Brócolis: <input type="number" id="qtd_brocolis">
+            <br>
+            Quanto custa cada um? <input type="number" id="preco_do_brocolis">
+            <br>
+            <br>
+            Quantidade de Cenouras: <input type="number" id="qtd_cenouras">
+            <br>
+            Quanto custa cada uma? <input type="number" id="preco_das_cenouras">
+            <br>
+            <br>
+            Quantidade de Maçãs: <input type="number" id="qtd_macas">
+            <br>
+            Quanto custa cada uma? <input type="number" id="preco_das_macas">
+            <br>
+            <br>
+            Quantos quilos (kg) você aguenta carregar? <input type="number" id="lim_peso_sacola">
+            <br>
+            <br>
+            <button type="button"
+                onclick="fazer_feira(qtd_bananas.value, preco_das_bananas.value, qtd_brocolis.value, preco_do_brocolis.value, qtd_cenouras.value, preco_das_cenouras.value, qtd_macas.value, preco_das_macas.value, lim_peso_sacola.value)">Fazer
+                a feira</button>
+        </form>
+        <div id="mensagem_feira_total"></div>
+        <div id="mensagem_feira_sacola"></div>
+        <div id="mensagem_mais_frutas"></div>
+        <div id="imagens_frutas" style="max-width: 100%"></div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    function fazer_feira(num_bananas, preco_bananas, num_brocolis, preco_brocolis, num_cenouras, preco_cenouras, num_macas, preco_macas, peso_sacola) {
+        var frase_total = '';
+
+        var frase_sacola = '';
+        var cor_frase_sacola;
+
+        var frase_frutas = '';
+        var cor_frase_frutas;
+
+        var imagens_sacola = '';
+
+        // calculando preco final da feira
+        var preco_final_bananas = num_bananas * preco_bananas;
+        var preco_final_brocolis = num_brocolis * preco_brocolis;
+        var preco_final_cenouras = num_cenouras * preco_cenouras;
+        var preco_final_macas = num_macas * preco_macas;
+        var preco_final_feira = preco_final_bananas + preco_final_brocolis + preco_final_cenouras + preco_final_macas;
+
+        // calculando peso final da sacola, em Kg
+        var peso_todas_bananas = num_bananas * 0.04;
+        var peso_todas_brocolis = num_brocolis * 0.015;
+        var peso_todas_cenouras = num_cenouras * 0.03;
+        var peso_todas_macas = num_macas * 0.015;
+        var peso_todas_na_sacola = peso_todas_bananas + peso_todas_brocolis + peso_todas_cenouras + peso_todas_macas;
+
+        // checando se válido número de cada item da lista
+        if (num_bananas < 0 || num_bananas > 15 || num_brocolis < 0 || num_brocolis > 15 || num_cenouras < 0 || num_cenouras > 15 || num_macas < 0 || num_macas > 15) {
+            alert('Cada produto deve ter entre 0 e 15 de quantidade');
+        } else {
+
+            // checando peso se válido que pessoa aguenta na sacola
+            if (peso_sacola < 0.8 || peso_sacola > 20) {
+                alert('O peso que o cabra aguenta deve ter entre 0.8kg e 20kg');
+            } else {
+
+                //calculando total da compra, preço e peso
+                frase_total = `Valor total das compras: R$${preco_final_feira.toFixed(2)}. <br>
+                Peso total das compras: ${peso_todas_na_sacola.toFixed(3)}Kg.`;
+
+                if (preco_final_bananas == 0 && num_bananas > 0 || preco_final_brocolis == 0 && num_brocolis > 0 || preco_final_cenouras == 0 && num_cenouras > 0 || preco_final_macas == 0 && num_macas > 0) {
+                    //EXTRA - se esquecer de colocar algum preço
+                    alert('Opa! Vai pegar de graça?? Esqueceu o preço de algum item!');
+                    imagens_sacola = '';
+                    frase_total = '';
+                } else {
+
+                    // se a sacola estiver muito pesada
+                    if (peso_todas_na_sacola > peso_sacola) {
+                        frase_sacola = 'Embaçou! O usuário não vai conseguir carregar essas compras!';
+                        cor_frase_sacola = 'red';
+                    }
+
+                    // se não comprar frutas
+                    if (num_bananas == 0 && num_macas == 0) {
+                        frase_frutas = 'Opa! Seria bom você comer mais frutas, né?';
+                        cor_frase_frutas = 'orange';
+                    }
+
+                    // imagens da sacola
+                    var contador_bananas = 0;
+                    while (contador_bananas < num_bananas) {
+                        imagens_sacola += '<img src="banana.png" width="80px">'
+                        contador_bananas++;
+                    }
+                    var contador_brocolis = 0;
+                    while (contador_brocolis < num_brocolis) {
+                        imagens_sacola += '<img src="brocolis.png" width="80px">';
+                        contador_brocolis++;
+                    }
+                    var contador_cenouras = 0;
+                    while (contador_cenouras < num_cenouras) {
+                        imagens_sacola += '<img src="carrot.png" width="80px">';
+                        contador_cenouras++;
+                    }
+                    var contador_macas = 0;
+                    while (contador_macas < num_macas) {
+                        imagens_sacola += '<img src="apple.png" width="80px">';
+                        contador_macas++;
+                    }
+                }
+            }
+        }
+
+        mensagem_feira_total.innerHTML = frase_total;
+
+        mensagem_feira_sacola.innerHTML = frase_sacola;
+        mensagem_feira_sacola.style.color = cor_frase_sacola;
+
+        mensagem_mais_frutas.innerHTML = frase_frutas;
+        mensagem_mais_frutas.style.color = cor_frase_frutas;
+
+        imagens_frutas.innerHTML = imagens_sacola;
+    }
+
+
+
+
+
+</script>
