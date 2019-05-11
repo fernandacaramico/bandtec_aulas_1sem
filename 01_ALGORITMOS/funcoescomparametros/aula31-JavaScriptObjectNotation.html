@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JSON - Objetos</title>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+</head>
+
+<body>
+    <h1>JSON</h1>
+    <div id="exercise">
+        <h2>Explicação JavaScipt Object Notation</h2>
+    </div>
+    <div id="exercise">
+        <form>
+            Vitórias <input type="number" id="vitorias"> <br>
+            Empates <input type="number" id="empates"> <br>
+            Derrotas <input type="number" id="derrotas"> <br>
+            <button type="button" onclick="analisar()">Analisar campanha</button>
+        </form>
+        <div id="resultado"></div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function analisar() {
+        
+        var campanha = {
+            v: Number(vitorias.value),
+            e: Number(empates.value),
+            d: Number(derrotas.value)
+        }
+
+        var pts = { v: 5, e: 2, d: 1 };
+
+        var pontos = campanha.v * pts.v + campanha.e * pts.e + campanha.d * pts.d;
+
+        resultado.innerHTML = `O time terminou com ${pontos} pontos.`;
+
+    }
+
+
+</script>
