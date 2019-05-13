@@ -13,13 +13,13 @@
   <div id="exercise">
     <h2>Extra - Tentado criar caixa eletrônico</h2>
     Notas disponíveis: <br>
-    <form>
-      <input type="number" id="notaDisp1"> <br>
-      <input type="number" id="notaDisp2"> <br>
-      <button type="button" onclick="depositarNotas()">Depositar notas</button>
-    </form>
+
+    <input type="number" id="notaDisp1"> <br>
+    <input type="number" id="notaDisp2"> <br>
+
 
     Saque desejado: <input type="number" id="saque_desejado"> <br>
+
     <button type="button" onclick="sacar()">Efetuar Saque</button> <br>
     <div id="resposta_saque"></div>
   </div>
@@ -30,20 +30,13 @@
 
 <script>
   // ex extra
-  var atm = {
-    nota1: 0,
-    nota2: 0
-  }
-
-  function depositarNotas() {
-    var atm = {
-    nota1: Number(notaDisp1.value),
-    nota2: Number(notaDisp2.value)
-  }
-  }
-  
 
   function sacar() {
+    var atm = {
+      nota1: Number(notaDisp1.value),
+      nota2: Number(notaDisp2.value)
+    }
+
     var frase = '';
     if (Number(saque_desejado.value) % atm.nota1 == 0 || Number(saque_desejado.value) % atm.nota2 == 0) {
       frase = `Saque possível.`;
@@ -51,16 +44,16 @@
       frase = 'Saque não será possível';
     }
 
-    // var n_notas_10 = Number(saque_desejado.value) / atm.nota1;
-    // var n_notas_50 = Number(saque_desejado.value) / atm.nota2;
+    var n_notas_10 = Number(saque_desejado.value) / atm.nota1;
+    var n_notas_50 = Number(saque_desejado.value) / atm.nota2;
 
-    // if (Number(saque_desejado.value) % atm.nota1 == 0 && Number(saque_desejado.value) % atm.nota2 == 0) {
-    //   frase += `<br> Você receberá ${n_notas_10} notas de R$${atm.nota1} ou ${n_notas_50} notas de R$${atm.nota2}`;
-    // } else if (Number(saque_desejado.value) % atm.nota1 == 0 && Number(saque_desejado.value) % atm.nota2 != 0) {
-    //   frase += `<br> Você receberá ${n_notas_10} notas de R$${atm.nota1}`;
-    // } else if (Number(saque_desejado.value) % atm.nota1 != 0 && Number(saque_desejado.value) % atm.nota2 == 0) {
-    //   frase += `<br> Você receberá ${n_notas_50} notas de R$${atm.nota2}`;
-    // }
+    if (Number(saque_desejado.value) % atm.nota1 == 0 && Number(saque_desejado.value) % atm.nota2 == 0) {
+      frase += `<br> Você receberá ${n_notas_10} notas de R$${atm.nota1} ou ${n_notas_50} notas de R$${atm.nota2}`;
+    } else if (Number(saque_desejado.value) % atm.nota1 == 0 && Number(saque_desejado.value) % atm.nota2 != 0) {
+      frase += `<br> Você receberá ${n_notas_10} notas de R$${atm.nota1}`;
+    } else if (Number(saque_desejado.value) % atm.nota1 != 0 && Number(saque_desejado.value) % atm.nota2 == 0) {
+      frase += `<br> Você receberá ${n_notas_50} notas de R$${atm.nota2}`;
+    }
     resposta_saque.innerHTML = frase;
   }
 

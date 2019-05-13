@@ -88,12 +88,12 @@
 
 <script>
     // ex extra
-    var atm = {
-        nota1: 10,
-        nota2: 50
-    }
-
     function sacar(valor) {
+        var atm = {
+            nota1: 10,
+            nota2: 50
+        }
+
         var frase = '';
         if (valor % atm.nota1 == 0 || valor % atm.nota2 == 0) {
             frase = `Saque possível.`;
