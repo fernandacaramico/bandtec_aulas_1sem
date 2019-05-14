@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array + Estruturas de repetição - aula 33</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <h1>Array + estruras de repetição</h1>
+    <div id="exercise">
+        <h2>Ex. 1</h2>
+        <p>
+            
+        </p>
+        <h2>Resolução</h2>
+        <form>
+            Insira seus filmes favoritos, em ordem <input type="text" id="filme_cadastrado">
+            <button type="button" onclick="cadastrar(filme_cadastrado.value)">Cadastrar filme</button> <br>
+        </form>
+        <div id="filmes_favoritos"></div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    var filmes = [];
+
+    function cadastrar(novo_filme) {
+        filmes.push(novo_filme);
+        filmes_favoritos.innerHTML = '';
+        // iterando o vetor com for
+        for (indice = 0; indice < filmes.length; indice++) {
+            filmes_favoritos.innerHTML += `${filmes[indice]} <br>`
+        }
+    }
+
+</script>

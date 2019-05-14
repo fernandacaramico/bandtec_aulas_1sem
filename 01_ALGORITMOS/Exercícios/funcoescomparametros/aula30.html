@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,143 +7,41 @@
     <title>Variáveis Globais</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
-
 <body>
-
     <div id="exercise">
-        <h2>Ex. 2 - Cofrinho</h2>
-        Depositando: <input type="number" id="v_depositar"> <br>
-        Depositado até agora: R$ <span id="v_depositado">0,00</span>
-        <button type="button" onclick="depositar()">Depositar</button>
+        <h2>Variáveis Globais - Explicação</h2>
+        <ul>
+            <li>Variáveis globais existem fora das funções</li>
+            <li>Não usaremos mais a ganbiarra de pegar o innerHTML, transformar em número, mudar e depois enviar novamente para o innerHTML. </li>
+            <li>Acessível de qualquer lugar</li>
+        </ul>
+    
     </div>
-
     <div id="exercise">
-        <h2>Ex. 5 - Treinando Saiajins</h2>
+        <h2>Treinando Saiajins</h2>
+        <img src="normal.png" id="imagemGoku">
         <button type="button" onclick="treinando()">Treinar!</button>
-        <br>
-        <img src="normal.png" id="imagemGoku" width="300px">
     </div>
 
-    <div id="exercise">
-        <h2>Ex. 3 - Votando</h2>
-        <img src="jolie.jpg" width="200px" onclick="votar(votos_ang)"> Votos: <span id="votos_ang">0</span>
-        <br>
-        <img src="scarlett.jpg" width="200px" onclick="votar(votos_scar)"> Votos: <span id="votos_scar">0</span> 
-        <br>
-        <button type="button" onclick="get_resultado(Number(votos_ang.innerHTML), Number(votos_scar.innerHTML) )">Finalizar Votação</button>
-        <div id="div_resultado_votacao"></div>
-    </div>
-
-    <div id="exercise">
-        <h2>Ex. 4 - Elevador</h2>
-        <button type="button" onclick="entrar_homem()">Entrou um homem</button> <br>
-        <button type="button" onclick="entrar_mulher()">Entrou uma mulher</button> <br>
-        <button type="button" onclick="entrar_crianca()">Entrou uma crianca</button>
-        <br> <br>
-        <b>Pessoas no elevador:</b> <br>
-        <span id="qtd_homens">0</span> homens <br>
-        <span id="qtd_mulheres">0</span> mulheres <br>
-        <span id="qtd_criancas">0</span> crianças <br> <br>
-        Peso total: <span id="peso_pessoas">0</span>kg
-    </div>
 
 </body>
-
-
 </html>
+
 <script>
-    // EXERCÍCIO 4
-    var n_homens = 0;
-    var n_mulheres = 0;
-    var n_criancas = 0;
 
-    var peso_homens = 90;
-    var peso_mulheres = 75;
-    var peso_criancas = 40;
+var qtdTreino = 0;
 
-    var peso_total = Number(peso_pessoas.innerHTML);
+function treinando() {
+    var img;
+    qtdTreino++;
 
-    function entrar_homem() {
-        n_homens++;
-        qtd_homens.innerHTML = n_homens;
-        peso_total += peso_homens;
-        peso_pessoas.innerHTML = peso_total;
+    if (qtdTreino >= 4) {
+        img = "superSaiajin.jpg";
+    } else if (qtdTreino >= 6) {
+        img = "super2.png";
+    } else if (qtdTreino >= 10) {
+        img =  "super3.png"
     }
-    function entrar_mulher() {
-        n_mulheres++
-        qtd_mulheres.innerHTML = n_mulheres;
-
-        peso_total += peso_mulheres;
-        peso_pessoas.innerHTML = peso_total;
-    }
-    function entrar_crianca() {
-        n_criancas++
-        qtd_criancas.innerHTML = n_criancas;
-
-        peso_total += peso_criancas;
-        peso_pessoas.innerHTML = peso_total;
-    }
-
-
-
-
-    // EXERCÍCIO 3
-    function votar(candidata) {
-        var votos_candidata = Number(candidata.innerHTML);
-        votos_candidata++
-        candidata.innerHTML = votos_candidata;
-    }
-
-    function get_resultado(cand1, cand2) {
-        var frase = '';
-        if (cand1 > cand2) {
-            frase = 'Candidata Angelia ganhou!'
-        } else if (cand2 > cand1) {
-            frase = 'Candidata Scarlett ganhou!'
-        } else {
-            frase = '';
-        }
-        div_resultado_votacao.innerHTML = frase;
-    }
-
-    
-    // EXERCÍCIO 2
-    var cofrinho = 0.00;
-    
-    function depositar() {
-        var valor_a_depositar = v_depositar.value;
-
-        cofrinho += Number(valor_a_depositar);
-        v_depositado.innerHTML = cofrinho.toFixed(2);
-    }
-
-
-    // EXERCÍCIO 5
-    var qtdTreino = 0;
-
-    function treinando() {
-        var img;
-        qtdTreino++;
-
-        if (qtdTreino < 4) {
-            img = "normal.png";
-        }
-        if (qtdTreino >= 4 && qtdTreino < 6) {
-            img = "superSaiajin.jpg";
-        }
-        if (qtdTreino >= 6 && qtdTreino < 10) {
-            img = "super2.png";
-        }
-        if (qtdTreino >= 10 && qtdTreino < 14) {
-            img = "super3.png"
-        }
-        if (qtdTreino >= 14 && qtdTreino < 20) {
-            img = "god.jpg"
-        }
-        if (qtdTreino >= 20) {
-            img = "blue.jpg"
-        }
-
-        imagemGoku.src = img;
-    }
+    imagemGoku.src = img;
+}
 </script>

@@ -14,6 +14,25 @@
 
     <div id="exercise">
         <h2>Ex. 1 - Analisando pontos de um time</h2>
+        <p>
+            Crie um programa no qual informe quantas vitórias, quantos empates e quantas derrotas um time de futebol
+            possui no campeonato. Após clicar num botão "Analisar campanha", exiba uma frase como esta: <br>
+            <i><u>O time terminou o campeonato com X pontos </u></i>
+            <br>
+            Onde X é calculado assim: <br>
+            <ul>
+                <li>
+                    Vitória: 5 pontos
+                </li>
+                <li>
+                    Empate: 2 ponto
+                </li>
+                <li>
+                    Derrota: 1 pontos
+                </li>
+            </ul>
+        </p>
+        <h2>Resolução</h2>
         <form>
             Vitórias <input type="number" id="vitorias"> <br>
             Empates <input type="number" id="empates"> <br>
@@ -22,9 +41,29 @@
         </form>
         <div id="resultado"></div>
     </div>
-
+    
     <div id="exercise">
         <h2>Ex. 2 - Analisando mais de um time</h2>
+        <p>
+            Crie um programa no qual informe os nomes do times, quantas vitórias, quantos empates e quantas derrotas 2
+            times de futebol possuem no campeonato. Após clicar num botão "Comparar campanhas", exiba uma frase como
+            esta: <br>
+            O time A terminou o campeonato com AX pontos <br>
+            O time B terminou o campeonato com BX pontos <br>
+            Onde o X de cada time é calculado assim: <br>
+            <ul>
+                <li>
+                    Vitória: 5 pontos
+                </li>
+                <li>
+                    Empate: 2 ponto
+                </li>
+                <li>
+                    Derrota: 1 pontos
+                </li>
+            </ul>
+        </p>
+        <h2>Resolução</h2>
         <form>
             Nome do primeiro time: <input type="text" id="nomeTimeA"> <br>
             Vitórias <input type="number" id="vitoriasTimeA"> <br>
@@ -40,38 +79,85 @@
         <br>
         <div id="resultadoTimeAB"></div>
     </div>
-
+    
     <div id="exercise">
         <h2>Ex. 3 - Pontuando país</h2>
+        <p>
+            Crie um programa no qual você informa quantas medalhas de ouro, prata e bronze um país já ganhou na
+            olimpíada. Após clicar num botão "Analisar medalhas", exiba uma frase como esta: <br>
+            O país tem X pontos até agora <br>
+            Onde X é calculado assim: <br>
+            <ul>
+                <li>
+                    Medalha de ouro: 10000 pontos
+                </li>
+                <li>
+                    Medalha de prata: 100 pontos
+                </li>
+                <li>
+                    Medalha de bronze: 1 ponto
+                </li>
+            </ul>
+        </p>
+        <h2>Resolução</h2>
         <form>
             Nome do País: <input type="text" id="nomePais"> <br>
             Quantidade de medalhas de ouro: <input type="number" id="ouroPais"> <br>
             Quantidade de medalhas de prata: <input type="number" id="prataPais"> <br>
             Quantidade de medalhas de bronze: <input type="number" id="bronzePais"> <br>
-            <button type="button"
-                onclick="pontuarPais(nomePais.value, ouroPais.value, prataPais.value, bronzePais.value)">Analisar
-                medalhas</button>
-        </form>
-        <div id="msg_medalhas_pais"></div>
-    </div>
-
-    <div id="exercise">
-        <h2>Ex. 4 - Pesquisando CEPs</h2>
-        <form>
-            Qual CEP você deseja pesquisar? <input type="text" id="cep_pesquisado" placeholder="00000-000"> <br>
-            <button type="button" onclick="encontrarCep(cep_pesquisado.value)">Pesquisar</button>
-        </form>
-        <div id="msgCep"></div>
-    </div>
-
-    <div id="exercise">
-        <h2>Ex. 5 - Simulando Poupança</h2>
-        <form>
-            Saldo: R$ <b id="v_saldo">0.00</b> <br>
-            Depósitos: <b id="n_dep">0</b> <br>
-            Saques: <b id="n_saques">0</b> <br>
-            <button type="button" onclick="depositar100()">Depositar 100</button> <br>
-            <button type="button" onclick="sacar20()">Sacar 20</button>
+            <button type="button" onclick="pontuarPais(nomePais.value, ouroPais.value, prataPais.value, bronzePais.value)">Analisar
+                    medalhas</button>
+                </form>
+                <div id="msg_medalhas_pais"></div>
+            </div>
+            
+            <div id="exercise">
+                <h2>Ex. 4 - Pesquisando CEPs</h2>
+                <p>
+                    Crie um programa que possui 2 endereços já cadastrados. Nesses endereços constam o cep, o endereço completo e o apelido. Ex: cep: 04301-000, end_completo: 'Av Xyz, 100. Ap 10', apelido: 'casa' <br>
+                    O usuário não vê esses endereços em lugar nenhum, mas pode pesquisar eles digitando um cep e clicando num botão "Pesquisar". Ao clicar nesse botão: <br>
+                    CASO o cep seja um dos 2 cadastrados, exiba a frase: <br>
+                    <b>Endereço APELIDO: ENDEREÇO_COMPLETO, cep: CEP</b> <br>
+                    CASO o cep não seja nenhum dos cadastrados: <br>
+                    <b>Cep não encontrado!</b>
+                </p>
+                <h2>Resolução</h2>
+                <form>
+                    Qual CEP você deseja pesquisar? <input type="text" id="cep_pesquisado" placeholder="00000-000"> <br>
+                    <button type="button" onclick="encontrarCep(cep_pesquisado.value)">Pesquisar</button>
+                </form>
+                <div id="msgCep"></div>
+            </div>
+            
+            <div id="exercise">
+                <h2>Ex. 5 - Simulando Poupança</h2>
+                <p>
+                    Crie um programa que simule o uso de uma conta Poupança de banco do usuário. <br>
+                    Ela deve ter as seguintes informações na tela: <br>
+                    <ul>
+                        <li>
+                            Saldo: R$ 0.00
+                        </li>
+                        <li>
+                            Depósitos: 0
+                        </li>
+                        <li>
+                            Saques: 0
+                        </li>
+                    </ul>
+                    Abaixo dessas informações, devem haver os botões: "Depositar 100" e "Sacar 20". <br>
+                    Ao clicar no primeiro botão, o saldo na tela atualiza aumentando em 100 e o número de depósitos aumenta em 1. <br>
+                    Ao clicar no segundo botão, o saldo na tela atualiza reduzindo em 20 e o número de saques aumenta em 1. <br>
+                    <br>
+                    <i>É possível que o saldo fique negativo (azar do usuário ser gastador, né?).</i> 
+                </p>
+                <h2>Resolução</h2>
+                <form>
+                    Saldo: R$ <b id="v_saldo">0.00</b> <br>
+                    Depósitos: <b id="n_dep">0</b> <br>
+                    Saques: <b id="n_saques">0</b> <br>
+                    <button type="button" onclick="depositar100()">Depositar 100</button> <br>
+                    <button type="button" onclick="sacar20()">Sacar 20</button>
         </form>
     </div>
 
@@ -150,13 +236,24 @@
 
     function encontrarCep(cep) {
         var frase;
-        if (cep == end1.cep) {
-            frase = `Endereço ${end1.apelido}: <br> ${end1.endereco_completo}, CEP ${end1.cep} `
-        } else if (cep == end2.cep) {
-            frase = `Endereço ${end2.apelido}: <br> ${end2.endereco_completo}, CEP ${end2.cep} `
-        } else {
+
+        // if (cep == end1.cep) {
+        //     frase = `Endereço ${end1.apelido}: <br> ${end1.endereco_completo}, CEP ${end1.cep} `
+        // } else if (cep == end2.cep) {
+        //     frase = `Endereço ${end2.apelido}: <br> ${end2.endereco_completo}, CEP ${end2.cep} `
+        // } else {
+        //     frase = 'CEP não encontrado'
+        // }
+        
+        // resolucao do prof, usando operador ternário
+        if (cep != end1.cep && cep != end2.cep) {
             frase = 'CEP não encontrado'
+        } else {
+            var cep_encontrado = cep == end1.cep ? end1 : end2;
+            frase = `Endereço ${cep_encontrado.apelido}: <br> ${cep_encontrado.endereco_completo}, CEP ${cep_encontrado.cep}`
         }
+        // criando var para criar novo JSON que receberá as infos dos JSON pesquisado.
+
         msgCep.innerHTML = frase;
     }
 
