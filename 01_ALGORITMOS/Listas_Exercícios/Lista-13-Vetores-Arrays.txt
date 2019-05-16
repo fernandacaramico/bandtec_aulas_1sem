@@ -1,0 +1,48 @@
+Lista de Exercícios 13 - Vetores (Arrays)
+Resolva as questões abaixo usando VETORES sempre que possível!
+
+1.  Crie um programa no qual o usuário informa os nomes dos filmes que mais gosta, começando pelo seu favorito e depois o 2º que mais gosta e assim por diante.
+Para ir cadastrando cada filme, ele clica em "Cadastrar filme".
+Crie um botão "Ver Favoritos". Ao clicar ele, exiba os filmes favoritos, abaixo, uma frase "Total: X".
+
+Abaixo, mostre essas frases:
+ O que mais gosta é A
+ E desses, o que menos gosta é B
+ 
+Onde A é o primeiro cadastrado e B, o último
+
+
+2. Crie um programa onde o usuário vá cadastrando os lugares para onde já viajou. Ele digita o nome do lugar e vai clica em "Cadastrar local".
+Deve haver um outro campo, onde ele digita apenas um número, indicando o local para onde viajou, a partir do número 1 (porque os usuários comuns contam as coisas a partir do 1) e clica em "Relembrar viagem". Se ele informar 1, exiba o primeiro local cadastrado e assim por diante.
+Porém, se ele informar um número maior do que a quantidade de viagens, exiba: "Você não fez uma Xª viagem!"
+
+
+3. Pergunte para o usuário o nome de cada projeto que já criou na vida. Ele digita e clica em "Registrar projeto". Na medida que ele vai cadastrando, verifique quantos projetos já foram cadastrados e exiba o seguinte texto abaixo:
+    Você já fez X projetos. Por isso você é um profissional Z.
+X é a quantidade de projetos e Z é seu nivel de experiência, segundo estas regras:
+  0 a 4: Júnior
+  5 a 12: Pleno desde o projeto "nome do 5º projeto"
+  13 ou mais: Sênior desde o projeto "nome do 13º projeto"
+
+
+4 (desafio). Crie um programa que cadastrada e pesquisa CEP de endereços. Pergunte ao usuário cep, o endereço completo e o apelido. Ao clicar em "Cadastrar CEP" esse endereço fica armazenado em algum lugar. Ex: cep: 04301-000, end_completo: 'Av Xyz, 100. Ap 10', apelido: 'casa'.
+Após cada cadastro, exiba abaixo a frase
+   X CEPs cadastrados até agora.
+
+O usuário não vê esses endereços em lugar nenhum, mas pode pesquisar eles digitando um cep e clicando num botão "Pesquisar". Ao clicar nesse botão:
+CASO o cep seja um dos cadastrados, exiba a frase:
+   Endereço APELIDO: ENDEREÇO_COMPLETO, cep: CEP
+CASO o cep não seja nenhum dos cadastrados:
+  Cep não encontrado!
+
+#ficadica: Use um vetor de JSONs
+
+
+5. Crie um programa no qual o usuário informa os nomes dos filmes que mais gosta. Ele digita e clica em "Cadastrar". 
+Na medida em que vai cadastrando, os filmes vão aparecendo um abaixo do outro abaixo do botão.
+
+
+6. Crie um programa no qual o usuário informa os nomes dos filmes que mais gosta. Ele digita e clica em "Cadastrar". 
+Na medida em que vai cadastrando, os filmes vão aparecendo um abaixo do outro abaixo do botão.
+
+Crie ainda um campo para o usuário pesquisar o nome de um filme que já tenha cadastrado e um botão "Pesquisar". Ao clicar nesse botão, o programa exibe "Você gosta desse filme" ou "Você não curte esse filme", conforme o filme tiver ou não sido cadastrado

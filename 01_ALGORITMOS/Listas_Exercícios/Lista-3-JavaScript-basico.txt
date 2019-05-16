@@ -1,0 +1,306 @@
+1. Crie uma página com um campo "Sua idade, em anos".
+E um botão "Verificar tempo p/ aposentar"
+Ao clicar no botão, exiba uma frase assim:
+"Faltam X anos para você se aposentar".
+
+Considere que a idade para se aposentar é 65.
+
+
+2. Crie uma página com um campo "Sua idade, em anos".
+E 2 botões: "Aposentadoria Homens" e "Aposentadoria Mulheres"
+Ao clicar no botão, exiba uma frase assim:
+"Faltam X anos para você se aposentar".
+
+Considere que a idade para se aposentar é 65 p/ Homens e 60 p/ mulheres.
+
+
+
+
+
+3. Crie uma página com um formulário que contenha um campo "Idade em anos". Deve haver também um botão "Calcular Vida".
+Ao clicar no botão, exiba uma frase como esta:
+'Você já viveu X dias e Y meses'
+
+Onde X e Y são o cálculo de dias e meses que a pessoa viveu a partir da idade informada.
+Considere que um ano tem 365 dias ou 12 meses.
+
+
+
+
+
+4. Crie uma página que tenha 2 caixas de entrada de texto. Uma é a "Depósito no cofrinho" e a outra "Valor total no cofrinho".
+A segunda já deve vir com o valor 0 dentro dela. Para isso, use o atributo value="0" na sua tag <input>.
+Crie um botão "Depositar". Ao ser clicado, ele pega o valor na primeira entrada e o usa para aumentar o valor na segunda. Por exemplo, se na segunda tinha 10 e na primeira 5, a segunda vira 15.
+
+OBS: não há alerta nem mensagem alguma aqui. Apenas a segunda caixa de texto deve ter seu valor aumentado sempre que se clicar em "Depositar".
+
+
+5. A aluna Aline Gligente quer saber suas notas na Bandtec. Na Bandtec o aluno tem 2 notas: A continuada e a integrada. O cálculo é:
+Nota Final = 40% da continuada + 60% da integrada.
+
+Crie um programa onde o aluno informa seu nome e suas notas continuada e integrada. Abaixo dos campos deve haver um botão "Calcular nota final".
+
+Ao clicar no botão, deve aparecer, abaixo do botão, um texto na cor verde com a frase 
+"Olá, NOME. Sua nota final será de NOTA".
+
+
+6. Altere ou refaça a 5ª questão adicionando um novo botão ao lado do anterior com o texto "Novo cálculo". Ao clicar nele, todos os campos devem ter seu valor limpo e a mensagem debaixo deve desaparecer também.
+
+
+
+7. Existe uma oração muito conhecida e admirada chamada "Oração pela Paz", atribuída a S. Francisco de Assis. É aquela que diz "onde houver ódio que eu leve o amor etc".
+
+Crie um programa que tenha uma combo box onde o usuário veja pelo menos 4 dos trechos que começam com "onde houver..." da oração. Mas deve haver só até a palavra negativa (ex: "Onde houver ódio").
+
+Abaixo, um botão "Revelar boa obra". Ao ser clicado, ele exibe abaixo dele e com uma distância de 30px e na cor verde a frase que completa o item selecionado (ex: "que eu leve o amor").
+
+Importante: O primeiro item da combo box deve conter a orientação "- escolha um trecho -". Caso clique no botão com isso selecionado, nada deve aparecer abaixo do botão.
+
+
+
+
+8. Em 2001 foi lançado um texto chamado "Manifesto Ágil", voltado para programadores, cuja principal parte diz
+
+    Indivíduos e interações mais que processos e ferramentas
+    Software em funcionamento mais que documentação abrangente
+    Colaboração com o cliente mais que negociação de contratos
+    Responder a mudanças mais que seguir um plano
+ 
+Crie um programa que tenha na tela:
+- um campo de texto para que o usuário digite seu nome
+- uma combo box na qual o usuário veja cada um dos itens sublinhados supracitados
+- um botão "#partiuagilidade"
+
+Ao clicar no botão, deve ser exibida uma mensagem abaixo dele, com uns 25px de distância, com o texto
+"Então, NOME, valorize menos processos e ferramentas e mais indivíduos e interações"
+
+Ou seja, exiba o nome digitado na caixa de texto, seguido do texto que o usuário vê e, por fim, o texto que o usuário não vê.
+Outro exemplo:
+"Então, NOME, valorize menos seguir um plano e mais responder a mudanças"
+
+
+
+9. Crie um programa no qual um aluno da Bandtec informa:
+- Seu nome
+- Sua nota na 1ª continuada
+- Sua nota na 2ª continuada
+- Sua nota na 3ª continuada
+
+Abaixo das entradas deve haver um botão "Calcular nota p/ passar"
+
+Ao clicar nesse botão, deve aparecer abaixo dele um texto em cor de tom vermelho com um texto como este:
+"Olá, NOME. Para passar você precisa tirar X na integrada"
+
+Sobre o valor X:
+- deve estar arredondado em 2 casas decimais (use a função .toFixed(2) do Javascript)
+- o cálculo de seu valor é assim: (5-(((continuada 1 + continuada 2 + continuada 3)/3)*0,4))/0,6
+
+Exemplos de valores para testes:
+c1 = 0,  c2 = 0,  c3 = 0     => X = 8,33
+c1 = 5,  c2 = 5,  c3 = 5     => X = 5
+c1 = 10, c2 = 10, c3 = 10  => X = 1,67
+
+
+10. Maria Fobada era estagiária pela Bandtec e será efetivada. Porém quer saber quanto serão seus descontos. Crie um programa que calcule quanto o usuário terá descontado de INSS (Previdência).
+
+Na tela devem existir:
+- Um campo para o nome do usuário
+- Um campo para o salário bruto
+- Uma combo box com a indicação "Faixa salarial p/ INSS" no qual o usuário deve ver 
+   Faixa 1: 0 a 1000
+   Faixa 2: 1000 a 3000
+   Faixa 3: Mais de 3000
+- Um botão "Calcular Desconto"
+
+Ao clicar no botão, deve aparecer abaixo dele, na cor Azul, um texto como este:
+"Olá, NOME. Seu desconto de INSS será de R$X. Assim, seu salário líquido será de R$Y"
+
+Cálculo de X: 
+  Faixa 1: 0% do salário bruto
+  Faixa 2: 10% do salário bruto
+  Faixa 3: 20% do salário bruto
+
+Cálculo de Y: Salário bruto - X
+
+
+11. Chico Itado adora pizza. Todo mundo adora, né? Que tal criarmos um programa que nos ajude a calcular o preço final de uma pizza de 3 ingredientes. 
+O programa deve conter:
+- um campo para o sabor da pizza (este campo já deve receber o foco do teclado assim que a página for carregada)
+- três combo box, um abaixo do outro, ambos com os mesmos itens:
+  Queijo, Presunto, Ovo, Palmito, Frango, Catupiry
+- identifique visualmente os combos como "Ingrediente 1", "Ingrediente 2" e "Ingrediente 3"
+- Um botão "Calcular preço da pizza"
+
+Ao clicar no botão, é exibido um texto abaixo dele com a exata formatação abaixo (cores, negrito etc):
+
+A pizza de SABOR vai custar um total de R$X.
+
+Defina você mesmo valores para cada um dos ingredientes, porém lembre-se de que o usuário não os vê antes de clicar no botão.
+
+
+
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+
+
+
+REFORCO
+
+
+
+1. Elis Tranha é nutricionista e quer ajuda na hora e sugerir dietas de café da manhã para seus pacientes. Ela precisa de um programa que:
+
+Tenha na sua tela os seguintes campos:
+
+"Quantas bananas?"
+
+"Quantos pães com manteiga?"
+
+"Quantos copos de café com leite?"
+
+Abaixo dos campos, um botão "Calcular calorias". Ao clicar nesse botão, deve aparecer abaixo dele uma frase como esta:
+
+Sua dieta com B bananas, P pa?s com manteiga e C copos de café com leite vai te fornecer X calorias
+
+O cálculo para X é:
+
+1 Banana: 20 calorias
+
+1 Pão com manteiga: 80 calorias
+
+1 Copo de café com leite: 30 calorias
+
+
+
+2. Para a pessoa entrar em forma, alguns profissionais de saúde acreditam que 80% é alimentação e 20% é por conta de exercícios físicos. Crie um programa onde a pessoa informa seu nome e 2 notas, ambas de 0 a 10:
+
+"Qual seu nome?"
+
+"Qual a nota de sua alimentação?"
+
+"Qual a nota de seus hábitos de exercícios?"
+
+Abaixo desses campos, um botão "Calcular saúde". Ao clicar nesse botão, deve aparacer abaixo dele a mensagem...
+
+Olá, NOME. Sua saúde é nota X.
+
+O cálculo de X é: 80% da nota da alimentação mais 20% da nota dos exercícios.
+
+
+
+3. Rute Imosa está abrindo um lojinha. Ela quer um programa que ajude ela a calcular o preço de venda dos produtos a partir do preço de compra. Esse programa deve ter em sua tela:
+
+Um campo "Nome do produto"
+
+Um campo "Preço de compra produto"
+
+Um botão "Calcular preço de venda"
+
+Ao clicar no botão, deve aparecer abaixo dele uma frase como esta:
+O produto NOME deve ser vendido por R$X
+Esse X é o preço de compra mais 50%. Por exemplo: se o produto foi comprado por 100, deve ser vendido por 150. Se foi comprado por 80 deve ser vendido por 120.
+
+
+
+4. Rute Imosa está abrindo outra lojinha. Ela quer um novo programa que ajude ela a calcular o preço de venda dos produtos a partir do preço de compra, mas com aperfeiçoamentos com relação ao anterior. Esse programa deve ter em sua tela:
+
+Um campo "Nome do produto"
+
+Um campo "Preço de compra produto"
+
+Um campo "Porcentagem de lucro"
+
+Um botão "Calcular preço de venda"
+
+Ao clicar no botão, deve aparecer abaixo dele uma frase como esta:
+O produto NOME deve ser vendido por R$X
+Esse X é o preço de compra mais a porcentagem indicada. Por exemplo: se o produto foi comprado por 100 e a porcentagem de lucro indicada foi 30, deve ser vendido por 130. Se foi comprado por 80 e a porcetagem de lucro indicada foi 90 deve ser vendido por 152.
+
+
+
+5. Rute Imosa está abrindo outra lojinha (faz jus ao nome a moça, né?). Ela quer um novo programa que ajude ela a calcular o preço de venda dos produtos a partir do preço de compra, mas com aperfeiçoamentos ainda. Esse programa deve ter em sua tela:
+
+Um campo "Nome do produto"
+
+Um campo "Preço de compra produto"
+
+Um campo "Porcentagem de impostos na venda"
+
+Um campo "Porcentagem de lucro"
+
+Um botão "Calcular preço de venda"
+
+Ao clicar no botão, deve aparecer abaixo dele uma frase como esta:
+O produto NOME deve ser vendido por R$X
+Esse X é o preço de compra mais a porcentagem dos impostos mais a porcentagem indicada. Por exemplo: se o produto foi comprado por 100 e a porcentagem de lucro indicada foi 30 e a porcentagem de impostos for 10, deve ser vendido por 140. 
+
+Ou seja, a porcetagem de impostos deve incidir sobre o preço de venda, assim como a porcentagem de lucro.
+
+
+6. Um dono de pequena lanchonete precisa saber que frutas vai usar conforme os preços atuais das frutas possíves de se usar numa salada para 10 porções. Crie um programa pra ele que tenha os seguintes campos:
+
+"Preço da laranja"
+"Quantas laranjas vai usar"
+
+"Preço da maçã"
+
+"Quantas maçãs vai usar"
+
+"Preço da banana"
+"Quantas bananas vai usar"
+
+"Preço da uva"
+"Quantas uvas vai usar"
+
+Abaixo deles, um botão "Calcular preço da salada". Ao clicar nele, deve aparecer abaixo dele a Sua salada vai custar R$X e cada porção, R$Y.
+X é a soma do custo de cada fruta (o custo é seu preço x a quantidade usada).
+
+Y é X dividido por 10 (já que a salada redne 10 porções).
+
+
+7. Procure 4 imagens na internet, que são os escudos de 4 times de futebol de qualquer lugar do mundo. De preferência, elas devem conter tamanhos parecidos. Na tela do programa deve haver uma combo box com os itens (os nomes de times são exemplos apenas):
+      - Escolha um time -
+      Barcelona
+      Manchester United
+      Juventus
+      Clube do Remo
+Abaixo da combo box, um botão "Exibir escudo", deve acontecer o seguinte...
+Caso seja escolhido o 1º item: Nenhuma imagem deve aparecer na tela
+Caso seja escolhido do 2º ao 4º item: Deve aparecer o escudo do time selecionado
+
+
+#FICADICA: Para fazer uma imagem aparecer, usamos a tag <img>, lembra? A imagem a ser exibida, pode estar na mesma pasta do arquivo .html ou na internet, bastando indicar seu nome ou endereço no atributo src da tag <img>. Logo, para mudar a imagem de uma tag <img>, basta:
+
+ a) Dar um identificador para a <img> 
+
+ b) Para alterar sua imagem, basta alterar seu src. Ex: para alterar a imagem de <img id="foto_pessoa">, fazemos: foto_pessoa.src = 'alegre.jpg'. 
+
+ c) Para fazer a imagem "sumir" basta alterar deixar seu src vazio. Ex: foto_pessoa.src = ''. 
+
+
+
+8. Procure 3 imagens na internet, de preferência com tamanhos parecidos. Uma deve ser de uma essoa super bem feliz e disposta. A outra de uma pessoa um pouco cansada ou apenas "normal". A terceira deve ser de uma pessoa "acabada", esgotada, super cansada.
+
+A página deve conter uma combo box com os seguintes itens:
+
+      - Selecione um item -
+
+      Dorme muito bem
+
+      Dorme entre 4 e 6 horas por noite
+
+      Dorme menos de 4 horas por noite
+
+Abaixo da combo, um botão "Mostrar o efeito sobre a pessoa". Ao clicar no botão, deve acontecer o seguinte...
+
+Caso seja escolhido o 1º item: Nenhuma imagem deve aparecer na tela
+
+Caso seja escolhido o 2º item: Deve aparecer a imagem da pessoa animada na tela
+
+Caso seja escolhido o 3º item: Deve aparecer a imagem da pessoa "normal" na tela
+
+Caso seja escolhido o 4º item: Deve aparecer a imagem da pessoa "acabada" na tela
+

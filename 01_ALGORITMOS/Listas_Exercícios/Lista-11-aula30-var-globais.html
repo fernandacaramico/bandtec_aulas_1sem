@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Variáveis Globais</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <div id="exercise">
+        <h2>Ex. 1 - Feliz</h2>
+        <h2>Enunciado</h2>
+        Crie um programa que tenha um botão "<u>Se está feliz, clique nimim!</u>". <br>
+        Abaixo dele, deve haver a frase <br>
+        <i>Você já disse X vezes que está feliz hoje!</i> <br>
+        Esse X começa com 0 e vai aumentando sempre que o usuário clica no botão. <br><br>
+        <h2>Resolução</h2>
+        <form>
+            <button type="button" onclick="ficar_feliz()">Se está feliz, clique nimim!</button>
+        </form>
+        Você já disse <span id="n_feliz">0</span> vezes que está feliz hoje!
+    </div>
+
+
+    <div id="exercise">
+        <h2>Ex. 2 - Cofrinho</h2>
+        <h2>Enunciado</h2>
+        Crie um programa que imite um cofrinho. Logo no topo deve haver o texto: <br>
+        <i>Depositado até agora: R$ X.XX</i> <br>
+        Abaixo desse texto, deve have um campo para informar o valor de um novo depósito. Ao lado desse campo, um botão
+        "<u>Depositar</u>". <br>
+        Ao clicar no botão, o valor de X aumenta conforme o valor no campo de novo depósito. <br> <br>
+        <h2>Resolução</h2>
+        <form>
+            Depositando: <input type="number" id="v_depositar"> <br>
+            Depositado até agora: R$ <span id="v_depositado">0,00</span>
+            <button type="button" onclick="depositar()">Depositar</button>
+        </form>
+    </div>
+
+    <div id="exercise">
+        <h2>Ex. 3 - Votando</h2>
+        <h2>Enunciado</h2>
+        Crie uma programa que tenha 2 fotos, uma abaixo da outra. Porém, ao lado de cada uma delas, o texto: <br>
+        <i>Votos: X</i> <br>
+        Ao clicar em alguma das fotos, aumente o valor de X que fica do lado da respectiva foto. <br>
+        Abaixo das fotos, deve haver um botão "<u>Finalizar Votação</u>". Ao ser clicado ele exibe uma frase abaixo
+        dele como
+        esta: <br>
+        <i>Candidato FULANO venceu!</i> <br>
+        Defina você mesmo o nome dos candidatos. <br>
+        Se estiverem com a mesma quantidade de votos, não mostre nada. <br><br>
+
+        <h2>Resolução</h2>
+        <img src="jolie.jpg" width="200px" onclick="votar(votos_ang)"> Votos: <span id="votos_ang">0</span>
+        <br>
+        <img src="scarlett.jpg" width="200px" onclick="votar(votos_scar)"> Votos: <span id="votos_scar">0</span>
+        <br>
+        <button type="button" onclick="get_resultado(Number(votos_ang.innerHTML), Number(votos_scar.innerHTML) )">Finalizar
+            Votação</button>
+        <div id="div_resultado_votacao"></div>
+    </div>
+
+    <div id="exercise">
+        <h2>Ex. 4 - Elevador</h2>
+        <h2>Enunciado</h2>
+        Crie um programa que controle a entrada de pessoas num elevador. Ele deve ter os seguintes botões, um do lado
+        do outro: <u> <br>
+            Entrou um Homem <br>
+            Entrou uma Mulher <br>
+            Entrou uma Criança <br> </u>
+        <br>
+        Abaixo deles, deve ter um texto como este:
+        <br>
+        <i>
+            Pessoas no elevador: <br>
+            * ? homens <br>
+            * ? mulheres <br>
+            * ? crianças <br>
+            Peso total: ?kg <br> <br>
+        </i>
+
+        Ao clicar em qualquer um deles, atualize o texto, considerando que os pesos das pessoas é: <br>
+        Homem: 90kg; Mulher: 75kg; Criança: 40kg. <br> <br>
+        <h2>Resolução</h2>
+        <button type="button" onclick="entrar_homem()">Entrou um homem</button>
+        <button type="button" onclick="entrar_mulher()">Entrou uma mulher</button>
+        <button type="button" onclick="entrar_crianca()">Entrou uma crianca</button>
+        <br> <br>
+        <b>Pessoas no elevador:</b> <br>
+        <span id="qtd_homens">0</span> homens <br>
+        <span id="qtd_mulheres">0</span> mulheres <br>
+        <span id="qtd_criancas">0</span> crianças <br> <br>
+        Peso total: <span id="peso_pessoas">0</span>kg
+    </div>
+
+    <div id="exercise">
+        <h2>Ex. 5 - Treinando Saiajins</h2>
+        <h2>Enunciado</h2>
+        No melhor anime já criado, o Dragon Ball, existem os personagem da raça Sayajins.
+        <br> Se treinarem muito, eles
+        evoluem a ponto de poderem se transformar em Super Sayajins, depois Super Sayajins 2, depois Super Sayajins 3,
+        depois Super Sayajins God e, por for fim Super Sayajins Blue. <br> <br>
+        Crie um programa onde você bota o Goku, que é o Sayajin mais protagonista de Dragon Ball.
+        Deixe uma foto sua na forma "normal" e, abaixo dela um botão "<u>Treinar</u>".
+        <br>
+        Assim ele vai se transformando na
+        medida em que vai treinando (cada clique é um treino), conforme essa escala:
+        <ul>
+            <li>
+                4 treinos: Super Sayajin
+            </li>
+            <li>
+                6 treinos: Super Sayajin 2
+            </li>
+            <li>
+                10 treinos: Super Sayajin 3
+            </li>
+            <li>
+                14 treinos: Super Sayajin God
+            </li>
+            <li>
+                20 treinos: Super Sayajin Blue
+            </li>
+        </ul>
+
+        <h2>Resolução</h2>
+        <button type="button" onclick="treinando()">Treinar!</button>
+        <br>
+        <img src="normal.png" id="imagemGoku" width="300px">
+    </div>
+
+</body>
+
+
+</html>
+<script>
+    // EXERCÍCIO 4
+    var n_homens = 0;
+    var n_mulheres = 0;
+    var n_criancas = 0;
+
+    var peso_homens = 90;
+    var peso_mulheres = 75;
+    var peso_criancas = 40;
+
+    var peso_total = Number(peso_pessoas.innerHTML);
+
+    function entrar_homem() {
+        n_homens++;
+        qtd_homens.innerHTML = n_homens;
+        peso_total += peso_homens;
+        peso_pessoas.innerHTML = peso_total;
+    }
+    function entrar_mulher() {
+        n_mulheres++
+        qtd_mulheres.innerHTML = n_mulheres;
+
+        peso_total += peso_mulheres;
+        peso_pessoas.innerHTML = peso_total;
+    }
+    function entrar_crianca() {
+        n_criancas++
+        qtd_criancas.innerHTML = n_criancas;
+
+        peso_total += peso_criancas;
+        peso_pessoas.innerHTML = peso_total;
+    }
+
+
+
+
+    // EXERCÍCIO 3
+    function votar(candidata) {
+        var votos_candidata = Number(candidata.innerHTML);
+        votos_candidata++
+        candidata.innerHTML = votos_candidata;
+    }
+
+    function get_resultado(cand1, cand2) {
+        var frase = '';
+        if (cand1 > cand2) {
+            frase = 'Candidata Angelia ganhou!'
+        } else if (cand2 > cand1) {
+            frase = 'Candidata Scarlett ganhou!'
+        } else {
+            frase = '';
+        }
+        div_resultado_votacao.innerHTML = frase;
+    }
+
+
+    // EXERCÍCIO 2
+    var cofrinho = 0.00;
+
+    function depositar() {
+        var valor_a_depositar = v_depositar.value;
+
+        cofrinho += Number(valor_a_depositar);
+        v_depositado.innerHTML = cofrinho.toFixed(2);
+    }
+
+
+    // EXERCÍCIO 5
+    var qtdTreino = 0;
+
+    function treinando() {
+        var img;
+        qtdTreino++;
+
+        if (qtdTreino < 4) {
+            img = "normal.png";
+        }
+        if (qtdTreino >= 4 && qtdTreino < 6) {
+            img = "superSaiajin.jpg";
+        }
+        if (qtdTreino >= 6 && qtdTreino < 10) {
+            img = "super2.png";
+        }
+        if (qtdTreino >= 10 && qtdTreino < 14) {
+            img = "super3.png"
+        }
+        if (qtdTreino >= 14 && qtdTreino < 20) {
+            img = "god.jpg"
+        }
+        if (qtdTreino >= 20) {
+            img = "blue.jpg"
+        }
+
+        imagemGoku.src = img;
+    }
+
+    // EXERCÍCIO 1
+
+
+    var n_disse_feliz = 0;
+
+    function ficar_feliz() {
+        n_disse_feliz++;
+        n_feliz.innerHTML = n_disse_feliz;
+    }
+</script>

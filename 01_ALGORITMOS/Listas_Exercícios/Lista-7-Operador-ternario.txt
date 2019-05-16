@@ -1,0 +1,20 @@
+Lista de Exercícios 07 - Operador Ternário
+1. Refaça pelo menos:
+
+a) 2 questões da lista 04
+
+b) 1 questão da lista 05
+
+Usando operador ternário onde julgar apropriado.
+
+
+
+2. Crie uma programa que leia o salário do usuário.
+Ao clicar em "Ver situação", deve aparecer uma dessas frases abaixo:
+
+Salário menor que 200: "Bem pobre"
+Salário de 200 a 1200: "Pobre"
+Salário maior que 1200 a 2000: "Nem tão pobre"
+Salário maior 2000: "Classe média ou rico"
+
+OBS: Use APENAS operador ternário! NENHUM if-else! E 1 linha apenas na função.

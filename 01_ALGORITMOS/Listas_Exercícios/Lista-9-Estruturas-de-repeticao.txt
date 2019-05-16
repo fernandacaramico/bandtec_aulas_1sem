@@ -1,0 +1,150 @@
+Lista de Exercícios 09 - Estruturas de repetição
+1. Crie um programa que pergunte ao usuário quantas vezes ele quer exibir uma frase qualquer. Ele digita isso num campo e clica num botão "Exibir".
+Ao clicar nesse botão, uma frase qualquer, escolhida por você exibe N vezes em "alerts".
+
+
+2. Crie um programa que pergunte ao usuário quantas vezes ele quer exibir uma frase definida por ele. Ele digita esse número e a frase na tela e clica num botão "Exibir".
+Ao clicar nesse botão, uma frase qualquer, escolhida por ele exibe N vezes em "alerts".
+
+
+
+3. Refaça a questão anterior, porém, ao invés de exibir "alerts", exiba as frases na própria página, logo abaixo do botão
+
+
+4. Crie um programa no qual, ao clicar no botão "Eu amo pares", ele exiba abaixo dele, um abaixo do outro, todos os números pares entre 0 e 100.
+
+
+5. Crie um programa no qual, ao clicar no botão "Eu amo o 5", ele exiba abaixo dele, um abaixo do outro, todos os múltiplos de 5 entre 0 e 50.
+
+
+6 (desafio). Crie um programa no qual, ao clicar no botão "Eu amo o 3 e 4", ele exiba abaixo dele, um abaixo do outro, quase todos os números entre 0 e 30. Por que "quase"? Se o número for múltiplo de 3, ao invés do número, exiba "Eu amo 3!". Se o número for múltiplo de 4, ao invés do número exiba "4 são 2 pares".
+
+
+7. Crie um programa no qual o usuário digita uma nota num campo de formulário identificado como "Nota de avaliação". 
+Após clicar em "Ilustrar Avaliação", caso a nota seja menor que 1 ou maior que 5, exiba um alert com a frase "Valor inválido. Só aceito entre 1 e 5".
+Caso a nota esteja entre 1 e 5, exiba 1 ou 5 estrelinhas amarelas de mesmo tamanho, uma do lado da outra, conforme a nota digitada (nota 1, uma estrela. Nota 2, duas estrelas...)
+
+
+8. Recrie o programa do enunciado anterior, porém as notas válidas são entre 1 e 10. Exiba:
+  1 estrela para notas entre 1 e 2;
+  2 estrelas para notas entre 3 e 4;
+  3 estrelas para notas entre 5 e 6;
+  4 estrelas para notas entre 7 e 8;
+  5 estrelas para notas entre 9 e 10.
+
+
+9 (desafio). Crie um programa que simule o funcionamento de um elevador. O usuário informa 2 valores: "Andar atual" e "Andar solicitado".
+Após clicar num botão "Partir", o programa primeiro valida se os valores informados são válidos. Para ambos o campos o mínimo é 0 (equivalente ao "térreo") e o máximo é 20. Caso o usuário informe um valor errado em algum deles, exiba um alert "Andares válidos: entre 0 e 20".
+Caso os valores de ambos os campos estejam corretos, exiba várias frases abaixo do botão: Primeiro informando de está subindo ou descendo e depois várias, uma abaixo da outra, simulando o caminho do elevador. Veja os exemplos abaixo:
+  Ex 1: Andar atual (5) maior que o andar solicitado (2)
+  Descendo
+  Elevador no andar 5 
+  Elevador no andar 4
+  Elevador no andar 3
+  Elevador no andar 2
+
+  Ex 2: Andar atual (0) menor que o andar solicitado (3)
+  Subindo
+  Elevador no andar 0
+  Elevador no andar 1
+  Elevador no andar 2
+  Elevador no andar 3
+
+OBS: Caso os valores dos andares informados sejam os mesmos, exiba apenas a frase "Elevador vai continuar onde está" abaixo do botão.
+
+
+10. Crie um programa no qual o usuário informe quantos homens, mulheres e crianças vão entrar num elevador. 
+Após clicar no botão "Ilustrar Elevador", deve aparecer um "elevador" (uma caixa com bordas da cor que quiser) e, dentro dela, N imagens de homens, N imagens de mulheres e N imagens de crianças, conforme os valores digitados para cada quantidade.
+
+
+11 (desafio). Melhore a questão anterior de tal forma que ela valide se o elevador pode ou não partir. 
+A regra é que o elevador só aguenta 600kg. E considera-se que:
+  Um homem adulto pesa, em média, 80kg. 
+  Uma mulher adulta pesa, em média, 70kg. 
+  Uma criança pesa, em média, 30 kg.
+  O elevador só aguenta 8 pessoas no total (não importa se homem, mulher ou criança)
+Ao clicar em "Ilustrar Elevador", o programa só vai "desenhar" o elevador caso as condições de embarque sejam adequadas. Em caso contrário, apenas exiba um alert "Elevador cheio demais!" e "limpe" o desenho do elevador, caso já esteja desenhado na tela,
+
+
+12. Crie um programa no qual o usuário pode clicar em 2 botões diferentes: "Ver os pares" ou "Ver os ímpares".
+Ao clicar no primeiro, devem aparecer abaixo do botão todos os números pares entre 10 e 40.
+Ao clicar no segundo, devem aparecer abaixo do botão todos os números ímpares entre 30 e 50.
+OBS: os números devem aparecer numa lista não ordenada, como no exemplo abaixo:
+31
+33
+35
+37
+39
+Caso você não lembre, para criar essa lista, usamos as tags <ul> e <li>, por exemplo:
+<ul id="lista_loka">
+  <li>leite</li>
+  <li>pão</li>
+  <li>café</li>
+</ul>
+Iria gerar o conteúdo
+leite
+pão
+café
+
+
+13. Crie um programa que simule quanto o dinheiro de uma pessoa rende na poupança. Se você não sabe, a poupança aumenta de valor uma vez por mês, em seu "aniversário" (por exemplo, se abriu a poupança num dia 9, todo dia 9 ela aumenta um pouco de valor).
+Pergunte ao usuário qual o valor que ele vai depositar quando abrir a poupança e por quantos meses esse valor vai ficar depositado.
+Ao clicar em "Ver investimento", deve aparecer o valor atualizado da poupança em cada mês. Considere que a poupança rende 0,5% ao mês. Veja como ficaria no exemplo a seguir, supondo que o usuário informou 10000 e 7 meses.
+  Valor depositado: 10000.00
+  1º mês: 10050.00
+  2º mês: 10100.25
+  3º mês: 10150.75
+  4º mês: 10201.50
+  5º mês: 10252.51
+  6º mês: 10303.77
+  7º mês: 10355.29
+Note que o valor deve estar sempre com 2 casas decimais.
+
+
+14 (inspirada na 9). Crie um programa que simule o funcionamento de um metrô da linha azul de São Paulo. O usuário informa 2 valores: "Estação atual" e "Estação de destino".
+Após clicar num botão "Partir", o programa primeiro valida se os valores informados são válidos. Para ambos o campos o mínimo é 0 e o máximo é 16. Caso o usuário informe um valor errado em algum deles, exiba um alert "Estações válidas: entre 0 e 16".
+Caso os valores de ambos os campos estejam corretos, exiba várias frases abaixo do botão: Primeiro informando de está indo para o norte ou sul e depois várias, uma abaixo da outra, simulando o caminho do elevador. Veja os exemplos abaixo:
+  Ex 1: Estação atual (5) maior que a solicitada (2)
+  Indo para o Sul
+  Metrô na estação 5 
+  Metrô na estação 4
+  Metrô na estação 3
+  Metrô na estação 2
+
+  Ex 2: Estação atual (0) menor que a solicitada (3)
+  Indo para o Norte
+  Metrô na estação 0
+  Metrô na estação 1
+  Metrô na estação 2
+  Metrô na estação 3
+
+OBS: Caso os valores das estações informados sejam os mesmos, exiba apenas a frase "Metrô vai continuar onde está" abaixo do botão.
+
+
+15 (inspirada nas 10 e 11). Crie um programa no qual o usuário informe quantos porcos, cavalos e bois vão entrar num caminhão. 
+Após clicar no botão "Ilustrar Caminhão", deve aparecer um "caminhão" (apenas uma caixa com bordas da cor que quiser) e, dentro delo, N imagens de porcos, N imagens de cavalos e N imagens de bois, conforme os valores digitados para cada quantidade.
+Porém, valide se o caminhão pode ou não partir. A regra é que o caminhão só aguenta 2 toneladas (ou seja, 2000kg). E considera-se que:
+  Um porco pesa, em média, 100kg. 
+  Um cavalo pesa, em média, 600kg. 
+  Um boi pesa, em média, 1300 kg.
+  O caminhão só aguenta 5 animais no total (não importa quais animais).
+Ao clicar em "Ilustrar Caminhão", o programa só vai "desenhar" ele caso as condições de embarque sejam adequadas. Em caso contrário, apenas exiba um alert "Caminhão cheio demais!" e "limpe" o desenho do caminhão, caso já esteja desenhado na tela,
+
+
+16 (inspirada na 13). Crie um programa que simule quanto o dinheiro de uma pessoa renda num investimento qualquer, supondo que esse investimento só pode ser resgatado em umd eterminado dia do mês. Assim, importa saber apenas quanto ele rendeu após cada mês.
+Pergunte ao usuário qual o valor que ele vai depositar quando começar o investimento, por quantos meses esse valor vai ficar investido e qual a taxa de juros de rendimento mensal.
+Ao clicar em "Ver investimento", deve aparecer o valor atualizado do investimento em cada mês.  Veja como ficaria no exemplo a seguir, supondo que o usuário informou 10000, 5 meses e 1 de taxa de juros (ou seja, 1 %).
+  Valor depositado: 10000.00
+  1º mês: 10100.00
+  2º mês: 10201.00
+  3º mês: 10303.01
+  4º mês: 10406.04
+  5º mês: 10510.10
+
+Outro exemplo, com depósito de 2000, 3 meses e 3.5 de taxa de juros (ou seja, 3,5%):
+  Valor depositado: 2000.00
+  1º mês: 2070.00
+  2º mês: 2142.45
+  3º mês: 2217.43
+
+Note que o valor deve estar sempre com 2 casas decimais.

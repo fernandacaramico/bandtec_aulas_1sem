@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array + Estruturas de repetição - aula 34</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <h1>Array + estruras de repetição</h1>
+    <div id="exercise">
+        <h2>Ex. 2</h2>
+        <p>
+            
+
+
+        </p>
+        <h2>Resolução</h2>
+        <form>
+            Insira seus filmes favoritos, em ordem <input type="text" id="filme_cadastrado">
+            <button type="button" onclick="cadastrar(filme_cadastrado.value)">Cadastrar filme</button> 
+            <br> <br>
+            Pesquisa por filme <input type="text" id="filme_pesquisado"> <br>
+            <button type="button" onclick="pesquisar()">Pesquisar filme</button>
+
+        </form>
+        <div id="resultado_pesquisa"></div>
+        <br>
+        <ul id="filmes_favoritos"></ul>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    var filmes = [];
+
+    function pesquisar() {
+        var frase;
+        var achou = 0;
+
+        for (indice = 0; indice < filmes.length; indice++) {
+            if (filme_pesquisado.value == filmes[indice]) {
+                achou++;
+            }
+        }
+
+        if (achou > 0) {
+            frase = `Você gosta desse filme`;
+        } else {
+            frase = 'Você não gostou desse filme';
+        }
+
+        resultado_pesquisa.innerHTML = frase;
+    }
+
+    function cadastrar(novo_filme) {
+        filmes.push(novo_filme);
+        filmes_favoritos.innerHTML = '';
+        // iterando o vetor com for
+        for (indice = 0; indice < filmes.length; indice++) {
+            filmes_favoritos.innerHTML += `<li>${filmes[indice]}</li>`
+        }
+    }
+
+</script>

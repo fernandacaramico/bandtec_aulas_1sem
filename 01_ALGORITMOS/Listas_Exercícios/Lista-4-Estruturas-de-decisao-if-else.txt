@@ -1,0 +1,165 @@
+Lista de Exercícios 04 - Estruturas de Decisão (If-else)
+1. Crie um programa que leia a idade do usuário. Caso ele tenha 18 anos ou mais, exiba "Já pode entrar na balada". Caso contrário, exiba "#jogarplaystation". Isso tudo deve ocorrer após clicar num botão "Testar acesso".
+
+
+
+2. Crie um programa que leia a renda familiar de uma família a partir do salário do pai e da mãe (ou seja, 2 entradas). Ao clicar num botão "Verificar Bolsa Família", ele exibe "Você tem direito ao Bolsa Família" caso a renda familiar for menor que 250,70 ou "Nada de Bolsa Família" caso contrário.
+
+
+3. Refaça a questão 2, porém, em caso positivo de bolsa família, a frase deve ter a cor azul e em caso contrário, cor vermelha.
+
+
+4. Crie um programa que leia as notas de um aluno. A nota continuada e a nota da integrada. Caso a média aritmética entre elas for a partir de 5, exiba na cor verde a frase "#partiuestágio". Caso contrário, exiba na cor roxa a frase "#tenteoutravez"
+
+
+5. Um biólogo está estudando árvores antigas. Ajude ele criando um programa com um campo: "Qual a idade dessa árvore?" e  um botão abaixo desse campo "Validar idade".
+Ao clicar no botão, vai aparecer uma frase abaixo dele, que pode ser uma dessas 2:
+Idade inválida! (caso o valor no campo for 0 ou menos)
+Idade válida (caso o valor no campo for a partir de 1)
+
+
+6. Um sociólogo precisa cadastrar família pobres para seu estudo. Ajude ele criando um programa com os campos: "Renda do pai", "Renda da mãe" e "Renda dos avós" e um botão abaixo desses campos "Verificar situação social".
+Ao clicar no botão, vai aparecer uma frase abaixo dele, que pode ser uma dessas 2:
+Abaixo da linha de pobreza! (caso a renda familia for menos de 150,55)
+Acima da linha de pobreza! (caso a renda familia for a partir de 150,55)
+* Considere que renda familiar é a soma das 3 rendas do programa.
+
+
+7. Um grupo de pessoas, auto-entitulado Equipe Idão, quer aprender a sobre câmbio (conversão de valores entre moedas diferentes). Ajude eles criando um programa com os campos: "Valor em R$", "Cotação do dólar, em R$" e  um botão abaixo desses campos "Converter e avaliar".
+Ao clicar no botão, vão aparecer duas frases abaixo dele. A primeira será:
+R$X, na cotação atual dá U$Y
+
+A segunda frase pode ser uma dessas duas:
+Você tem muitos dólares! (caso a conversão tenha dado mais de U$1000,99)
+Você tem poucos dólares! (caso a conversão tenha dado até U$1000,99)
+
+
+
+8. Crie um programa que tenha dois campos: "O quanto você gosta de Frutas?" e "O quanto você gosta de Fastfood?". Ambos devem receber somente números.
+Abaixo deles,deve haver um botão "Avaliar sua preferência".
+Ao clicar no botão, vai aparecer uma frase abaixo dele, que pode ser uma dessas 3:
+Você gosta tanto de frutas quanto de fastfood (caso o valor nos 2 campos seja o mesmo)
+Você gosta mais de frutas (caso o valor do primeiro campo seja maior)
+Você gosta mais de fastfood (caso o valor do segundo campo seja maior)
+
+
+9. Crie um programa que ajude a calcular a média final de um aluno Bandtec. A tela deve conter:
+Um campo "Nome do aluno"
+
+Um campo "Média das continuadas"
+
+Um campo "Nota da integrada"
+
+Um botão "Verificar Resultado"
+Ao clicar no botão, deve aparecer na tela uma destas frases:
+Parabéns, NOME, você foi aprovado com média final X. (frase na cor azul)
+Olá, NOME, infelizmente você foi reprovado com média final X. (frase na cor vermelha)
+X deve ser exibido sempre com 2 casas decimais.
+X é a soma entre 20% da média das continuadas e 80% da nota da integrada. Para a aprovação, a média final (X) deve ser maior ou igual a 5.
+
+Abaixo da frase, deve aparecer a foto de uma pessoa feliz, em caso de aprovação. Ou de uma pessoa triste, em caso de reprovação.
+
+#FICADICA: Para fazer uma imagem aparecer, usamos a tag <img>, lembra? A imagem a ser exibida, pode estar na mesma pasta do arquivo .html ou na internet, bastando indicar seu nome ou endereço no atributo src da tag <img>. Logo, para mudar a imagem de uma tag <img>, basta:
+
+ a) Dar um identificador para a <img> 
+
+ b) Para alterar sua imagem, basta alterar seu src. Ex: para alterar a imagem de <img id="foto_pessoa">, fazemos: foto_pessoa.src = 'alegre.jpg'. 
+
+ c) Para fazer a imagem "sumir" basta alterar seu style.display para "none" (Ex: foto_pessoa.style.display = 'none') OU deixar seu src vazio (Ex: foto_pessoa.src = '')
+
+
+
+10. Sabe aquelas avaliações por "estrelas" (1 a 5 estrelas) que damos a sites, aplicativos etc? Vamos simular algo parecido aqui.
+Numa tela pergunte num campo de formulário "Que nota dá para o atendimento?".
+Ao clicar num botão "Salvar avaliação", o programa deve exibir uma ou mais frases abaixo dele, que podem ser:
+Caso a nota for entre 0 e 2: Sua avaliação foi negativa (Cor vermelha)
+Caso a nota for 3: Sua avaliação foi neutra (Cor cinza)
+Caso a nota for entre 4 e 5: Sua avaliação foi positiva (Cor azul) e, um alerta (função alert()) com a frase Só queria confirmar meus parabéns!.
+Caso a nota for menor que 0: Não existe avaliação menor que 0! (Cor vermelha escura)
+Caso a nota for maior que 5: Não existe avaliação maior que 5! (Cor vermelha escura)
+Dica: Aqui só nos interessa a parte inteira do valor informado ;)
+
+
+11. Pergunte numa tela qual o salário do usuário. Ao clicar num botão "Status social", exiba algumas frases abaixo dele que podem ser:
+Caso o salário for menor que 1000: #aindatenhoqueralarmuito
+Caso o salário for menor que 200: #precisodeajuda
+Caso o salário for a partir de 1000: #estoumenospobre
+Caso o salário for maior que 2500: #ostentação
+Caso o salário for maior que 5000: #amigodoneymar
+OBS: Note que podem ser exibidas várias frases, de acordo com o salário informado.
+
+
+12. Pergunte ao usuário qual sua idade e quantos filhos tem. Ao clicar num botão "Analisar vida", algumas frases podem aparecer abaixo, que são:
+Caso a idade for menor que 18: Você é menor de idade
+Caso a idade for menor que 14: Você é praticamente uma criança
+Caso a idade for menor de 18 e tenha filhos: Nossa, começou cedo, hein :O
+Caso a idade for 18 ou mais: Você é maior de idade
+Caso a idade for 18 ou mais e tenha menos de 3 filhos: Parabéns pelos filhos!
+Caso a idade for 18 ou mais e tenha 3 ou mais filhos: Não tem TV nem internet em casa?
+OBS: Note que podem ser exibidas várias frases.
+
+
+13 (desafio). Vamos criar um programa que estimule o usuário a guardar dinheiro ao invés de ficar comprando supérfluos como iPhone, milkshakes ou ingressos pra jogos de times sem mundial, por exemplo.
+A tela deve ter 2 campos: "Valor do depósito" e "Total já guardado".
+
+O segundo campo já deve estar com o valor 0 logo de cara (value="0" na tag <input>).
+
+Abaixo dos campos, deve haver um botão "Depositar". Ao clicar nele, o valor do segundo campo vai aumentando conforme o valor no primeiro.
+
+Outra coisa que pode acontecer quando se clica em "Depositar", é que pode aparecer uma imagem abaixo dele, de acordo com o total que o usuário já depositou (valor do segundo campo).
+A imagem pode ser:
+Total abaixo de 4.000: Nenhuma
+Total a partir de 4.000: Foto de uma moto
+Total a partir de 10.000: Foto de um carro simples
+Total a partir de 20.000: Foto de um carro bom
+Total a partir de 80.000: Foto de uma casa simples
+Note que, na medida que o total depositado vai aumentando, a imagem abaixo pode mudar, mas sempre só veremos uma imagem.
+
+
+14. A época das eleições é uma festa da democracia (claro, também época de algumas brigas entre amigos e parentes, infelizmente). Vamos criar um pequeno programa que simule uma urna de votação com 2 candidatos.
+Na tela devem haver os campos:
+"Votos do Zé Ruela" e "Votos da Maria Bigodenha". Esses 2 campos devem estar já com o valor 0(zero) em cada.
+
+Abaixo desses campos, devem haver os botões "Votar no Ze Ruela", "Votar na Maria Bigodenha" e "Resultado Parcial". 
+Quando o primeiro botão for clicado, aumente em 1 o valor do primeiro campo. Quando o segundo botão for clicado, aumente em 1 o valor do segundo campo.
+
+O candidato que estiver com mais votos deve ter o texto de seu campo na cor azul. O que estiver perdendo, com a cor vermelha. Em caso em empate, ambos devem estar com a cor preta. A Atualização dessas cores deve ocorrer quando for clicado no botão "Resultado Parcial".
+
+
+15. "Cofrinho mítico". Vamos criar um programa que simule com cofrinho que tem uma meta.
+A tela deve conter: 
+    - Uma figura de um cofrinho comum
+    - Os campos: "Meta" e "Novo depósito". Ambos já devem vir com o valor 0 por padrão.
+    - Abaixo dos campos, a frase "Total depositado até agora: R$0" (apenas o valor deve estar em negrito)
+    - Abaixo da frase, um botão "Depositar"
+
+Ao clicar no botão, deve ocorrer o seguinte:
+    - O valor do "Novo depósito" deve ser usado para aumentar o valor da frase acima do botão;
+    - Caso o total depositado ainda for menor que a meta, deve aparecer uma frase abaixo do botão, com a cor verde, dizendo "Ainda falta R$X para a meta! #focanameta" (X, é claro, é a diferença entre a meta e o total depositado);
+    - Caso o total depositado tiver atinjido ou ultrapassado a meta, deve aparecer uma frase abaixo do botão, com a cor azul, dizendo "Ai sim, bati a meta!". Nesse caso, a figura do porquinho deve mudar para a de um porquinho "feliz".
+
+
+
+16 (desafio). "Cofrinho mítico e criterioso". Aperfeiçoe o programa da 15ª questão de tal forma que, ao clicar no botão "Depositar", ocorra o seguinte:
+    - Caso a meta for menor ou igual a 0, exibir uma frase abaixo dele na cor vermelha dizendo "A meta deve ser maior que 0". Mas não apague a frase que exibe quanto ainda falta para a meta, caso ela já esteja sendo exibida.
+    - Caso o novo depósito for menor ou igual a 0, exibir uma frase abaixo dele na cor vermelha dizendo "Não pode depositar 0 ou negativo, né?". Mas não apague a frase que exibe quanto ainda falta para a meta, caso ela já esteja sendo exibida.
+    - Caso os valores de meta e depósito sejam válidos, nenhuma mensagem de erro na cor vermelha deve aparecer na tela.
+
+
+17 (desafio). Crie um pequeno jogo de luta. Nele, você tem a foto do personagem e, abaixo dela, uma barra com sua "vida". Tanto a foto quanto a barra devem ter 200px de largura. Abaixo das barras, deve ter um botão "Apanhar".  Veja como seria isso na imagem de exemplo a seguir.
+
+
+Os personagens não precisam ser exatamente esses. Escolha quem quiser para "botar pra brigar".
+Sempre que clicar no "Apanhar" a vida do personagem acima reduz, o que pode ser percebido em sua barra, que reduz em 25px. Veja como isso vai acontecendo na figura a seguir.
+
+
+Caso a vida de um dos dois acabe, sua barra de vida some e sua foto é trocada pela foto de um caixão. Ainda, o nome do vencedor é anunciado abaixo. Veja nas figuras a seguir.
+
+
+
+
+Os nomes dos personagens você é quem escolhe.
+
+
+18. Refazer as seguintes questões da lista 4 usando if-else-if:
+8), 10), 12), 13)

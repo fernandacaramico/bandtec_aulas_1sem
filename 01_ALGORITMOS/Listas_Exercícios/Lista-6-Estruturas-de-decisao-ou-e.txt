@@ -1,0 +1,57 @@
+Lista de Exercícios 06 - Estruturas de Decisão (Operadores lógicos - "OU" e "E")
+1. A grande família. O usuário quer saber se sua família é grande. Pergunte quantos irmãos e quantos primos tem. Caso ele tenha 3 ou mais irmãos ou 4 ou mais primos, exiba "É uma grande família", caso contrário, exiba "Família pequena". Isso tudo após clicar num botão "Analisar Família".
+
+
+
+2. Situação de vida do jovem. Um jovem quer saber sua situação de vida. Para isso, pergunte sua idade e seu salário. Ao clicar num botão "Situação de vida", podem ser exibidas as seguintes frases:
+   Totalmente dependente
+   (caso a idade seja menor que 18 ou o salário seja menor que 1000)
+
+   Parcialmente dependente
+   (caso a idade seja a partir de 18 ou o salário seja entre 1000 e 2000)
+
+   Independente
+   (caso a idade seja a partir de 22 ou o salário seja maior que 2000)
+
+
+3. Simulador de autenticação. Numa tela solicite o login e a senha do usuário. Ao clicar em "Entrar", podem aparecer as seguintes frases:
+  Bem vindo, Administrador!
+  (caso o login seja "admin" e a senha "123admin")
+  
+  Bem vindo, Usuário comum!
+  (caso o login seja "user" e a senha "mypass")
+
+  Falha de autenticação
+  (caso o login e/ou a senha sejam inválidos)
+
+
+4. Vestibular dahora! Numa determinada faculdade dahora o aluno passa para a segunda etapa caso sua nota no ENEM for pelo menos 500 ou se sua nota no vestibular for pelo menos 50. Pergunte essas 2 informações ao usuário, acompanhadas de um botão "Vestibular".
+Ao clicar no botão, podem aparecer as seguintes frases:
+  Parabéns, você está classificado(a) para a 2ª fase!
+  (Cor AZUL. Caso um dos critérios seja atendido)
+  
+  Bem vindo, Usuário comum!
+  (Cor VERMELHA. Caso nenhum dos critérios tenha sido atendido)
+
+
+5. Todo mundo adora Pizza! Crie um programa que tenha uma "combo box" que lista os seguintes sabores de pizza:
+  Calabresa
+  4 Queijos
+  Portuguesa
+  Marguerita
+
+Abaixo desse combo, outro combo, com uma lista de restrições alimentares:
+
+  Alérgico a queijo
+  Alérgico a palmito
+  Sem restrições
+
+Abaixo, um botão "Validar pizza". Ao clicar nele, podem aparecer as seguintes frases:
+
+Se não tiver restrições, independente do sabor da pizza, exibir: Eu papo todas!
+
+Se for alérgico a queijo, e o sabor não for calabresa, exibir: Não deu, não como queijo!
+Se for alérgico a queijo, e o sabor  for calabresa, exibir: Calabresa eu papo!
+
+Se for alérgico a palmito, e o sabor for portuguesa ou marguerita, exibir: Não deu, não como palmito!
+Se for alérgico a queijo, e o sabor for calabresa ou 4 queijos, exibir: Essas eu papo!

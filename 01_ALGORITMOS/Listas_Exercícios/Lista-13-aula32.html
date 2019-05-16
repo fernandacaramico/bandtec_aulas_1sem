@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Arrays</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <h1>ARRAYS</h1>
+    <div id="exercise">
+        <h2>Ex. 1</h2>
+        <p>
+            Crie um programa no qual o usuário informa os nomes dos filmes que mais gosta, começando pelo seu favorito
+            e
+            depois o 2º que mais gosta e assim por diante. <br>
+            Para ir cadastrando cada filme, ele clica em <u>'Cadastrar filme'</u>. <br>
+            Crie um botão <u>'Ver favoritos'</u>. Ao clicar nele, exiba os filmes favoritos, abaixo, uma frase <i>'Filmes
+                cadastrados: X'</i>
+            <br>
+            Abaixo mostre essas frases: <br>
+            <i>O que mais gosta é A</i> <br>
+            <i>O que menos gosta é B </i> <br>
+            onde A é o primeiro cadastrado e B é o último.
+        </p>
+        <h2>Resolução</h2>
+        <form>
+            Insira seus filmes favoritos, em ordem <input type="text" id="filme_cadastrado">
+            <button type="button" onclick="cadastrar_filme(filme_cadastrado.value)">Cadastrar filme</button> <br>
+            <button type="button" onclick="ver_filmes()">Ver favoritos</button>
+        </form>
+        <div id="filmes_favoritos"></div>
+    </div>
+
+    <div id="exercise">
+        <h2>Ex. 2</h2>
+        <p>Crie um programa onde o suuário vá cadastrando os lugares para onde já viajou. Ele digita onome do lugar e
+            clica em <u>Cadastrar Local</u>.
+            <br>
+            Deve haver um outro campo, onde ele digita apenas um número, indicando o local para onde viajou a partir do
+            número 1 (porque os usuários comuns contam as coisas a partir do 1) e clica em <u>Relembrar viagem</u>. Se
+            ele informar 1, exiba o primeiro local cadastrado e assim por diante.
+            <br>
+            Porém, se ele informar o número mario do que a quantidade de viagens, exiba <i>'Você não fez uma Xª viagem'</i>.
+        </p>
+        <h2>Resolução</h2>
+        <form>
+            Cadastrar local viajado: <input type="text" id="local_viagem"> <button type="button" onclick="cad_local(local_viagem.value)">Cadastrar
+                local</button> <br>
+            Relembrando minha viagem de número: <input type="number" id="n_viagem"> <button type="button" onclick="relembrar_viagem(Number(n_viagem.value))">Relembrar
+                Viagem</button>
+        </form>
+        <div id="localViagemNum"></div>
+    </div>
+
+    <div id="exercise">
+        <h2>Ex. 3</h2>
+        <p>Pergunte ao usuário o nome de cada projeto que já criou na vida. Ele digita e clica em <u>Registrar Projeto</u>.
+            Na medida que ele vai cadastrando, verifique quantos projetos já foram cadastrados e exiba o sequinte texto
+            abaixo: <br> <i>Você já fez <b>X</b> projeto. Por isso você é um profissional <b>Z</b></i>
+            <br>
+            X é a quantidade de projetos e Z é o seu nível de experiÊncia, segundo estas regras:
+            <ul>
+                <li>0 a 4 - Júnior</li>
+                <li>5 a 12 - Pleno desde o projeto "nome do 5º projeto"</li>
+                <li>13 ou mais: Sênior desde o projeto "nome do 13º projeto"</li>
+            </ul>
+        </p>
+        <h2>Resolução</h2>
+        <form>
+            Cdastre aqui seus projetos, em ordem: <input type="text" id="nome_proj"> <button type="button" onclick="registrar_proj(nome_proj.value)">Registrar
+                projeto</button> <br>
+        </form>
+        <div id="tipo_profissional"></div>
+    </div>
+
+    <div id="exercise">
+        <h2>Ex. 4 - Desafio!</h2>
+        <p>
+            Crie um programa que cadastrada e pesquisa CEP de endereços. Pergunte ao usuário cep, o endereço completo e
+            o apelido.
+            Ao clicar em "Cadastrar CEP" esse endereço fica armazenado em algum lugar.
+            Ex: cep: 04301-000, end_completo: 'Av Xyz, 100. Ap 10', apelido: 'casa'.
+            Após cada cadastro, exiba abaixo a frase
+            X CEPs cadastrados até agora.
+
+            O usuário não vê esses endereços em lugar nenhum, mas pode pesquisar eles digitando um cep e clicando num
+            botão "Pesquisar". Ao clicar nesse botão:
+            CASO o cep seja um dos 2 cadastrados, exiba a frase:
+            Endereço APELIDO: ENDEREÇO_COMPLETO, cep: CEP
+            CASO o cep não seja nenhum dos cadastrados:
+            Cep não encontrado!
+
+            #ficadica: Use um vetor de JSONs</p>
+        <form>
+            Cadastrar novo CEP: <input type="text" id="novo_cep"> <br>
+            Cadastrar novo Endereço Completo: <input type="text" id="novo_end_comp"> <br>
+            Cadastrar novo Apelido ao endereço: <input type="text" id="novo_apelido"> <br>
+            <button type="button" onclick="cadastrar_cep()">Cadastrar CEP</button>
+        </form>
+        <div id="numero_de_ceps"></div>
+        <br>
+        <br>
+        <form>
+            Pesquisar CEP cadastrado: <input type="text" id="consult_cep"> <button type="button" onclick="consultar_cep(consult_cep.value)">Consultar
+                CEP</button>
+        </form>
+        <div id="cep_encontrado"></div>
+    </div>
+</body>
+
+</html>
+<script>
+
+    var ceps_cadastrados = []
+
+    function cadastrar_cep() {
+        ceps_cadastrados.push(novo_cep.value = { cep: novo_cep.value, end_completo: novo_end_comp.value, apelido: novo_apelido.value })
+
+        numero_de_ceps.innerHTML = `Número de CEPs cadastrados: ${ceps_cadastrados.length}`
+
+        novo_cep.value = '';
+        novo_end_comp.value = '';
+        novo_apelido.value = '';
+    }
+
+    function consultar_cep() {
+        var achei_cep = 0;
+
+        for (var i = 0; i < ceps_cadastrados.length; i++) {
+            if (consult_cep.value == ceps_cadastrados[i].cep) {
+                achei_cep++
+            } 
+        }
+        if (achei_cep > 0) {
+            cep_encontrado.innerHTML = `Endereço encontrado`
+        } else {
+            cep_encontrado.innerHTML = `Endereço não encontrado`
+        }
+    }
+
+    // exercicio 3
+    var projetos = [];
+
+    function registrar_proj(proj) {
+        frase = '';
+        projetos.push(proj);
+        if (projetos.length === 1) {
+            frase = `Você já fez ${projetos.length} projeto. Por isso você é um profissional Júnior`
+        } else if (projetos.length <= 4 && projetos.length > 1) {
+            frase = `Você já fez ${projetos.length} projetos. Por isso você é um profissional Júnior`
+        } else if (projetos.length >= 13) {
+            frase = `Você já fez ${projetos.length} projetos. Por isso você é programador Senior desde o projeto ${projetos[12]}`
+        } else {
+            frase = `Você já fez ${projetos.length} projetos. Por isso você é programador Junior desde o projeto ${projetos[4]}`
+        }
+        nome_proj.value = ''
+        tipo_profissional.innerHTML = frase;
+    }
+    // exemplo 2
+
+    var viagens = [];
+
+    function cad_local(locais) {
+        viagens.push(locais);
+        local_viagem.value = '';
+    }
+
+    function relembrar_viagem(numero) {
+        var frase = '';
+        if (numero <= viagens.length) {
+            frase = `Sua ${numero}ª viagem foi para ${viagens[numero - 1]}`
+        } else {
+            frase = `Você ainda não fez uma ${numero}ª viagem`
+        }
+        localViagemNum.innerHTML = frase;
+    }
+
+    //exemplo 1
+    // vetor vazio
+    var filmes = [];
+
+    function cadastrar_filme(filme) {
+        filmes.push(filme);
+        filme_cadastrado.value = '';
+    }
+
+    function ver_filmes() {
+        var frase = '';
+        frase = `${filmes} <br>
+        <b>Filmes favoritos cadastrados:</b> ${filmes.length} <br>
+        O que mais gosta é <b>${filmes[0]}</b>
+        <br> O que menos gosta é <b>${filmes[filmes.length - 1]}</b> `
+        filmes_favoritos.innerHTML = frase;
+    }
+
+</script>
