@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ex 05 - 12</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+  <div id="title">
+    <h1>Novos exercícios!</h1>
+  </div>
+  <!--EXERCÍCIO 5-->
+  <div id="exercise">
+    <h2>Calculando idade das árvores</h2>
+    <p>
+      Um biólogo está estudando árvores antigas. Ajude ele criando um programa com um campo: "Qual a idade dessa
+      árvore?" e um botão abaixo desse campo "Validar idade".
+      Ao clicar no botão, vai aparecer uma frase abaixo dele, que pode ser uma dessas 2: <br>
+      Idade inválida! (caso o valor no campo for 0 ou menos) <br>
+      Idade válida (caso o valor no campo for a partir de 1)
+    </p>
+    <form>
+      Qual a idade dessa árvore? <input type="number" id="ageTree" autofocus>
+      <button type="button" onclick="calcTreeAge()">Validar idade</button>
+    </form>
+    <br>
+    <div id="treeMsg"></div>
+  </div>
+
+  <!--EXERCÍCIO 6-->
+  <div id="exercise">
+    <h2>Cadastrando famílias</h2>
+    <p>
+      Um sociólogo precisa cadastrar família pobres para seu estudo. Ajude ele criando um programa com os campos: "Renda
+      do pai", "Renda da mãe" e "Renda dos avós" e um botão abaixo desses campos "Verificar situação social".
+      Ao clicar no botão, vai aparecer uma frase abaixo dele, que pode ser uma dessas 2: <br>
+      Abaixo da linha de pobreza! (caso a renda familia for menos de 150,55) <br>
+      Acima da linha de pobreza! (caso a renda familia for a partir de 150,55) <br>
+      * Considere que renda familiar é a soma das 3 rendas do programa.
+    </p>
+    <form>
+      Qual a renda da mãe? <input type="number" id="incomeMother" autofocus> <br>
+      Qual a renda do pai? <input type="number" id="incomeFather"> <br>
+      Qual a renda dos avós? <input type="number" id="incomeGrandParents"> <br>
+      <button type="button" onclick="calcFamIncome()">Calcular a renda da família</button>
+    </form>
+    <br>
+    <div id="famIncome"></div>
+  </div>
+
+  <!--EXERCÍCIO 7-->
+  <div id="exercise">
+    <h2>Equipe Idão aprendendo conversão</h2>
+    <p>
+      Um grupo de pessoas, auto-entitulado Equipe Idão, quer aprender a sobre câmbio (conversão de valores entre moedas
+      diferentes). Ajude eles criando um programa com os campos: "Valor em R$", "Cotação do dólar, em R$" e um botão
+      abaixo desses campos "Converter e avaliar".
+      Ao clicar no botão, vão aparecer duas frases abaixo dele. A primeira será: <br>
+      R$X, na cotação atual dá U$Y
+    </p>
+    <p>
+      A segunda frase pode ser uma dessas duas: <br>
+      Você tem muitos dólares! (caso a conversão tenha dado mais de U$1000,99) <br>
+      Você tem poucos dólares! (caso a conversão tenha dado até U$1000,99) <br>
+    </p>
+    <form>
+      Valor em R$: <input type="number" id="valueReais"> <br>
+      Cotação do dólar, em R$: <input type="number" id="priceDolar">
+      <button type="button" onclick="priceReal2Dolar()">Quantos dólares você tem?</button>
+    </form>
+    <br>
+    <div id="priceReal1"></div>
+    <div id="priceReal2"></div>
+  </div>
+
+  <!--EXERCÍCIO 8-->
+  <div id="exercise">
+    <h2>Frutas ou FastFood?</h2>
+    <p>
+      Crie um programa que tenha dois campos: "O quanto você gosta de Frutas?" e "O quanto você gosta de Fastfood?".
+      <br>
+      Ambos devem receber somente números. <br>
+      Abaixo deles,deve haver um botão "Avaliar sua preferência". <br>
+      Ao clicar no botão, vai aparecer uma frase abaixo dele, que pode ser uma dessas 3: <br>
+      Você gosta tanto de frutas quanto de fastfood (caso o valor nos 2 campos seja o mesmo) <br>
+      Você gosta mais de frutas (caso o valor do primeiro campo seja maior) <br>
+      Você gosta mais de fastfood (caso o valor do segundo campo seja maior) <br>
+
+    </p>
+    <form>
+      O quanto você gosta de frutas? <input type="number" id="likeFruits"> <br>
+      O quanto você gosta de fast food? <input type="number" id="likeFastFood"> <br>
+      <button type="button" onclick="fruitsXfastFood()">Avaliar sua preferência</button>
+    </form>
+    <br>
+    <div id="answerLikeFruits"></div>
+  </div>
+
+  <!--EXERCÍCIO 9-->
+  <div id="exercise">
+    <h2>Calculando média aluno BandTec</h2>
+    <p>
+      Crie um programa que ajude a calcular a média final de um aluno Bandtec. A tela deve conter:
+      <ul>
+        <li>
+          Um campo "Nome do aluno"
+        </li>
+        <li>
+          Um campo "Média das continuadas"
+        </li>
+        <li>
+          Um campo "Nota da integrada"
+        </li>
+        <li>
+          Um botão "Verificar Resultado"
+        </li>
+      </ul>
+      Ao clicar no botão, deve aparecer na tela uma destas frases:
+      <ul>
+        <li>
+          Parabéns, NOME, você foi aprovado com média final X. (frase na cor azul)
+        </li>
+        <li>
+          Olá, NOME, infelizmente você foi reprovado com média final X. (frase na cor vermelha)
+        </li>
+        <li>
+          X deve ser exibido sempre com 2 casas decimais.
+        </li>
+        <li>
+          X é a soma entre 20% da média das continuadas e 80% da nota da integrada. Para a aprovação, a média final (X)
+          deve ser maior ou igual a 5. <br>
+        </li>
+      </ul>
+
+      Abaixo da frase, deve aparecer a foto de uma pessoa feliz, em caso de aprovação. Ou de uma pessoa triste, em caso
+      de reprovação.
+
+    </p>
+    <form>
+      Nome do aluno: <input type="text" id="studentsName"> <br>
+      Média das integradas: <input type="number" id="studentsGrade1"> <br>
+      Nota da continuada: <input type="number" id="studentsGrade2"> <br>
+      <button type="button" onclick="studentsFinal()">Calcular média</button>
+    </form>
+    <br>
+    <div id="studentsMsg"></div> <br>
+    <img id="studentsResponse">
+  </div>
+
+  <!--EXERCÍCIO 10-->
+  <div id="exercise">
+    <h2>Avaliando!</h2>
+    <p>
+      Sabe aquelas avaliações por "estrelas" (1 a 5 estrelas) que damos a sites, aplicativos etc? Vamos simular algo
+      parecido aqui.
+      Numa tela pergunte num campo de formulário "Que nota dá para o atendimento?". <br>
+      Ao clicar num botão "Salvar avaliação", o programa deve exibir uma ou mais frases abaixo dele, que podem ser:
+      <ul>
+        <li>
+          Caso a nota for entre 0 e 2: Sua avaliação foi negativa (Cor vermelha)
+        </li>
+        <li>
+          Caso a nota for 3: Sua avaliação foi neutra (Cor cinza)
+        </li>
+        <li>
+          Caso a nota for entre 4 e 5: Sua avaliação foi positiva (Cor azul) e, um alerta (função alert()) com a frase
+          Só queria confirmar meus parabéns!.
+        </li>
+        <li>
+          Caso a nota for menor que 0: Não existe avaliação menor que 0! (Cor vermelha escura)
+        </li>
+        <li>
+          Caso a nota for maior que 5: Não existe avaliação maior que 5! (Cor vermelha escura)
+        </li>
+      </ul>
+      Dica: Aqui só nos interessa a parte inteira do valor informado ;)
+
+    </p>
+    <form>
+      De 0 a 5, que nota você dá para o atendimento? <input type="number" id="serviceGrade"> <br>
+      <button type="button" onclick="giveGrade()">Salvar avaliação</button>
+    </form>
+    <div id="serviceMsg"></div>
+  </div>
+
+  <!--EXERCÍCIO 11-->
+  <div id="exercise">
+    <h2>Status Social!</h2>
+    <p>
+        Pergunte numa tela qual o salário do usuário. Ao clicar num botão "Status social", exiba algumas frases abaixo dele que podem ser:
+        <ul>
+          <li>
+            Caso o salário for menor que 1000: #aindatenhoqueralarmuito
+          </li>
+          <li>
+            Caso o salário for menor que 200: #precisodeajuda
+          </li>
+          <li>
+            Caso o salário for a partir de 1000: #estoumenospobre
+          </li>
+          <li>
+            Caso o salário for maior que 2500: #ostentação
+          </li>
+          <li>
+            Caso o salário for maior que 5000: #amigodoneymar
+          </li>
+        </ul>
+        OBS: Note que podem ser exibidas várias frases, de acordo com o salário informado.
+        
+    </p>
+    <form>
+      Qual o seu salário? <input type="number" id="salary"> <br>
+      <button type="button" onclick="getSocialStatus()">Verificar Status Social</button>
+    </form>
+    <div id="socialStatusMsg"></div>
+  </div>
+
+  <!--EXERCÍCIO 12-->
+  <div id="exercise">
+    <h2>Analisando sua vida</h2>
+    <p>
+        Pergunte ao usuário qual sua idade e quantos filhos tem. Ao clicar num botão "Analisar vida", algumas frases podem aparecer abaixo, que são:
+        <ul>
+          <li>
+            Caso a idade for menor que 18: Você é menor de idade
+          </li>
+          <li>
+            Caso a idade for menor que 14: Você é praticamente uma criança
+          </li>
+          <li>
+            Caso a idade for menor de 18 e tenha filhos: Nossa, começou cedo, hein :O
+          </li>
+          <li>
+            Caso a idade for 18 ou mais: Você é maior de idade
+          </li>
+          <li>
+            Caso a idade for 18 ou mais e tenha menos de 3 filhos: Parabéns pelos filhos!
+          </li>
+          <li>
+            Caso a idade for 18 ou mais e tenha 3 ou mais filhos: Não tem TV nem internet em casa?
+          </li>
+        </ul>
+        OBS: Note que podem ser exibidas várias frases.
+      
+    </p>
+    <form>
+      Qual a sua idade? <input type="number" id="userAge"> <br>
+      Quantos filhos você tem? <input type="number" id="userKids"> <br>
+      <button type="button" onclick="analiseLife()">Analisar vida.</button>
+    </form>
+    <div id="lifeAge"></div>
+    <div id="lifeKids"></div>
+  </div>
+
+  <div id="exercise">
+      <h2>Democracia!</h2>
+      <p>
+          A época das eleições é uma festa da democracia (claro, também época de algumas brigas entre amigos e parentes, infelizmente). Vamos criar um pequeno programa que simule uma urna de votação com 2 candidatos. <br>
+          Na tela devem haver os campos: <br>
+          "Votos do Zé Ruela" e "Votos da Maria Bigodenha". Esses 2 campos devem estar já com o valor 0(zero) em cada. <br>
+          
+          Abaixo desses campos, devem haver os botões "Votar no Ze Ruela", "Votar na Maria Bigodenha" e "Resultado Parcial". <br> 
+          Quando o primeiro botão for clicado, aumente em 1 o valor do primeiro campo. Quando o segundo botão for clicado, aumente em 1 o valor do segundo campo.
+          <br>
+          O candidato que estiver com mais votos deve ter o texto de seu campo na cor azul. O que estiver perdendo, com a cor vermelha. Em caso em empate, ambos devem estar com a cor preta. A Atualização dessas cores deve ocorrer quando for clicado no botão "Resultado Parcial". <br>
+          
+      </p>
+      <form>
+        Votos no Zé Ruela <input type="number" id="totalVotesRuela" placeholder="0" disabled> <br>
+        Votos na Maria Bigodenha <input type="number" id="totalVotesMaria" placeholder="0" disabled> <br>
+        <button type="button" onclick="voteRuela()">Votar no Zé Ruela</button>
+        <button type="button" onclick="voteMaria()">Votar na Maria </button> <br><br>
+        <button type="button" onclick="getResult()">Resultado Parcial</button>
+      </form>
+  
+    </div>
+
+</body>
+
+</html>
+<script>
+  // EXERCICIO DEMOCRACIA
+  function voteRuela() {
+    totalVotesRuela.value = Number(totalVotesRuela.value) + 1;
+  }
+  
+  function voteMaria() {
+    totalVotesMaria.value = Number(totalVotesMaria.value) + 1;
+  }
+
+  function getResult() {
+    var colorRuela;
+    var colorMaria;
+    if (totalVotesRuela.value > totalVotesMaria.value) {
+      colorRuela = "blue";
+      colorMaria = "red";
+    } else if (totalVotesRuela.value < totalVotesMaria.value) {
+      colorMaria = "blue";
+      colorRuela = "red";
+    } else {
+      colorRuela = "gray";
+      colorMaria = "gray";
+    }
+    totalVotesRuela.style.color = colorRuela;
+    totalVotesMaria.style.color = colorMaria;
+  }
+ 
+  // EXERCÍCIO 12
+  function analiseLife() {
+    var phraseAge;
+    var phraseKids;
+    var ageUser = Number(userAge.value);
+    var kidsUser = Number(userKids.value);
+
+    if (ageUser < 14) {
+      phraseAge = 'Você é praticamente uma criança';
+    } else {
+      if (ageUser < 18) {
+        phraseAge = 'Você é menor de idade';
+        if (kidsUser <= 0) {
+          phraseKids = ' ';
+        }
+      } else {
+        phraseAge = 'Você é maior de idade'
+      }
+    }
+
+    if (ageUser < 18) {
+      if (kidsUser > 0) {
+        phraseKids = 'Nossa, começou cedo, hein!'
+      }
+    }
+    if (ageUser >= 18) {
+      if (kidsUser > 0) {
+        if (kidsUser < 3) {
+          phraseKids = 'Parabéns pelos filhos!'
+        } else {
+          phraseKids = 'Não tem TV nem internet em casa?'
+        }
+      }
+    }
+
+    lifeAge.innerHTML = phraseAge;
+    lifeKids.innerHTML = phraseKids;
+  }
+
+  /*
+    Caso a idade for menor de 18 e tenha filhos: Nossa, começou cedo, hein : O
+  
+    Caso a idade for 18 ou mais e tenha menos de 3 filhos: Parabéns pelos filhos!
+    Caso a idade for 18 ou mais e tenha 3 ou mais filhos: Não tem TV nem internet em casa ?
+  */
+
+  // EXERCÍCIO 11
+  function getSocialStatus() {
+    var phrase;
+    var salaryValue = Number(salary.value);
+    if (salaryValue < 200) {
+      phrase = '#aindatenhoqueralarmuito';
+    } else {
+      if (salaryValue < 1000) {
+        phrase = '#precisodeajuda';
+      }
+      if (salaryValue >= 1000) {
+        phrase = '#estoumenospobre';
+      }
+      if (salaryValue > 2500) {
+        phrase = '#ostentação';
+      }
+      if (salaryValue > 5000) {
+        phrase = '#amigodoNeymar';
+      }
+    }
+    socialStatusMsg.innerHTML = phrase;
+  }
+
+
+  // EXERCÍCIO 10
+  function giveGrade() {
+    var phrase;
+    var grade = Number(serviceGrade.value);
+    if (grade > 5) {
+      phrase = 'Não existe nota maior que 5!';
+      color = 'maroon';
+    } if (grade < 0) {
+      phrase = 'Não existe nota menor que 0.';
+      color = 'maroon';
+    } else {
+      if (grade <= 2) {
+        phrase = 'Sua avaliação foi negativa';
+        color = 'red';
+      }
+      if (grade == 3) {
+        phrase = 'Sua avaliação foi neutra';
+        color = 'gray';
+      }
+      if (grade <= 5) {
+        phrase = 'Sua avaliação foi positiva!';
+        color = 'blue';
+        alert('Só queria confirmar: Meus parabéns!!')
+      }
+    }
+    serviceMsg.innerHTML = phrase;
+    serviceMsg.style.color = color;
+  }
+
+  // EXERCÍCIO 9
+  function studentsFinal() {
+    var phrase;
+    var color;
+    var gradeFinal = studentsGrade1.value * 0.2 + studentsGrade2.value * 0.8;
+    if (gradeFinal >= 5) {
+      phrase = `Parabéns, ${studentsName.value}, você foi aprovado com média final ${gradeFinal.toFixed(2)}!`;
+      color = 'blue';
+      image = 'approval.gif';
+    } else {
+      phrase = `Olá, ${studentsName.value}, infelizmente você foi reprovado com média final ${gradeFinal.toFixed(2)}.`;
+      color = 'red';
+      image = 'disapproval.gif';
+    }
+    studentsMsg.innerHTML = phrase;
+    studentsMsg.style.color = color;
+    studentsResponse.src = image;
+  }
+
+  // EXERCÍCIO 5
+  function calcTreeAge() {
+    var phrase;
+    if (ageTree.value <= 0) {
+      phrase = 'Idade inválida!';
+    } else {
+      phrase = 'Idade válida.';
+    }
+    treeMsg.innerHTML = phrase;
+  }
+
+  // EXERCÍCIO 6
+  function calcFamIncome() {
+    var phrase;
+    var sumFamIncome = Number(incomeMother.value) + Number(incomeFather.value) + Number(incomeGrandParents.value);
+    if (sumFamIncome >= 150.55) {
+      phrase = 'Acima da linha da pobreza.'
+    } else {
+      phrase = 'Abaixo da linha da pobreza.'
+    }
+    famIncome.innerHTML = phrase;
+  }
+
+  // EXERCÍCIO 7
+  function priceReal2Dolar() {
+    var phrase1;
+    var phrase2;
+    var finalPrice = valueReais.value / priceDolar.value;
+    phrase1 = `R$${valueReais.value}, na cotação atual dá U$${finalPrice.toFixed(2)}`;
+
+    if (finalPrice > 1000.99) {
+      phrase2 = 'Você tem muitos dólares!'
+    } else {
+      phrase2 = 'Você tem poucos dólares.'
+    }
+    priceReal1.innerHTML = phrase1;
+    priceReal2.innerHTML = phrase2;
+  }
+
+  // EXERCÍCIO 8
+  function fruitsXfastFood() {
+    var phrase;
+    if (Number(likeFruits.value) == Number(likeFastFood.value)) {
+      phrase = 'Você gosta tanto de frutas quanto de fast food';
+    } else {
+      if (Number(likeFruits.value) > Number(likeFastFood.value)) {
+        phrase = 'Você gosta mais de frutas do que de fast food. <br> Parabéns! Seu corpo agradece!';
+      } else {
+        phrase = 'Você gosta mais de fast food do que de frutas. <br> Já prepare sua lápide.';
+      }
+    }
+    answerLikeFruits.innerHTML = phrase;
+  }
+
+</script>

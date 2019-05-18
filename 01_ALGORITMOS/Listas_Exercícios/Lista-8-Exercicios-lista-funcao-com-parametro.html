@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Fui embora mais cedo</title>
-   <link rel="stylesheet" type="text/css" href="estilos.css"> 
+  <link rel="stylesheet" type="text/css" href="estilos.css">
 </head>
 
 <body>
@@ -32,7 +32,27 @@
 
   <!--EXERCÍCIO 1-->
   <div id="exercise">
-    <h2>Exercício 1 da lista</h2>
+    <h2>Exercício 1</h2>
+    <h2>Enunciado</h2>
+    Crie um programa que tenha 4 frases, uma abaixo da outra, todas na cor cinza. São elas:
+    <ul>
+      <li>
+        Zona Norte
+      </li>
+      <li>
+        Zona Sul
+      </li>
+      <li>
+        Zona Leste
+      </li>
+      <li>
+        Zona Oeste
+      </li>
+    </ul>
+    Então, o clicar em alguma dessas frases, ela fica com a cor azul e as demais ficam cinza.
+    <br> <i>OBS: Crie no máximo duas funções Javascript</i>
+
+    <h2>Resolução</h2>
     <div id="zn" style="color: gray" onclick="changeColor(zn)">Zona Norte</div> <br>
     <div id="zs" style="color: gray" onclick="changeColor(zs)">Zona Sul</div> <br>
     <div id="zl" style="color: gray" onclick="changeColor(zl)">Zona Leste</div> <br>
@@ -41,9 +61,23 @@
 
   <!--EXERCÍCIO 2-->
   <div id="exercise">
-    <h2>Descontos no Salário</h2>
-    Insira seu salário: <input type="number" id="salario"> <br>
-    <button type="button" onclick="calcINSS(salario.value)">Ver descontos</button>
+    <h2>Ex. 2 - Descontos no Salário</h2>
+    <h2>Enunciado</h2>
+    Crie um programa que solicite o salário do usuário. Após clicar num botão "Ver descontos", devem aparecer as
+    seguintes frases abaixo dele: <br> <br>
+    <i>Desconto de INSS: R$X <br>
+      Desconto de Imposto de Renda: R$Y <br>
+      Desconto de VT: R$Z <br>
+    </i>
+    <br>
+    Onde X é 10% do salário. Y é 15% do salário. Z é 6% do salário. <br> <br>
+    <i>OBS: Use uma função para cada desconto.</i>
+
+    <h2>Resolução</h2>
+    <form>
+      Insira seu salário: <input type="number" id="salario"> <br>
+      <button type="button" onclick="calcINSS(salario.value)">Ver descontos</button>
+    </form>
     <div id="div_inss"></div>
     <div id="div_ir"></div>
     <div id="div_vt"></div>
@@ -51,16 +85,46 @@
 
   <!--EXERCÍCIO 3-->
   <div id="exercise">
-    <h2>Calculando aposentadorias</h2>
-    Idade do Pai: <input type="number" id="idadePai"> <br>
-    Idade da Mãe: <input type="number" id="idadeMae"> <br>
-    <button type="button" onclick="verificar(idadePai.value, idadeMae.value)">Verificar aposentadoria</button>
+    <h2>Ex. 3 - Calculando aposentadorias</h2>
+    <h2>Enunciado</h2>
+    Crie um programa que tenha 2 campos de formulário: "Idade do pai" e "Idade da mãe". <br>
+    Abaixo, um botão "<u>Verificar Aposentadoria</u>". <br>
+    Ao clicar no botão, devem aparacer duas frases abaixo: <br>
+    <i>Faltam X anos para o pai se aposentar <br>
+      Faltam Y anos para a mãe se aposentar <br> </i>
+    <br>
+    O pai se aposenta com 65 anos e a mãe aos 60.
+    <br>
+    <i>OBS: Crie uma ou mais funções com argumentos (ou parâmetros).</i>
+
+    <h2>Resolução</h2>
+    <form>
+      Idade do Pai: <input type="number" id="idadePai"> <br>
+      Idade da Mãe: <input type="number" id="idadeMae"> <br>
+      <button type="button" onclick="verificar(idadePai.value, idadeMae.value)">Verificar aposentadoria</button>
+    </form>
     <div id="div_aposent"></div>
   </div>
 
   <!-- EXERCÍCIO 4 -->
   <div id="exercise">
-    <h2>Votação</h2>
+    <h2>Ex. 4 - Votação</h2>
+    <h2>Enunciado</h2>
+
+    <p> Crie uma mini urna eletrônica. Na tela devem haver os textos:
+      <br>
+      "<i>Votos do Zé: 0</i>" e "<i>Votos da Maria: 0</i>".
+    </p>
+    <p>
+      Abaixo deles, os botões:
+      <br>
+      "<u>Votar no Zé</u>" e "<u>Votar na Maria</u>"
+    </p>
+    <p>
+      Se clicar no 1º botão, aumentam os votos do Zé. Se clicar no segundo, aumentam da Maria.
+      <br> <i>OBS: Use uma função com parâmetros para criar esse programa.</i>
+    </p>
+    <h2>Resolução</h2>
     Votos do Zé: <b id="votosZe">0</b> <br>
     Votos da Maria: <b id="votosMaria">0</b> <br>
     <button type="button" onclick="votar(votosZe)">Votar no Zé</button>
@@ -69,7 +133,21 @@
 
   <!-- EXERCÍCIO 5 -->
   <div id="exercise">
-    <h2>Os 4 elementos</h2>
+    <h2>Ex. 5 - Os 4 elementos</h2>
+    <h2>Enunciado</h2>
+    <p>
+      Crie um programa cuja tela deve ter as fotos de 4 elementos da natureza: terra, ar, água e fogo. A princípio,
+      todos
+      invisíveis.
+      <br>
+      Só que, abaixo deles, 4 botões, cada um com o texto do nome de cada elemento.
+      <br>
+      Ao clicar em um dos botões, somente a foto relativa ao botão é exibida.
+    </p>
+    <p>
+      <i>OBS: Use uma função com parâmetros para criar esse programa</i>
+    </p>
+    <h2>Resolução</h2>
     <img src="terra.png" id="terra" style="display: none; width: 80px">
     <img src="ar.png" id="ar" style="display: none; width: 80px">
     <img src="agua.png" id="agua" style="display: none; width: 80px">
@@ -82,7 +160,24 @@
 
   <!-- EXERCÍCIO 6 -->
   <div id="exercise">
-    <h2>Os elementos II</h2>
+    <h2>Ex. 6 - Os elementos II</h2>
+    <h2>Enunciado</h2>
+    <p>
+      Recrie o programa da questão anterior. A princípio, a foto da "Terrra" deve estar visível.
+      Só que, abaixo deles, não devem haver botões e sim uma combo com os itens:
+      <ul>
+        <li>Terra</li>
+        <li>Ar</li>
+        <li>Água</li>
+        <li>Fogo</li>
+      </ul>
+      Ao selecionar um item na combo, somente a foto relativa ao item é exibida.
+    </p>
+    <p>
+      <i>OBS: Use uma função com parâmetros para criar esse programa.</i>
+    </p>
+
+    <h2>Resolução</h2>
     <img src="terra.png" id="elemento" style="display: block; width: 80px">
     <br>
     <select id="sel_elemento" onchange="mudar()">
@@ -95,7 +190,51 @@
 
   <!-- EXERCÍCIO 7 -->
   <div id="exercise">
-    <h2>Feliz Páscoa (ou não)</h2>
+    <h2>Ex. 7 - Feliz Páscoa (ou não)</h2>
+    <h2>Enunciado</h2>
+    <p>
+      Crie um programa que demonstre quanto é desperdício de dinheiro comprar ovo de páscoa ao invés de barras de
+      chocolate ou caixas de bombons.
+      Na tela devem haver os seguintes campos:
+      <ul>
+        <li>
+          Preço do ovo
+        </li>
+        <li>
+          Peso do ovo (gramas)
+        </li>
+        <li>
+          Preço da barra
+        </li>
+        <li>
+          Peso da barra (gramas)
+        </li>
+        <li>
+          Preço da caixa de bombons
+        </li>
+        <li>
+          Peso da caixa (gramas)
+        </li>
+      </ul>
+      Ao clicar num botão "Calcular", exiba 3 frases abaixo, como estas:
+      <ul>
+        <li>
+          Cada 1/2kg (500g) do ovo saem por R$ 22.50
+        </li>
+        <li>
+          Cada 1/2kg (500g) da barra saem por R$ 15.20
+        </li>
+        <li>
+          Cada 1/2kg (500g) da caixa saem por R$ 12.18
+        </li>
+      </ul>
+    </p>
+    <p>
+      <i>OBS: Crie 1 (uma) função para o cálculo de qualquer um dos 3. A partir de seus parâmetros ela calcula e exibe o
+        resultado num local específico.</i>
+    </p>
+
+    <h2>Resolução</h2>
     <form>
       Preço do ovo: <input type="number" id="ovo_preco" required> <br>
       Peso do ovo (gramas) <input type="number" id="ovo_peso" required> <br>
@@ -112,7 +251,18 @@
 
   <!-- EXERCÍCIO 8 -->
   <div id="exercise">
-    <h2>Votação</h2>
+    <h2>Ex. 8 - Votação II (Desafio)</h2>
+    <h2>Enunciado</h2>
+    <p>
+      Refaça a 4ª questão de tal forma que sejam exibidas barras de cores direfentes que podem ocupar até 100% do espaço
+      horizontal da página (vide as figuras abaixo). Essa barras se atualizam sempre que um voto é recebido por algum
+      candidado. Logo que o programa inica, nenhuma barra deve aparecer.
+    </p>
+    <p>
+      <i>OBS: Crie somente 1 função com quantos parâmetros achar necessários para a atualização das barras.</i>
+    </p>
+
+    <h2>Resolução</h2>
     Votos do Zé: <b id="votosZe_jogo" style="color: blue">0</b> <br>
     Votos da Maria: <b id="votosMaria_jogo" style="color: red">0</b> <br>
     <button type="button" onclick="votar_jogo(votosZe_jogo, zeBarra, zeNumero)">Votar no Zé</button>
@@ -127,7 +277,27 @@
 
   <!-- EXERCÍCIO 9 -->
   <div id="exercise">
-    <h2>Vai passar??</h2>
+    <h2>Ex. 9 - Vai passar??</h2>
+    <h2>Enunciado</h2>
+    <p>
+      Crie um programa no qual um aluno Bandtec descubra se vai passar ou não na em uma disciplina.
+      Na tela devem ter os campos de 'Média nas continuadas', 'Nota na Integrada' e 'Frequência'. Ao clicar no botão
+      "<u>E
+        agora?</u>", devem aparecer as seguintes frases abaixo:
+    </p>
+    <p>
+      Sua média geral foi X
+      <br>
+      Seu resultado final foi Y
+    </p>
+    <p>
+      O valor de X é 40% da média das continuadas mais 60% da nota da integrada.
+      Y é "aprovado" de X for a partir de 5 e a frequência for a partir de 75.
+    </p>
+    <p>
+      OBS: Crie uma função para calcular e exibir a frase com o X e outra para calcular e exibir a frase com Y.
+    </p>
+    <h2>Resolução</h2>
     <form>
       Média das continuadas: <input type="number" id="mediaCont"> <br>
       Nota da Integrada: <input type="number" id="notaInt"> <br>
@@ -140,7 +310,35 @@
 
   <!-- EXERCÍCIO 10 -->
   <div id="exercise">
-    <h2>Cotação do Real</h2>
+    <h2>Ex. 10 - Cotação do Real</h2>
+    <h2>Enunciado</h2>
+    <p>
+      Crie um programa que ajude o usuário a fazer cotações do Real (R$) em relação a moedas estrangeiras.
+      Na tela deve haver uma combo com os seguintes itens:
+      <ul>
+        <li>
+          Dólar Americano (U$)
+        </li>
+        <li>
+          Iene Japonês (¥)
+        </li>
+        <li>
+          Euro (€)
+        </li>
+        <li>
+          Bolívar Venezuelano (Bs.F)
+        </li>
+      </ul>
+
+      Sua cotações em Real são, respectivamente: 0,25, 0,75, 0,20 e 8000.
+      Assim, ao escolher um deles, deve aparecer abaixo uma frase como esta:
+      Cotação em Real: R$ 0.25
+    </p>
+    <p>
+      OBS: Crie uma função com parâmetro.
+    </p>
+
+    <h2>Resolução</h2>
     <select id="moeda" onchange="cotarReal(moeda.value)">
       <option value="0">Escolha a moeda</option>
       <option value="0.25">Dólar Americano (U$)</option>
@@ -179,7 +377,7 @@
     calcMedia(cont, int);
     calcAprov(freq);
   }
-  
+
   function calcMedia(cont, int) {
     mediafinalAluno = cont * 0.4 + int * 0.6;
     mediaGeralSem.innerHTML = `Sua média geral foi <b>${mediafinalAluno}</b>`;
@@ -191,18 +389,18 @@
       aprovacao = 'aprovado';
     } else {
       aprovacao = 'reprovado';
-    } 
+    }
     resultadoSem.innerHTML = `Seu resultado final foi <b>${aprovacao}</b>`;
   }
 
-  
+
 
   // EXERCÍCIO 8
   function votar_jogo(candidato, barra, numero) {
     candidato.innerHTML++;
 
     var novoValor = Number(numero.innerHTML) + 20;
- 
+
     barra.style.width = `${novoValor}px`;
     numero.innerHTML = novoValor;
   }

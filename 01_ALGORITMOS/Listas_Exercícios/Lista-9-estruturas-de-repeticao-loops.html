@@ -18,7 +18,13 @@
 
     <!--Exercício 1-->
     <div id="exercise">
-        <h2>Quantas vezes repetir a frase?</h2>
+        <h2>Ex. 1 - Quantas vezes repetir a frase?</h2>
+        <h3>Enunciado</h3>
+        <p> Crie um programa que pergunte ao usuário quantas vezes ele quer exibir uma frase qualquer. Ele digita isso
+            num campo e clica num botão "Exibir".
+            Ao clicar nesse botão, uma frase qualquer, escolhida por você exibe N vezes em "alerts".
+        </p>
+        <h3>Resolução</h3>
         <form>
             Quantas vezes você quer que a frase apareça?
             <input type="number" id="vezesRep1">
@@ -29,8 +35,14 @@
 
     <!--Exercício 2-->
     <div id="exercise">
-        <h2>Quantas vezes repetir a
+        <h2>Ex. 2 - Quantas vezes repetir a
             <b>sua</b> frase?</h2>
+        <h3>Enunciado</h3>
+        <p> Crie um programa que pergunte ao usuário quantas vezes ele quer exibir uma frase definida por ele. Ele
+            digita esse número e a frase na tela e clica num botão "Exibir".
+            Ao clicar nesse botão, uma frase qualquer, escolhida por ele exibe N vezes em "alerts".
+        </p>
+        <h3>Resolução</h3>
         <form>
             Qual a sua frase?
             <input type="text" id="textRep2">
@@ -43,8 +55,15 @@
 
     <!--Exercício 3-->
     <div id="exercise">
-        <h2>Quantas vezes repetir a
+        <h2>Ex. 3 - Quantas vezes repetir a
             <b>sua</b> frase?</h2>
+        <h3>Enunciado</h3>
+        <p>
+            Refaça a questão anterior, porém, ao invés de exibir "alerts", exiba as frases na própria página, logo
+            abaixo do
+            botão
+        </p>
+        <h3>Resolução</h3>
         <form>
             Qual a sua frase?
             <input type="text" id="textRep3">
@@ -58,38 +77,74 @@
 
     <!--EXERCÍCIO 4-->
     <div id="exercise">
-        <h2>Eu amo pares!</h2>
-        <button type="button" onclick="showPares()">EU AMO PARES!</button>
+        <h2>Ex. 4 - Eu amo pares!</h2>
+        <h3>Enunciado</h3>
+        <p>Crie um programa no qual, ao clicar no botão "Eu amo pares", ele exiba abaixo dele, um abaixo do outro, todos
+            os números pares entre 0 e 100.
+        </p>
+        <h3>Resolução</h3>
+        <button type="button" onclick="showPares()">Eu amo pares</button>
         <div id="div_pares"></div>
     </div>
 
     <!--EXERCÍCIO 5-->
     <div id="exercise">
-        <h2>Eu amo cincos!</h2>
-        <button type="button" onclick="showCinco()">EU AMO CINCOS!</button>
+        <h2>Ex. 5 - Eu amo cincos!</h2>
+        <h3>Enunciado</h3>
+        <p>Crie um programa no qual, ao clicar no botão "Eu amo o 5", ele exiba abaixo dele, um abaixo do outro, todos
+            os múltiplos de 5 entre 0 e 50.
+        </p>
+        <h3>Resolução</h3>
+        <button type="button" onclick="showCinco()">Eu amo o 5</button>
         <div id="div_cinco"></div>
     </div>
 
     <!--EXERCÍCIO 6-->
     <div id="exercise">
-        <h2>Eu amo divisores!</h2>
-        <button type="button" onclick="pulando()">EU AMO DIVIDIR!</button>
+        <h2>Ex. 6 (desafio) - Eu amo divisores!</h2>
+        <h3>Enunciado</h3>
+        <p>Crie um programa no qual, ao clicar no botão "Eu amo o 3 e 4", ele exiba abaixo dele, um abaixo do outro,
+            quase todos os números entre 0 e 30. Por que "quase"? Se o número for múltiplo de 3, ao invés do número,
+            exiba "Eu amo 3!". Se o número for múltiplo de 4, ao invés do número exiba "4 são 2 pares".</p>
+        <h3>Resolução</h3>
+        <button type="button" onclick="pulando()">Eu amo o 3 e 4</button>
         <div id="div_pulando"></div>
     </div>
 
     <!--EXERCÍCIO 7-->
     <div id="exercise">
-        <h2>Avaliação ilustrada</h2>
+        <h2>Ex. 7 - Avaliação ilustrada</h2>
+        <h3>Enunciado</h3>
+        <p>Crie um programa no qual o usuário digita uma nota num campo de formulário identificado como "Nota de
+            avaliação". <br>
+            Após clicar em "Ilustrar Avaliação", caso a nota seja menor que 1 ou maior que 5, exiba um alert com a frase
+            "Valor inválido. Só aceito entre 1 e 5". <br>
+            Caso a nota esteja entre 1 e 5, exiba 1 ou 5 estrelinhas amarelas de mesmo tamanho, uma do lado da outra,
+            conforme a nota digitada (nota 1, uma estrela. Nota 2, duas estrelas...)
+        </p>
+        <h3>Resolução</h3>
         Nota da avaliação:
         <input type="number" id="repetirEstrela">
         <br>
-        <button type="button" onclick="ilustrar(repetirEstrela.value)"> Ilustrar</button>
+        <button type="button" onclick="ilustrar(repetirEstrela.value)">Ilustrar Avaliação</button>
         <div id="estrelinhas"></div>
     </div>
 
     <!--EXERCÍCIO 8-->
     <div id="exercise">
-        <h2>Avaliação ilustrada II</h2>
+        <h2>Ex. 8 - Avaliação ilustrada II</h2>
+        <h3>Enunciado</h3>
+        <p>
+            Recrie o programa do enunciado anterior, porém as notas válidas são entre 1 e 10. Exiba:
+        </p>
+        <p>
+            1 estrela para notas entre 1 e 2; <br>
+            2 estrelas para notas entre 3 e 4; <br>
+            3 estrelas para notas entre 5 e 6; <br>
+            4 estrelas para notas entre 7 e 8; <br>
+            5 estrelas para notas entre 9 e 10.
+        </p>
+        <h3>Resolução</h3>
         Nota da avaliação:
         <input type="number" id="repetirEstrela2">
         <br>
@@ -99,7 +154,68 @@
 
     <!--EXERCÍCIO 9-->
     <div id="exercise">
-        <h2>Simulação de elevador</h2>
+        <h2>Ex. 9 (desafio) - Simulação de elevador</h2>
+        <h3>Enunciado</h3>
+        <p>
+            Crie um programa que simule o funcionamento de um elevador. O usuário informa 2 valores: "Andar atual" e
+            "Andar solicitado". <br>
+            Após clicar num botão "Partir", o programa primeiro valida se os valores informados são válidos. Para ambos
+            o campos o mínimo é 0 (equivalente ao "térreo") e o máximo é 20. Caso o usuário informe um valor errado em
+            algum deles, exiba um alert "Andares válidos: entre 0 e 20". <br>
+            Caso os valores de ambos os campos estejam corretos, exiba várias frases abaixo do botão: Primeiro
+            informando de está subindo ou descendo e depois várias, uma abaixo da outra, simulando o caminho do
+            elevador. Veja os exemplos abaixo:
+            <ul>
+                <li>
+                    Ex 1: Andar atual (5) maior que o andar solicitado (2)
+                </li>
+                <ul>
+                    <li>
+                        Descendo
+                    </li>
+                    <li>
+                        Elevador no andar 5
+                    </li>
+                    <li>
+                        Elevador no andar 4
+                    </li>
+                    <li>
+                        Elevador no andar 3
+                    </li>
+                    <li>
+                        Elevador no andar 2
+                    </li>
+                </ul>
+            </ul>
+            <ul>
+                <li>
+                    Ex 2: Andar atual (0) menor que o andar solicitado (3)
+                </li>
+                <ul>
+                    <li>
+                        Subindo
+                    </li>
+                    <li>
+                        Elevador no andar 0
+                    </li>
+                    <li>
+                        Elevador no andar 1
+                    </li>
+                    <li>
+                        Elevador no andar 2
+                    </li>
+                    <li>
+                        Elevador no andar 3
+                    </li>
+                </ul>
+            </ul>
+            <i>OBS: Caso os valores dos andares informados sejam os mesmos, exiba apenas a frase "Elevador vai continuar
+                onde está" abaixo do botão.</i>
+
+
+
+        </p>
+        <h3>Resolução</h3>
         Andar atual: <input type="number" id="atual"> <br>
         Andar desejado: <input type="number" id="final"> <br>
         <button type="button" onclick="partir(Number(atual.value), Number(final.value))">Partir</button>
@@ -108,71 +224,261 @@
 
     <!--EXERCÍCIO 10-->
     <div id="exercise">
-        <h2>Simulação do elevador II</h2>
+        <h2>Ex. 10 - Simulação do elevador II</h2>
+        <h3>Enunciado</h3>
+        <p>
+            Crie um programa no qual o usuário informe quantos homens, mulheres e crianças vão entrar num elevador. <br>
+            Após clicar no botão "Ilustrar Elevador", deve aparecer um "elevador" (uma caixa com bordas da cor que
+            quiser) e, dentro dela, N imagens de homens, N imagens de mulheres e N imagens de crianças, conforme os
+            valores digitados para cada quantidade.
+        </p>
+        <h3>Resolução</h3>
         Quantos homens? <input type="number" id="num_homens"> <br>
         Quantas mulheres? <input type="number" id="num_mulheres"> <br>
         Quantas crianças? <input type="number" id="num_criancas"> <br>
-        <button type="button" onclick="ver_elevador(Number(num_homens.value), Number(num_mulheres.value), Number(num_criancas.value))">Partir</button>
+        <button type="button"
+            onclick="ver_elevador(Number(num_homens.value), Number(num_mulheres.value), Number(num_criancas.value))">Ilustrar
+            Elevador</button>
         <div id="elevador_img" style="border: 4px solid black; max-width: 100%; display: none"></div>
     </div>
 
     <!--EXERCÍCIO 11-->
     <div id="exercise">
-        <h2>Simulação do elevador III</h2>
+        <h2>Ex. 11 (desafio) - Simulação do elevador III</h2>
+        <h3>Enunciado</h3>
+        <p>
+            Melhore a questão anterior de tal forma que ela valide se o elevador pode ou não partir.
+            A regra é que o elevador só aguenta 600kg. E considera-se que:
+            <ul>
+                <li>
+                    Um homem adulto pesa, em média, 80kg.
+                </li>
+                <li>
+                    Uma mulher adulta pesa, em média, 70kg.
+                </li>
+                <li>
+                    Uma criança pesa, em média, 30 kg.
+                </li>
+            </ul>
+            O elevador só aguenta 8 pessoas no total (não importa se homem, mulher ou criança) <br>
+            Ao clicar em "Ilustrar Elevador", o programa só vai "desenhar" o elevador caso as condições de embarque
+            sejam adequadas. Em caso contrário, apenas exiba um alert "Elevador cheio demais!" e "limpe" o desenho do
+            elevador, caso já esteja desenhado na tela,
+        </p>
+        <h3>Resolução</h3>
         Quantos homens? <input type="number" id="num_homens2"> <br>
         Quantas mulheres? <input type="number" id="num_mulheres2"> <br>
         Quantas crianças? <input type="number" id="num_criancas2"> <br>
-        <button type="button" onclick="ver_elevador_peso(Number(num_homens2.value), Number(num_mulheres2.value), Number(num_criancas2.value))">Partir</button>
+        <button type="button"
+            onclick="ver_elevador_peso(Number(num_homens2.value), Number(num_mulheres2.value), Number(num_criancas2.value))">Ilustrar
+            Elevador</button>
         <div id="elevador_img2" style="border: 4px solid black; max-width: 100%; display: none"></div>
     </div>
 
     <!--EXERCÍCIO 12-->
     <div id="exercise">
         <h2>Par! Ímpar!</h2>
-        <button type="button" onclick="ver_pares()">Par!</button> <br>
-        <button type="button" onclick="ver_impares()">Ímpar!</button>
+        <h3>Enunciado</h3>
+        <p>
+            Crie um programa no qual o usuário pode clicar em 2 botões diferentes: "Ver os pares" ou "Ver os ímpares".
+            <br>
+            Ao clicar no primeiro, devem aparecer abaixo do botão todos os números pares entre 10 e 40. <br>
+            Ao clicar no segundo, devem aparecer abaixo do botão todos os números ímpares entre 30 e 50. <br>
+            <i>OBS: os números devem aparecer numa lista não ordenada</i>
+        </p>
+        <h3>Resolução</h3>
+        <button type="button" onclick="ver_pares()">Ver os pares</button> <br>
+        <button type="button" onclick="ver_impares()">Ver os ímpares</button>
         <ul id="ver_nums"></ul>
     </div>
 
     <!--EXERCÍCIO 13-->
     <div id="exercise">
         <h2>POUPAnça</h2>
-        Qual o depósito inicial? <input type="number" id="depositoIni"> <br>
-        Por quantos meses você quer deixar esse $ rendendo? <input type="number" id="mesesRendendo"> <br>
-        <button type="button" onclick="sim_poupanca(Number(depositoIni.value), Number(mesesRendendo.value))">Simular</button>
+        <h3>Enunciado</h3>
+        <p>
+            Crie um programa que simule quanto o dinheiro de uma pessoa rende na poupança. Se você não sabe, a poupança
+            aumenta de valor uma vez por mês, em seu "aniversário" (por exemplo, se abriu a poupança num dia 9, todo dia
+            9 ela aumenta um pouco de valor). <br>
+            Pergunte ao usuário qual o valor que ele vai depositar quando abrir a poupança e por quantos meses esse
+            valor vai ficar depositado. <br>
+            Ao clicar em "Ver investimento", deve aparecer o valor atualizado da poupança em cada mês. Considere que a
+            poupança rende 0,5% ao mês.
+            <br>
+            O valor deve estar sempre com 2 casas decimais.
+
+        </p>
+        <h3>Resolução</h3>
+        <form>
+
+            Qual o depósito inicial? <input type="number" id="depositoIni"> <br>
+            Por quantos meses você quer deixar esse $ rendendo? <input type="number" id="mesesRendendo"> <br>
+            <button type="button" onclick="sim_poupanca(Number(depositoIni.value), Number(mesesRendendo.value))">Ver
+                investimento</button>
+        </form>
         <div id="valor_poupa"></div>
     </div>
 
     <!--EXERCÍCIO 14-->
     <div id="exercise">
-        <h2>Tipo do elevador, mas com Metrô</h2>
-        Estação atual: <input type="number" id="metro_inic"> <br>
-        Estação final: <input type="number" id="metro_fin"> <br>
-        <button type="button" onclick="partir_metro(Number(metro_inic.value), Number(metro_fin.value))">partir</button>
+        <h2>Ex. 14 - Tipo do elevador, mas com Metrô</h2>
+        <h3>Enunciado</h3>
+        <p>Crie um programa que simule o funcionamento de um metrô da linha azul de São Paulo. O usuário informa 2
+            valores: "Estação atual" e "Estação de destino".</p>
+        <p>
+            Após clicar num botão "Partir", o programa primeiro valida se os valores informados são válidos. Para ambos
+            o campos o mínimo é 0 e o máximo é 16. Caso o usuário informe um valor errado em algum deles, exiba um alert
+            "Estações válidas: entre 0 e 16". <br>
+            Caso os valores de ambos os campos estejam corretos, exiba várias frases abaixo do botão: Primeiro
+            informando de está indo para o norte ou sul e depois várias, uma abaixo da outra, simulando o caminho do
+            elevador. Veja os exemplos abaixo:
+            <ul>
+                <li>
+                    Ex 1: Estação atual (5) maior que a solicitada (2)
+                </li>
+                <ul>
+                    <li>
+                        Indo para o Sul
+                    </li>
+                    <li>
+                        Metrô na estação 5
+                    </li>
+                    <li>
+                        Metrô na estação 4
+                    </li>
+                    <li>
+                        Metrô na estação 3
+                    </li>
+                    <li>
+                        Metrô na estação 2
+                    </li>
+                </ul>
+            </ul>
+
+            <ul>
+                <li>
+                    Ex 2: Estação atual (0) menor que a solicitada (3)
+                </li>
+                <ul>
+                    <li>
+                        Indo para o Norte
+                    </li>
+                    <li>
+                        Metrô na estação 0
+                    </li>
+                    <li>
+                        Metrô na estação 1
+                    </li>
+                    <li>
+                        Metrô na estação 2
+                    </li>
+                    <li>
+                        Metrô na estação 3
+                    </li>
+                </ul>
+            </ul>
+        </p>
+        <p>
+            OBS: Caso os valores das estações informados sejam os mesmos, exiba apenas a frase "Metrô vai continuar onde
+            está" abaixo do botão.
+        </p>
+        <h3>Resolução</h3>
+        <form>
+            Estação atual: <input type="number" id="metro_inic"> <br>
+            Estação final: <input type="number" id="metro_fin"> <br>
+            <button type="button"
+                onclick="partir_metro(Number(metro_inic.value), Number(metro_fin.value))">partir</button>
+        </form>
         <div id="metro_partiu"></div>
     </div>
 
     <!--EXERCÍCIO 15-->
     <div id="exercise">
-        <h2>Tipo o do elevador, mas com animais</h2>
-        Quantos porcos? <input type="number" id="num_porcos"> <br>
-        Quantos cavalos? <input type="number" id="num_cavalos"> <br>
-        Quantos bois? <input type="number" id="num_bois"> <br>
-        <button type="button" onclick="ilu_caminhao(Number(num_porcos.value), Number(num_cavalos.value), Number(num_bois.value))">Ilustrar caminhao</button>
+        <h2>Ex. 15 - Tipo o do elevador, mas com animais</h2>
+        <h3>Enunciado</h3>
+        <p>
+            Crie um programa no qual o usuário informe quantos porcos, cavalos e bois vão entrar num caminhão. <br>
+            Após clicar no botão "Ilustrar Caminhão", deve aparecer um "caminhão" (apenas uma caixa com bordas da cor
+            que quiser) e, dentro delo, N imagens de porcos, N imagens de cavalos e N imagens de bois, conforme os
+            valores digitados para cada quantidade. <br>
+            Porém, valide se o caminhão pode ou não partir. A regra é que o caminhão só aguenta 2 toneladas (ou seja,
+            2000kg). E considera-se que:
+            <ul>
+                <li>
+                    Um porco pesa, em média, 100kg.
+                </li>
+                <li>
+                    Um cavalo pesa, em média, 600kg.
+                </li>
+                <li>
+                    Um boi pesa, em média, 1300 kg.
+                </li>
+                <li>
+                    O caminhão só aguenta 5 animais no total (não importa quais animais).
+                </li>
+            </ul>
+            Ao clicar em "Ilustrar Caminhão", o programa só vai "desenhar" ele caso as condições de embarque sejam
+            adequadas. Em caso contrário, apenas exiba um alert "Caminhão cheio demais!" e "limpe" o desenho do
+            caminhão, caso já esteja desenhado na tela,
+
+        </p>
+        <h3>Resolução</h3>
+        <form>
+            Quantos porcos? <input type="number" id="num_porcos"> <br>
+            Quantos cavalos? <input type="number" id="num_cavalos"> <br>
+            Quantos bois? <input type="number" id="num_bois"> <br>
+            <button type="button"
+                onclick="ilu_caminhao(Number(num_porcos.value), Number(num_cavalos.value), Number(num_bois.value))">Ilustrar
+                caminhao</button>
+        </form>
         <div id="caminhao_ilustrado" style="border: 3px black solid; display: none; max-width: 100%"></div>
     </div>
 
-    <!--EXERCÍCIO 16-->
     <div id="exercise">
-        <h2></h2>
+        <h2>Ex. 16 - Poupança com novos juros</h2>
+        <h3>Enunciado</h3>
+        <p>
+        Crie um programa que simule quanto o dinheiro de uma pessoa renda num investimento qualquer, supondo que esse
+        investimento só pode ser resgatado em umd eterminado dia do mês. Assim, importa saber apenas quanto ele rendeu
+        após cada mês. <br>
+        Pergunte ao usuário qual o valor que ele vai depositar quando começar o investimento, por quantos meses esse
+        valor vai ficar investido e qual a taxa de juros de rendimento mensal. <br>
+        Ao clicar em "Ver investimento", deve aparecer o valor atualizado do investimento em cada mês. <br>
+        O valor deve estar sempre com 2 casas decimais.
+        </p>
+        <h3>Resolução</h3>
+        <form>
+            Depósito inicial: <input type="number" id="depIni_novo"> <br>
+            Por quantos meses? <input type="number" id="val_meses"> <br>
+            Valor de juros em %: <input type="number" id="val_juros"> <br>
+            <button type="button" onclick="investir_poupanca(Number(depIni_novo.value), Number(val_juros.value), Number(val_meses.value))">Ver investimento</button>
+        </form>
+        <div id="resultado_investimento"></div>
     </div>
+
 </body>
 
 </html>
 
 <script>
+
+    // EXERCÍCIO 16
+    function investir_poupanca(depos, juros_mensais, meses) {
+        var frase = '';
+        frase += `Valor depositado: R$${depos.toFixed(2)} <br>`
+        var juros = juros_mensais / 100;
+        var i = 1;
+        var valorTotal = depos;
+        while (i <= meses) {
+            valorTotal *= 1 + juros;
+            frase += `${i}º Mês: R$${(valorTotal).toFixed(2)}. <br>`;
+            i++
+        }
+        resultado_investimento.innerHTML = frase;
+    }
+
     // EXERCÍCIO 15
-    function ilu_caminhao (porcos, cavalos, bois) {
+    function ilu_caminhao(porcos, cavalos, bois) {
         var peso_porcos = porcos * 100;
         var peso_cavalos = cavalos * 600;
         var peso_bois = bois * 1300;
@@ -250,12 +556,9 @@
         var juros = 0.05
 
         var contador = 1;
+        var valor = dep;
         while (contador <= meses) {
-            //var valor *= 1.005;
-            //var valor = dep * Math.pow( 1 + juros, contador);
-            //var valor2 = Math.pow(valor, contador);
-
-            //var depnovo = dep + contador * dep * juros;
+            valor *= 1 + juros;
             valor_poupa.innerHTML += `${contador}º Mês: R$${(valor).toFixed(2)}. <br>`;
             contador++;
         }
@@ -268,7 +571,7 @@
         var contador = 10;
         while (contador <= 40) {
             ver_nums.innerHTML += `<li>${contador}</li>`;
-            contador +=2;
+            contador += 2;
         }
     }
 
@@ -278,7 +581,7 @@
         var contador = 31
         while (contador <= 50) {
             ver_nums.innerHTML += `<li>${contador}</li>`;
-            contador +=2;
+            contador += 2;
         }
     }
 
