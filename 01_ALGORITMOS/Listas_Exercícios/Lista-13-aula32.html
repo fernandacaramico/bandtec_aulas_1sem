@@ -221,26 +221,213 @@
 
             Pesquisar linha: <input type="text" id="linhaPesq">
             <button type="button" onclick="pesqBus(linhaPesq.value)">Pesquisar</button>
-
-            FALTA TERMINAR!
         </form>
+        <div id="resp_bus"></div>
     </div>
+
+    <div id="exercise">
+        <h2>Ex. 10</h2>
+        <h3>Enunciado</h3>
+        <p>
+            Crie um programa no qual o usuário informa um número e clica em "Cadastrar" quantas vezes quiser. Abaixo,
+            deve haver um botão "Exibir todos", que mostra todos os números cadastrados, um abaixo do outro numa
+            <b>lista ordenada</b>. Abaixo da lista, exiba: <br>
+            <i> O maior número cadastrado foi: X <br>
+                O menor número cadastrado foi: Y <br> </i>
+            Onde X foi o maior dentre os números cadastrados e Y foi o menor.
+        </p>
+        <h3>Resolução</h3>
+        <form>
+            Informe um número: <input type="number" id="numCadastrar">
+            <button type="button" onclick="cadastrarNum()">Cadastrar</button> <br>
+            <button type="button" onclick="exibirNum()">Exibir todos</button>
+        </form>
+        <ol id="listaOrdenada"></ol>
+        <div id="maiorMenorNums"></div>
+    </div>
+
+    <div id="exercise">
+        <h2>Ex. 11 - desafio!</h2>
+        <h3>Enunciado</h3>
+        <p>
+            Crie um programa no qual o usuário digita o nome de uma linha de metrô e clica em "Cadastrar" quantas vezes
+            quiser.
+            Porém, se ele digitar algo que não seja "azul" ou "verde", ou "vermelha" ou "amarela" ou "lilás", exiba um
+            alert "Linha não existe. Cadastro inválido" (OBS: NÃO USE if com "ou" (||) nem "e" (&&) para fazer essa
+            validação).
+            Deve haver um botão chamado "Relatório". Ao clicar nele, exiba, abaixo dele:
+            <br><br>
+            N imagens de trens azuis, de acordo com a quantidade de vezes que pegou a linha azul <br>
+            N imagens de trens verdes, de acordo com a quantidade de vezes que pegou a linha verde <br>
+            N imagens de trens vermelhos, de acordo com a quantidade de vezes que pegou a linha vermelha <br>
+            N imagens de trens amarelos, de acordo com a quantidade de vezes que pegou a linha amarela <br>
+            N imagens de trens lilás, de acordo com a quantidade de vezes que pegou a linha lilás
+            <br><br>
+            A linha que você mais pegou foi a X.
+        </p>
+        <h3>Resolução</h3>
+        Cadastrar linh<b>a</b> de metrô: <input type="text" id="linhaCad"> 
+        <button type="button" onclick="cadLinha(linhaCad.value)">Cadastrar</button>
+        <button type="button" onclick="relatorioTrem()">Relatório</button>
+        <br>    
+        <div id="fraseMetro"></div>
+            <br>
+            <div id="imagensMetro" style="display: none">
+                <div id="imagensAzul"></div>
+                <div id="imagensVerde"></div>
+                <div id="imagensVerm"></div>
+                <div id="imagensAmarela"></div>
+                <div id="imagensLilas"></div>
+            </div>
+        </div>
+    
 </body>
 
 </html>
 <script>
+    // comeco do ex 11
+    var linhasMetro = [
+        { 
+            cor: 'azul',
+            numero: 0
+        },
+        { 
+            cor: 'verde',
+            numero: 0
+        },
+        { 
+            cor: 'vermelha',
+            numero: 0
+        },
+        { 
+            cor: 'amarela',
+            numero: 0
+        },
+        { 
+            cor: 'lilás',
+            numero: 0
+        }
+    ]
 
-    // comeco do exercicio 9
-   /* var linhasBus = [];
+    function cadLinha(linha) {
+        linhaCad.value = '';
+        imagensMetro.style.display = "none";
+        fraseMetro.innerHTML = '';
+        // checando se linha existe
+        var contador = 0;
+        for (i = 0; i < linhasMetro.length; i++) {
+            if (linha == linhasMetro[i].cor) {
+                contador++
+            }
+        }
+        if (contador == 0) {
+            alert('Linha não existe. Cadastro inválido');
+        } else {
+            if (linha == linhasMetro[0].cor) {
+                linhasMetro[0].numero++
+                imagensAzul.innerHTML += '<img src="https://image.flaticon.com/icons/png/512/64/64332.png" style="border: 3px solid blue" width="80px">'
+            }
+            if (linha == linhasMetro[1].cor) {
+                linhasMetro[1].numero++
+                imagensVerde.innerHTML += '<img src="https://image.flaticon.com/icons/png/512/64/64332.png" style="border: 3px solid green" width="80px">'
+            }
+            if (linha == linhasMetro[2].cor) {
+                linhasMetro[2].numero++
+                imagensVerm.innerHTML += '<img src="https://image.flaticon.com/icons/png/512/64/64332.png" style="border: 3px solid red" width="80px">'
+            }
+            if (linha == linhasMetro[3].cor) {
+                linhasMetro[3].numero++
+                imagensAmarela.innerHTML += '<img src="https://image.flaticon.com/icons/png/512/64/64332.png" style="border: 3px solid yellow" width="80px">'
+            }
+            if (linha == linhasMetro[4].cor) {
+                linhasMetro[4].numero++
+                imagensLilas.innerHTML += '<img src="https://image.flaticon.com/icons/png/512/64/64332.png" style="border: 3px solid purple" width="80px">'
+            }
+            
+        }
+    }
 
-    function pesqBus(linhaBusca) {
-        for (i=0; i < linhasBus.length; i++) {
-            if (linhasBus[i] == linhaBusca) {
+    var linhasTodas = [linhasMetro[0].numero, linhasMetro[1].numero, linhasMetro[2].numero, linhasMetro[3].numero, linhasMetro[4].numero];
+    var linhasEmRol = [];
 
+    function relatorioTrem() {
+        imagensMetro.style.display = "block";
+        
+        for (i=0; i < linhasMetro[i].numero; i++) {
+            if (linhasMetro[i].numero > Math.max(...linhasTodas)) {
+                linhasEmRol.push(linhasMetro[i].cor)
             }
         }
 
-    } */
+        fraseMetro.innerHTML = `A linha que você mais pegou foi a linha GAMBIARRA! ${linhasEmRol[linhasEmRol.length - 1]}`
+    }
+    // fim do ex 11
+
+    // comeco do ex 10
+    var numerosCad = [];
+    var maiorEmenor = [];
+    function cadastrarNum() {
+        var numeros = Number(numCadastrar.value);
+        numerosCad.push(numeros)
+        numCadastrar.value = '';
+    }
+
+    function exibirNum() {
+        var lista = '';
+        var maior_menor = '';
+        for (i = 0; i < numerosCad.length; i++) {
+            lista += `<li>${numerosCad[i]}</li>`
+        }
+
+        // comparar();
+
+        maior_menor = `O maior número cadastrado foi: ${Math.max(...numerosCad)} <br>
+                        O menor número cadastrado foi: ${Math.min(...numerosCad)}`
+
+        maiorMenorNums.innerHTML = maior_menor;
+        listaOrdenada.innerHTML = lista;
+    }
+
+    function comparar() {
+        maiorEmenor.push(numerosCad[0])
+        for (i = 1; i < numerosCad.length; i++) {
+            if (numerosCad[i] > numerosCad[i - 1]) {
+                maiorEmenor.push(numerosCad[i]);
+            } else {
+                maiorEmenor.unshift(numerosCad[i]);
+            }
+        }
+    }
+
+    // fim do ex 10
+
+    // comeco do exercicio 9
+    var linhasBus = [];
+
+    function gravarBus(linhaPeg) {
+        linhasBus.push(linhaPeg);
+        linhaPeguei.value = '';
+    }
+
+    function pesqBus(linhaBusca) {
+        var frase = '';
+        var contador = 0;
+        var ordemLinhas = [];
+
+        for (i = 0; i < linhasBus.length; i++) {
+            if (linhasBus[i] == linhaBusca) {
+                contador++;
+                ordemLinhas.push(i - (-1));
+            }
+        }
+
+        if (contador > 0) {
+            frase = `Você já pegou essa linha ${contador} vez(es), nessa ordem: ${ordemLinhas}`;
+        } else {
+            frase = 'Você nunca pegou essa linha';
+        }
+        resp_bus.innerHTML = frase;
+    }
 
     // fim do exercicio 9
 
