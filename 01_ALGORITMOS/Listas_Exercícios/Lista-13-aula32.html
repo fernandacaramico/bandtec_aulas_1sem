@@ -50,11 +50,9 @@
         </p>
         <h2>Resolução</h2>
         <form>
-            Cadastrar local viajado: <input type="text" id="local_viagem"> <button type="button"
-                onclick="cad_local(local_viagem.value)">Cadastrar
+            Cadastrar local viajado: <input type="text" id="local_viagem"> <button type="button" onclick="cad_local(local_viagem.value)">Cadastrar
                 local</button> <br>
-            Relembrando minha viagem de número: <input type="number" id="n_viagem"> <button type="button"
-                onclick="relembrar_viagem(Number(n_viagem.value))">Relembrar
+            Relembrando minha viagem de número: <input type="number" id="n_viagem"> <button type="button" onclick="relembrar_viagem(Number(n_viagem.value))">Relembrar
                 Viagem</button>
         </form>
         <div id="localViagemNum"></div>
@@ -76,8 +74,7 @@
         </p>
         <h2>Resolução</h2>
         <form>
-            Cdastre aqui seus projetos, em ordem: <input type="text" id="nome_proj"> <button type="button"
-                onclick="registrar_proj(nome_proj.value)">Registrar
+            Cdastre aqui seus projetos, em ordem: <input type="text" id="nome_proj"> <button type="button" onclick="registrar_proj(nome_proj.value)">Registrar
                 projeto</button> <br>
         </form>
         <div id="tipo_profissional"></div>
@@ -111,8 +108,7 @@
         <br>
         <br>
         <form>
-            Pesquisar CEP cadastrado: <input type="text" id="consult_cep"> <button type="button"
-                onclick="consultar_cep(consult_cep.value)">Consultar
+            Pesquisar CEP cadastrado: <input type="text" id="consult_cep"> <button type="button" onclick="consultar_cep(consult_cep.value)">Consultar
                 CEP</button>
         </form>
         <div id="cep_encontrado"></div>
@@ -122,7 +118,8 @@
         <h2>Ex. 7</h2>
         <h3>Enunciado</h3>
         Peça para o usuário digitar um número qualquer e, ao clicar em "Registrar", grave esse número de tal forma que,
-        ao clicar em "Ver números separados", ele veja, um abaixo do outro, primeiro só os ímpares e depois só os pares.
+        ao clicar em "Ver números separados", ele veja, um abaixo do outro, primeiro só os ímpares e depois só os
+        pares.
         <h3>Resolução</h3>
 
         <p>
@@ -266,27 +263,21 @@
             A linha que você mais pegou foi a X.
         </p>
         <h3>Resolução</h3>
-        Cadastrar linh<b>a</b> de metrô: <input type="text" id="linhaCad"> 
+        Cadastrar linh<b>a</b> de metrô: <input type="text" id="linhaCad">
         <button type="button" onclick="cadLinha(linhaCad.value)">Cadastrar</button>
         <button type="button" onclick="relatorioTrem()">Relatório</button>
-        <br>    
+        <br>
         <div id="fraseMetro"></div>
-            <br>
-            <div id="imagensMetro" style="display: none">
-                <div id="imagensAzul"></div>
-                <div id="imagensVerde"></div>
-                <div id="imagensVerm"></div>
-                <div id="imagensAmarela"></div>
-                <div id="imagensLilas"></div>
-            </div>
-        </div>
-    
+        <br>
+        <div id="imagensMetro" style="display: none"></div>
+    </div>
+
 </body>
 
 </html>
 <script>
-    // comeco do ex 11
-    var linhasMetro = [
+    // comeco ex 11 meu
+var linhasMetro = [
         { 
             cor: 'azul',
             numero: 0
@@ -325,43 +316,43 @@
         } else {
             if (linha == linhasMetro[0].cor) {
                 linhasMetro[0].numero++
-                imagensAzul.innerHTML += '<img src="https://image.flaticon.com/icons/png/512/64/64332.png" style="border: 3px solid blue" width="80px">'
+                imagensMetro.innerHTML += '<img src="https://image.flaticon.com/icons/png/512/64/64332.png" style="border: 3px solid blue" width="80px">'
             }
             if (linha == linhasMetro[1].cor) {
                 linhasMetro[1].numero++
-                imagensVerde.innerHTML += '<img src="https://image.flaticon.com/icons/png/512/64/64332.png" style="border: 3px solid green" width="80px">'
+                imagensMetro.innerHTML += '<img src="https://image.flaticon.com/icons/png/512/64/64332.png" style="border: 3px solid green" width="80px">'
             }
             if (linha == linhasMetro[2].cor) {
                 linhasMetro[2].numero++
-                imagensVerm.innerHTML += '<img src="https://image.flaticon.com/icons/png/512/64/64332.png" style="border: 3px solid red" width="80px">'
+                imagensMetro.innerHTML += '<img src="https://image.flaticon.com/icons/png/512/64/64332.png" style="border: 3px solid red" width="80px">'
             }
             if (linha == linhasMetro[3].cor) {
                 linhasMetro[3].numero++
-                imagensAmarela.innerHTML += '<img src="https://image.flaticon.com/icons/png/512/64/64332.png" style="border: 3px solid yellow" width="80px">'
+                imagensMetro.innerHTML += '<img src="https://image.flaticon.com/icons/png/512/64/64332.png" style="border: 3px solid yellow" width="80px">'
             }
             if (linha == linhasMetro[4].cor) {
                 linhasMetro[4].numero++
-                imagensLilas.innerHTML += '<img src="https://image.flaticon.com/icons/png/512/64/64332.png" style="border: 3px solid purple" width="80px">'
+                imagensMetro.innerHTML += '<img src="https://image.flaticon.com/icons/png/512/64/64332.png" style="border: 3px solid purple" width="80px">'
             }
             
         }
     }
 
-    var linhasTodas = [linhasMetro[0].numero, linhasMetro[1].numero, linhasMetro[2].numero, linhasMetro[3].numero, linhasMetro[4].numero];
-    var linhasEmRol = [];
 
     function relatorioTrem() {
         imagensMetro.style.display = "block";
-        
-        for (i=0; i < linhasMetro[i].numero; i++) {
-            if (linhasMetro[i].numero > Math.max(...linhasTodas)) {
-                linhasEmRol.push(linhasMetro[i].cor)
+        var maior = 0;
+        var linha_maior;
+        for (i=0; i < linhasMetro.length; i++) {
+            if (linhasMetro[i].numero > maior) {
+                maior = linhasMetro[i].numero;
+                linha_maior = linhasMetro[i].cor;
             }
         }
 
-        fraseMetro.innerHTML = `A linha que você mais pegou foi a linha GAMBIARRA! ${linhasEmRol[linhasEmRol.length - 1]}`
+        fraseMetro.innerHTML = `A linha que você mais pegou foi a linha ${linha_maior}`
     }
-    // fim do ex 11
+    //fim do ex 11 meu
 
     // comeco do ex 10
     var numerosCad = [];
