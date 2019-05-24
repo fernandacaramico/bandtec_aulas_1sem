@@ -355,8 +355,11 @@ var linhasMetro = [
     //fim do ex 11 meu
 
     // comeco do ex 10
+    // EXERCÍCIO CONSERTADO
     var numerosCad = [];
-    var maiorEmenor = [];
+    var maiorNum = 0;
+    var menorNum = 9999999999999999999999999999999999999; 
+
     function cadastrarNum() {
         var numeros = Number(numCadastrar.value);
         numerosCad.push(numeros)
@@ -370,22 +373,21 @@ var linhasMetro = [
             lista += `<li>${numerosCad[i]}</li>`
         }
 
-        // comparar();
+        comparar();
 
-        maior_menor = `O maior número cadastrado foi: ${Math.max(...numerosCad)} <br>
-                        O menor número cadastrado foi: ${Math.min(...numerosCad)}`
-
-        maiorMenorNums.innerHTML = maior_menor;
+        maiorMenorNums.innerHTML = `O maior número cadastrado foi: ${maiorNum} <br>
+                        O menor número cadastrado foi: ${menorNum}`
         listaOrdenada.innerHTML = lista;
     }
 
+
     function comparar() {
-        maiorEmenor.push(numerosCad[0])
-        for (i = 1; i < numerosCad.length; i++) {
-            if (numerosCad[i] > numerosCad[i - 1]) {
-                maiorEmenor.push(numerosCad[i]);
-            } else {
-                maiorEmenor.unshift(numerosCad[i]);
+        for (i = 0; i < numerosCad.length; i++) {
+            if (numerosCad[i] > maiorNum) {
+                maiorNum = numerosCad[i];
+            }
+            if (numerosCad[i] < menorNum) {
+                menorNum = numerosCad[i];
             }
         }
     }
