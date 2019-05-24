@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Estudando Questão turma A</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+  <h1>Av Continuada - Turma A</h1>
+  <div id="exercise">
+    <h2>Questão única</h2>
+
+    <h3>Enunciado</h3>
+    <p>
+      <i>
+        No filme Interestrelar, de 2014, os astronautas do futuro conseguem ir
+        para lugares onde o tempo é diferente do nosso. Por exemplo, há um
+        lugar onde 1 minuto equivale a vários anos aqui na Terra, por isso os
+        astronautas têm que agir bem rápido lá. Uma observação importante é
+        que mesmo nesse futuro longínquo, não há registros de que o Palmeiras
+        tenha um mundial.
+      </i>
+    </p>
+    <p>
+      <b>Crie um programa</b> no qual o usuário você registra as viagens de um
+      astronauta a um lugar desses. Considere que nesse local, 1 minuto
+      equivale a 2 horas na Terra. Ou seja, o tempo passa 120x mais rápido
+      lá.
+    </p>
+
+    <ul>
+      <li>
+        a) O usuário informa: o nome do astronauta, a quantidade de dias, horas
+        e minutos (cada um desses é um campo próprio) da viagem. Por
+        exemplo, se o astronauta passou só 3 minutos lá, então cadastra 0 dias, 0
+        horas e 3 minutos.
+      </li>
+      <li>
+        b) Pelo menos uma das 3 informações de tempo deve ser maior que 0 e
+        nenhuma deve ser menor que zero, caso contrário, exiba um alert
+        "Informe um tempo de viagem válido!" e, claro, ignore este registro.
+      </li>
+      <li>
+        c) O cadastro é efetuado ao clicar num botão "Registrar viagem".
+      </li>
+      <li>
+        d) O usuário pode registrar quantas viagens quiser.
+      </li>
+      <li>
+        e) Deve haver um botão "Relatório de viagens". Ao clicar nele, devem
+        aparecer os registros de cada viagem, comparando o tempo relativo na
+        Terra a partir da idade de uma criança recém nascida no dia do início da
+        viagem, como nos exemplos abaixo:
+      </li>
+    </ul>
+
+
+    <br> <b>
+      Foram registradas ? viagens, detalhadas a seguir:
+      <br><br>
+      Viagem 1: <br>
+      Astronauta NOME1 ficou fora por pelo menos X anos no tempo da
+      Terra. <br>
+      Como a pessoa estava quando ele chegou? <u>imagem aqui</u> <br>
+      <br>
+      Viagem 2:
+      <br>
+      Astronauta NOME2 ficou fora por pelo menos X anos no tempo da
+      Terra. <br>
+      Como a pessoa estava quando ele chegou? <u>imagem aqui</u> <br>
+    </b>
+    <p>
+      => As regras para a foto da pessoa nos itens do relatório são as seguintes:
+    </p>
+
+    <ol>
+      <li>
+        Se a viagem durou até 1 ano no tempo da Terra:
+        <br><img src="baby-bart.png" width="80px">
+      </li>
+      <li>
+        Se a viagem durou mais de 1 ano até 13 anos no tempo da Terra:
+        <br><img src="teen-bart.png" width="80px">
+      </li>
+      <li>
+        Se a viagem durou mais de 13 anos até 30 anos no tempo da Terra:
+        <br><img src="young-adult-bart.png" width="80px">
+      </li>
+      <li>
+        Se a viagem durou mais de 30 anos até 45 anos no tempo da Terra:
+        <br><img src="adult-bart.png" width="80px">
+      </li>
+      <li>
+        Se a viagem durou mais de 45 anos até 90 anos no tempo da Terra:
+        <br><img src="old-bart.png" width="80px">
+      </li>
+      <li>
+        Se a viagem durou mais de 90 anos no tempo da Terra:
+        <br><img src="skull-bart.png" width="80px">
+      </li>
+    </ol>
+
+    <ul>
+      <li>
+        f) Ao final dos detalhes das viagens, exiba a frase: <br>
+        <i>
+          O astronauta que passou mais tempo foi o NOME, que ficou pelo
+          menos X anos no tempo da Terra viajando. Essa foi a Yª viagem
+          registrada. <br>
+          (Onde Y deve começar de 1 no caso da primeira viagem)
+        </i>
+      </li>
+    </ul>
+
+    <h3>
+      Resolução
+    </h3>
+
+    <form>
+      Nome do Astronaura: <input type="text" id="nomeAstronauta"> <br>
+      Quantidade de dias da viagem: <input type="number" id="viagem_dias"> <br>
+      Quantidade de horas da viagem: <input type="number" id="viagem_horas"> <br>
+      Quantidade de minutos da viagem: <input type="number" id="viagem_minutos"> <br>
+      <button type="button"
+        onclick="registrar(nomeAstronauta.value, Number(viagem_dias.value), Number(viagem_horas.value), Number(viagem_minutos.value))">Registrar
+        viagem</button>
+    </form>
+    <button type="button" onclick="ver_relatorio()">Relatório de viagens</button>
+    <div id="div_relatorio"></div>
+    <div id="div_relatorio_mais"></div>
+  </div>
+</body>
+
+</html>
+
+<script>
+
+  var viagens = [];
+
+  function registrar(nomeAstr, diasAstr, horasAstr, minAstr) {
+    if (nomeAstr != '' && diasAstr > 0 || horasAstr > 0 || minAstr > 0) {
+      viagens.push({
+        nome: nomeAstr,
+        dias: diasAstr,
+        horas: horasAstr,
+        minutos: minAstr,
+        tempoTotal: 0
+      })
+    } else {
+      alert('Informe um tempo de viagem válido!')
+    }
+  }
+
+  function ver_relatorio() {
+    var relatorio = '';
+    relatorio = `<br>Foram registradas <b>${viagens.length}</b> viagens, detalhadas a seguir:`
+
+    for (i = 0; i < viagens.length; i++) {
+      var tempo_em_minutos = Number(viagens[i].dias) * 1440 + Number(viagens[i].horas) * 60 + Number(viagens[i].minutos);
+      var total_em_anos = parseInt(tempo_em_minutos / 525600 * 120);
+      viagens[i].tempoTotal = total_em_anos;
+      relatorio += `<br>
+      O Astronauta <b>${viagens[i].nome}</b> ficou fora por pelo menos <b>${total_em_anos}</b> anos terrestres. Quando voltou, estava assim:`
+
+      if (total_em_anos <= 1) {
+        relatorio += '<br><img src="baby-bart.png" width="150px">'
+      } else if (total_em_anos > 90) {
+        relatorio += '<br><img src="skull-bart.png" width="150px">'
+      } else if (total_em_anos > 45) {
+        relatorio += '<br><img src="old-bart.png" width="150px">'
+      } else if (total_em_anos > 30) {
+        relatorio += '<br><img src="adult-bart.png" width="150px">'
+      } else if (total_em_anos > 13) {
+        relatorio += '<br><img src="young-adult-bart.png" width="150px">'
+      } else {
+        relatorio += '<br><img src="teen-bart.png" width="150px">'
+      }
+    }
+
+    var astronauta_mais_tempo = 0;
+    var astronauta_mais_nome;
+    var ordem_viagem = 0;
+
+    for (i = 0; i < viagens.length; i++) {
+      if (viagens[i].tempoTotal > astronauta_mais_tempo) {
+        astronauta_mais_tempo = viagens[i].tempoTotal;
+        astronauta_mais_nome = viagens[i].nome;
+        ordem_viagem = i + Number(1)
+      }
+    }
+    div_relatorio_mais.innerHTML = `<br> O astronauta que passou mais tempo foi o <b>${astronauta_mais_nome}</b>, que ficou pelo menos <b>${astronauta_mais_tempo}</b> anos no tempo da Terra viajando. Essa foi a <b>${ordem_viagem}ª</b> viagem registrada.`
+    div_relatorio.innerHTML = relatorio;
+  }
+
+</script>
