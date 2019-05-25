@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Av Substitutiva</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+  <h1>Av Substitutiva</h1>
+  <div id="exercise">
+    <h2>Questão única TERMINAR</h2>
+    <h3>Enunciado</h3>
+    <p>
+      Crie um programa para uma pequena lojinha.
+    </p>
+
+    <p>a) Inicialmente, ele só exibe 2 botões para o usuário: "Cadastrar produtos" e "Iniciar nova venda"
+    </p>
+
+    <p>
+      b) Ao clicar em "Cadastrar produtos" o usuário vê um formulário com os seguintes campos:
+    </p>
+
+    <ul>
+      <li>
+        Código do produto
+      </li>
+      <li>
+        Nome do produto
+      </li>
+      <li>
+        Preço unitário
+      </li>
+      <li>
+        Quantidade em estoque
+      </li>
+    </ul>
+    <p>
+      c) Abaixo desse campos, há um botão "Salvar produto", ao clicar nele, o programa grava os dados do produto em
+      algum lugar, porém...
+    </p>
+
+    <p>
+      d) Caso o código do produto for menor que 1 ou o preço for menor que 0,01 ou a quantidade em estoque for menor que
+      1, exiba um alert "Cadastro inválido!" e ignore o cadastro desse produto. Caso contrário, o cadastro ocorre
+      normalmente
+    </p>
+
+    <p>
+      e) Se, por acaso, o código de produto informado já existir, localize o registro e altere seus nome, preço e
+      quantidade com os novos valores. Assim, não devem haver 2 registros de produtos com o código 5, por exemplo.
+      Ainda: Vamos supor que já existia um produto de código 5, nome "mel", preço 8,50 e quantidade 10. Dai você informa
+      novamente o código 5, mas nome "mel puro", preço 9,83 e quantidade 8. Então o registro de código 5 passa a ter
+      nome "mel puro", preço 9,83 e quantidade 8. Mas não deve ser criado um outro produto com código 5.
+    </p>
+
+    <p>
+      f) O usuário pode cadastrar quantos produtos quiser
+    </p>
+
+    <p>
+      g) Ao clicar em "Iniciar nova venda", o formulário de cadastro deve sumir e deve aparecer um novo formulário, com
+      os seguintes campos:
+    </p>
+
+    <ul>
+      <li>
+        Código do produto
+      </li>
+      <li>
+        Quantidade vendida
+      </li>
+    </ul>
+
+    <p>
+      h) Abaixo dos campos, deve haver um botão "Registrar venda".
+    </p>
+
+    <p>
+      i) Ao clicar nele, verifique se o código é de um produto cadastrado. Se for, registre a "venda" em algum lugar no
+      programa e exiba um alert "Venda registrada com sucesso!" (caso a validação do item j) passe). Se o código não for
+      de nenhum produto, exiba um alert "Produto não encontrado"
+    </p>
+
+    <p>
+      j) Outra validade no "Registrar venda" é que, se a "quantidade vendida" for maior que a quantidade atual do
+      produto, exiba um alert "Quantidade insuficiente em estoque" e não registre a venda
+    </p>
+
+    <p>
+      k) Caso todas as validações de i) e j) pasem, registre a venda, diminuindo a quantidade do produto no estoque
+    </p>
+
+    <p>
+      l) Abaixo, deve haver um botão "Finalizar venda". Ao clicar nele, deve aparecer um mini relatório parecido com uma
+      "nota fiscal", como o exemplo a seguir:
+    </p>
+
+    <ul>
+      <li>
+        Total de vendas: 3
+      </li>
+      <br>
+      <li>
+        Produto 1: Mingau de aveia <br>
+        Valor unitário: R$ 2.00. Unidades vendidas: 4 <br>
+        Subtotal: R$8.00 <br>
+      </li>
+      <li>
+        Produto 2: Leite em pó <br>
+        Valor unitário: R$ 4.50. Unidades vendidas: 2 <br>
+        Subtotal: R$9.00 <br>
+      </li>
+      <li>
+        Produto 3: Boneco do Goku <br>
+        Valor unitário: R$ 13.00. Unidades vendidas: 1 <br>
+        Subtotal: R$13.00 <br>
+      </li>
+      <br>
+      <li>
+        Valor Total da Venda: R$30.00
+      </li>
+    </ul>
+
+    <p>
+      E o registro interno de vendas deve ser "zerado". Ou seja, se clicar novamente em "Finalizar venda", não devem
+      mais aparecer as vendas. Aí será necessário fazer novas vendas.
+    </p>
+
+    <p>
+      m) Caso o usuário clique novamente em "Cadastrar produtos", o formulário de venda dome e aperece novamente o de
+      cadastro
+    </p>
+  </div>
+  <div id="exercise">
+    <h3>Resolução</h3>
+
+
+    <span style="margin:0px 100px"></span>
+    <button type="button" onclick="ver_cadastrar()">Cadastrar Produto</button>
+    <span style="margin:0px 100px"></span>
+    <button type="button" onclick="ver_vender()">Iniciar nova venda</button>
+
+    <div id="div_cadastro" style="display:none">
+      <br>
+      <form>
+        Código do produto <input type="number" id="codigoProduto" placeholder="apenas números"> <br>
+        Nome do produto <input type="text" id="nomeProduto"> <br>
+        Preço unitário <input type="number" id="precoProduto" placeholder="00.00"> <br>
+        Quantidade em estoque <input type="number" id="qtdProduto"> <br>
+        <button type="button" onclick="cadastrar()">Cadastrar
+          Produto</button>
+      </form>
+    </div>
+
+    <div id="div_venda" style="display:none">
+      <br>
+      <form>
+        Código do produto <input type="number" id="codProduto_venda" placeholder="apenas números"> <br>
+        Quantidade vendida <input type="number" id="qtdProduto_venda"> <br>
+        <button type="button" onclick="vender()">Registrar venda</button>
+      </form>
+
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+<script>
+
+  var produtos = []
+
+  function limpar() {
+    codigoProduto.value = '';
+    nomeProduto.value = '';
+    precoProduto.value = '';
+    qtdProduto.value = '';
+  }
+
+  function cadastrar() {
+    var codP = Number(codigoProduto.value);
+    var nomeP = nomeProduto.value;
+    var precoP = Number(precoProduto.value);
+    var qtdP = Number(qtdProduto.value);
+
+    if (codP < 1 || precoP < 0.01 || nomeP == '' || qtdP < 1) {
+      alert('Cadastro inválido')
+    } else {
+
+      for (i = 0; i <= produtos.length; i++) {
+        if (codP == produtos[i].codigo) {
+          produtos[i].nome = nomeP;
+          produtos[i].preco = precoP;
+          produtos[i].quantidade = qtdP;
+
+          alert('Produto Atualizado')
+          limpar();
+
+        } else {
+          produtos.push({
+            codigo: codP,
+            nome: nomeP,
+            preco: precoP,
+            quantidade: qtdP
+          });
+          alert('Produto novo cadastrado')
+          limpar();
+        }
+      }
+    }
+
+
+
+
+
+
+
+
+  }
+
+
+
+
+  function ver_cadastrar() {
+    div_cadastro.style.display = "block"
+    div_venda.style.display = "none"
+  }
+
+
+  function ver_vender() {
+    div_cadastro.style.display = "none"
+    div_venda.style.display = "block"
+  }
+
+
+</script>

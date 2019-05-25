@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Avaliação Continuada 3</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <h1>Avaliação Continuada</h1>
+    <div id="exercise">
+        <h2>Calculando países</h2>
+        <form>
+            Insira o nome do país: <input type="text" id="nomePais"> <br>
+            Insira a população do país: <input type="number" id="popPais"> <br>
+            Insira o grau de liberdade econômica no país: <input type="number" id="liberdadeEconomica"> <br>
+            <button type="button" onclick="cadastrar(nomePais.value, popPais.value, liberdadeEconomica.value)">Cadastrar
+                País</button>
+        </form>
+        <button type="button" onclick="analisar()">Analisar</button>
+        <div id="analisePaises"></div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    var paises = [];
+
+    function cadastrar(nomPais, popuPais, libEco) {
+        analisePaises.innerHTML = '';
+        if (nomePais != '' && popuPais >= 1000 && libEco <= 100 && libEco > 0) {
+            paises.push({
+                nome: nomPais,
+                populacao: popuPais,
+                liberdade: libEco,
+                liberdadePadrao: '',
+                idh: '',
+                desemprego: '',
+                taxaDesemprego: '',
+                imagem: ''
+            })
+        } else {
+            alert('Entradas inválidas!')
+        }
+        nomePais.value = '';
+        popPais.value = '';
+        liberdadeEconomica.value = '';
+    }
+
+    function analisar() {
+        analisePaises.innerHTML = '';
+        for (i = 0; i < paises.length; i++) {
+            if (paises[i].liberdade <= 50) {
+                paises[i].liberdadePadrao = 'Reprimido';
+                paises[i].idh = 0.5;
+                paises[i].taxaDesemprego = 20;
+                paises[i].desemprego = parseInt(paises[i].populacao * paises[i].taxaDesemprego / 100);
+                paises[i].imagem = 'reprimido.jpeg'
+
+            } else if (paises[i].liberdade > 80) {
+                paises[i].liberdadePadrao = 'Livre'
+                paises[i].idh = 0.85;
+                paises[i].taxaDesemprego = 5
+                paises[i].desemprego = parseInt(paises[i].populacao * paises[i].taxaDesemprego / 100);
+                paises[i].imagem = 'livre.jpg'
+
+            } else if (paises[i].liberdade > 70) {
+                paises[i].liberdadePadrao = 'Quase livre'
+                paises[i].idh = 0.77;
+                paises[i].taxaDesemprego = 7
+                paises[i].desemprego = parseInt(paises[i].populacao * paises[i].taxaDesemprego / 100);
+                paises[i].imagem = 'quase-livre.png'
+
+            } else if (paises[i].liberdade > 60) {
+                paises[i].liberdadePadrao = 'Moderadamente livre'
+                paises[i].idh = 0.72;
+                paises[i].taxaDesemprego = 10;
+                paises[i].desemprego = parseInt(paises[i].populacao * paises[i].taxaDesemprego / 100);
+                paises[i].imagem = 'mod-livre.jpg'
+
+            } else {
+                paises[i].liberdadePadrao = 'Quase reprimido'
+                paises[i].idh = 0.65;
+                paises[i].taxaDesemprego = 15
+                paises[i].desemprego = parseInt(paises[i].populacao * paises[i].taxaDesemprego / 100);
+                paises[i].imagem = 'quase-reprimido.jpg'
+            }
+        }
+
+        for (i = 0; i < paises.length; i++) {
+            analisePaises.innerHTML += `<p>
+                    <h3>País ${i + Number(1)}: ${paises[i].nome}</h3>
+                    Categoria: <b>${paises[i].liberdadePadrao}</b> <br>
+                    Habitantes: <b>${paises[i].populacao}</b> <br> 
+                    IDH médio provável: <b>${paises[i].idh}</b> <br>
+                    Desemprego médio provável: <b>${paises[i].taxaDesemprego}%</b>, ou seja, talvez <b>${paises[i].desemprego}</b> estejam sem emprego <br>
+                    <img src="${paises[i].imagem}" width="150px">
+                    </p>`
+        }
+    }
+
+</script>
