@@ -174,7 +174,9 @@
 
 <script>
 
-  var produtos = []
+  var produtos = [{
+    codigo: 0
+  }]
 
   function limpar() {
     codigoProduto.value = '';
@@ -184,35 +186,25 @@
   }
 
   function cadastrar() {
-    var codP = Number(codigoProduto.value);
-    var nomeP = nomeProduto.value;
-    var precoP = Number(precoProduto.value);
-    var qtdP = Number(qtdProduto.value);
+    var _cod = Number(codigoProduto.value);
+    var _nome = nomeProduto.value;
+    var _preco = Number(precoProduto.value);
+    var _qtd = Number(qtdProduto.value);
 
-    if (codP < 1 || precoP < 0.01 || nomeP == '' || qtdP < 1) {
+    if (_cod < 1 || _preco < 0.01 || _nome == '' || _qtd < 1) {
       alert('Cadastro inválido')
     } else {
-
-      for (i = 0; i <= produtos.length; i++) {
-        if (codP == produtos[i].codigo) {
-          produtos[i].nome = nomeP;
-          produtos[i].preco = precoP;
-          produtos[i].quantidade = qtdP;
-
-          alert('Produto Atualizado')
-          limpar();
-
-        } else {
-          produtos.push({
-            codigo: codP,
-            nome: nomeP,
-            preco: precoP,
-            quantidade: qtdP
-          });
-          alert('Produto novo cadastrado')
+      for (i = 0; i < produtos.length; i++) {
+        if (Number(codigoProduto.value) != produtos[i].codigo) {
+          produtos.push({ codigo: _cod, nome: _nome, preco: _preco, quantidade: _qtd })
           limpar();
         }
       }
+
+
+
+
+
     }
 
 
