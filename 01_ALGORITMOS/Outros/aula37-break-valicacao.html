@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Interrompendo loops</title>
+</head>
+<body>
+<!--
+    O usuário digita uma palavra qualquer e clica em 'Salvar'
+    Quantas vezes quiser.
+    Porém, caso digite uma que já tenha salvo, exiba
+    um alert 'Opa! Repetida!' e ignorar seu registro
+
+    Sempre que clicar em 'Salvar', exiba abaixo todos as
+    palavras digitadas da forma mais simples possível
+    (Dica: só mostra o vetor direto)
+-->
+
+
+
+    Digite uma palavra inédita
+    <input type="text" id='palavra'> 
+    <button type="button" onclick="salvar()">
+        Salvar
+    </button>
+
+    <br>
+    <div id="cadastradas"></div>
+</body>
+</html>
+<script>
+    let palavras = [];
+
+    function salvar() {
+
+        if (palavras.length == 0) {
+            // na primeira vez, pois,
+            // o vetor é vazio
+            palavras.push(palavra.value);
+        } else {
+            // da 2ª vez em diante
+            for (contador=0; contador<palavras.length; contador++) {
+                if (palavras[contador] == palavra.value) {
+                    alert('Opa! Repetida!');
+                    break; // interrompe o 'for'
+                } 
+            }
+
+            if (contador == palavras.length) {
+                // se não achou nenhum repetido no vetor
+                palavras.push(palavra.value);
+            }
+        }
+        cadastradas.innerHTML = `Cadastradas: ${palavras}`;
+
+    }
+</script>

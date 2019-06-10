@@ -12,7 +12,7 @@
 <body>
   <h1>Av Substitutiva</h1>
   <div id="exercise">
-    <h2>Questão única TERMINAR</h2>
+    <h2>Questão única</h2>
     <h3>Enunciado</h3>
     <p>
       Crie um programa para uma pequena lojinha.
@@ -92,7 +92,7 @@
     </p>
 
     <p>
-      k) Caso todas as validações de i) e j) pasem, registre a venda, diminuindo a quantidade do produto no estoque
+      k) Caso todas as validações de i) e j) passem, registre a venda, diminuindo a quantidade do produto no estoque
     </p>
 
     <p>
@@ -132,7 +132,7 @@
     </p>
 
     <p>
-      m) Caso o usuário clique novamente em "Cadastrar produtos", o formulário de venda dome e aperece novamente o de
+      m) Caso o usuário clique novamente em "Cadastrar produtos", o formulário de venda some e aperece novamente o de
       cadastro
     </p>
   </div>
@@ -152,7 +152,8 @@
         Nome do produto <input type="text" id="nomeProduto"> <br>
         Preço unitário <input type="number" id="precoProduto" placeholder="00.00"> <br>
         Quantidade em estoque <input type="number" id="qtdProduto"> <br>
-        <button type="button" onclick="cadastrar()">Cadastrar
+        <button type="button"
+          onclick="cadastrar(codigoProduto.value, nomeProduto.value, precoProduto.value, qtdProduto.value)">Cadastrar
           Produto</button>
       </form>
     </div>
@@ -162,10 +163,12 @@
       <form>
         Código do produto <input type="number" id="codProduto_venda" placeholder="apenas números"> <br>
         Quantidade vendida <input type="number" id="qtdProduto_venda"> <br>
-        <button type="button" onclick="vender()">Registrar venda</button>
+        <button type="button" onclick="vender(codProduto_venda.value, qtdProduto_venda.value)">Registrar venda</button>
       </form>
-
+      <button type="button" onclick="finalizar()">Finalizar Venda</button>
     </div>
+
+    <ul id="recibo"></ul>
   </div>
 
 </body>
@@ -173,61 +176,127 @@
 </html>
 
 <script>
-
-  var produtos = [{
-    codigo: 0
-  }]
+  let produtos = []
 
   function limpar() {
     codigoProduto.value = '';
     nomeProduto.value = '';
     precoProduto.value = '';
     qtdProduto.value = '';
+    codProduto_venda.value = '';
+    qtdProduto_venda.value = '';
   }
 
-  function cadastrar() {
-    var _cod = Number(codigoProduto.value);
-    var _nome = nomeProduto.value;
-    var _preco = Number(precoProduto.value);
-    var _qtd = Number(qtdProduto.value);
+  function adicionar(_cod, _nome, _preco, _qtd) {
+    produtos.push({
+      codigo: _cod,
+      nome: _nome,
+      preco: _preco,
+      quantidade: _qtd
+    })
+  }
 
+  function cadastrar(_cod, _nome, _preco, _qtd) {
+    recibo.innerHTML = '';
     if (_cod < 1 || _preco < 0.01 || _nome == '' || _qtd < 1) {
       alert('Cadastro inválido')
     } else {
-      for (i = 0; i < produtos.length; i++) {
-        if (Number(codigoProduto.value) != produtos[i].codigo) {
-          produtos.push({ codigo: _cod, nome: _nome, preco: _preco, quantidade: _qtd })
+      if (produtos.length == 0) {
+        adicionar(_cod, _nome, _preco, _qtd);
+        alert('Cadastro criado');
+        limpar();
+      } else {
+        for (i = 0; i < produtos.length; i++) {
+          if (produtos[i].codigo == _cod) {
+            produtos[i].nome = _nome;
+            produtos[i].preco = _preco;
+            produtos[i].quantidade = _qtd;
+            alert('Cadastro atualizado');
+            limpar();
+            break;
+          }
+        }
+        if (i == produtos.length) {
+          adicionar(_cod, _nome, _preco, _qtd);
+          alert('Cadastro criado');
           limpar();
         }
       }
+    }
+  }
 
+  let vendas = [];
 
+  function vender(_cod_comprando, _qtd_comprando) {
+    if (_cod_comprando == '' || _qtd_comprando == '') {
+      alert('Preencha os campos');
+    } else {
+      recibo.innerHTML = '';
+      for (i = 0; i < produtos.length; i++) {
 
+        var cod_produto = produtos[i].codigo;
+        var nome_produto = produtos[i].nome;
+        var preco_produto = produtos[i].preco;
+        var qtd_produto = produtos[i].quantidade;
 
+        if (_cod_comprando == cod_produto) {
+          if (Number(_qtd_comprando) > Number(produtos[i].quantidade)) {
+            alert('Quantidade insuficiente em estoque');
+            limpar();
+            break;
+          } else {
+            vendas.push({
+              codigo: cod_produto,
+              nome: nome_produto,
+              preco: preco_produto,
+              quantidade: _qtd_comprando,
+            })
+            produtos[i].quantidade -= _qtd_comprando;
+            alert('Venda realizada com sucesso!');
+            limpar();
+            break;
+          }
+        }
+      }
+      if (i == produtos.length) {
+        alert('Produto não cadastrado');
+      }
+    }
+  }
 
+  function finalizar() {
+    var nota_fiscal = '';
+    var total = 0;
+    limpar();
+
+    nota_fiscal += `<li>Total de vendas: ${vendas.length}</li><br>`;
+
+    for (i = 0; i < vendas.length; i++) {
+      var subtotal = vendas[i].preco * vendas[i].quantidade;
+
+      nota_fiscal += `<li>Produto ${i - (-1)}: ${vendas[i].nome} <br>
+      Valor unitário: R$${Number(vendas[i].preco).toFixed(2)}. Unidades vendidas: ${vendas[i].quantidade}<br>
+      Subtotal: R$${Number(subtotal).toFixed(2)}</li>`;
+
+      total = total + subtotal;
     }
 
+    nota_fiscal += `<br><li>Valor total da venda: R$${total.toFixed(2)}</li>`;
 
-
-
-
-
-
-
+    vendas = [];
+    recibo.innerHTML = nota_fiscal;
   }
-
-
-
 
   function ver_cadastrar() {
-    div_cadastro.style.display = "block"
-    div_venda.style.display = "none"
+    div_cadastro.style.display = "block";
+    div_venda.style.display = "none";
+    recibo.innerHTML = '';
   }
 
-
   function ver_vender() {
-    div_cadastro.style.display = "none"
-    div_venda.style.display = "block"
+    div_cadastro.style.display = "none";
+    div_venda.style.display = "block";
+    recibo.innerHTML = '';
   }
 
 
